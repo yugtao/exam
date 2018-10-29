@@ -16,7 +16,7 @@
 		<context:exclude-filter type="annotation"
 			expression="org.springframework.stereotype.Service" />
 	</context:component-scan>
-
+	<context:component-scan base-package="com.jeecg.exam.controller"/>
 	<!-- ApplicationContext-->
 	<bean class="org.jeecgframework.core.util.ApplicationContextUtil"></bean>
 	<!-- 配置缓存工具类（支持redis\ehcache切换）  
