@@ -1,6 +1,10 @@
 package com.jeecg.exam.controller;
+import com.jeecg.demo.entity.JfromOrderLineEntity;
 import com.jeecg.exam.entity.EExamEntity;
 import com.jeecg.exam.service.EExamServiceI;
+
+import net.sf.json.JSONObject;
+
 import com.jeecg.exam.page.EExamPage;
 import com.jeecg.exam.entity.EPlaceEntity;
 import java.util.ArrayList;
@@ -214,11 +218,18 @@ public class EExamController extends BaseController {
 	public ModelAndView goUpdate(EExamEntity eExam, HttpServletRequest req) {
 		if (StringUtil.isNotEmpty(eExam.getId())) {
 			eExam = eExamService.getEntity(EExamEntity.class, eExam.getId());
-			req.setAttribute("eExamPage", eExam);
+			req.setAttribute("eExamPage", JSONObject.fromObject(eExam));
 		}
 		return new ModelAndView("com/jeecg/exam/eExam-update");
 	}
-	
+	@RequestMapping(params = "test")
+	public ModelAndView test(HttpServletRequest req) {
+		EExamEntity eExam = eExamService.getEntity(EExamEntity.class, "4028d73c66c3964f0166c39dd9970007");
+		ModelAndView model = new ModelAndView("com/jeecg/exam/eExam-update");
+		req.setAttribute("eExamPage", JSONObject.fromObject(eExam));
+		//model.addObject("eExamPage", JSONObject.fromObject(eExam));
+		return model;
+	}
 	
 	/**
 	 * 加载明细列表[考场管理]
@@ -241,6 +252,16 @@ public class EExamController extends BaseController {
 			logger.info(e.getMessage());
 		}
 		return new ModelAndView("com/jeecg/exam/ePlaceList");
+	}
+	
+	@RequestMapping(params = "eplaceDatagrid")
+	public void eplaceDatagrid(EPlaceEntity ePlaceEntity,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
+		CriteriaQuery cq = new CriteriaQuery(EPlaceEntity.class, dataGrid);
+		//查询条件组装器
+		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, ePlaceEntity);
+		cq.add();
+		this.eExamService.getDataGridReturn(cq, true);
+		TagUtil.datagrid(response, dataGrid);
 	}
 
     /**

@@ -50,7 +50,7 @@ public class EExamEntity implements java.io.Serializable {
 	private java.lang.String sysCompanyCode;
 	/**考试时间*/
 	@Excel(name="考试时间",width=15,format = "yyyy-MM-dd")
-	private java.util.Date eDate;
+	private java.lang.String eDate;
 	/**考试人数*/
 	@Excel(name="考试人数",width=15)
 	private java.lang.String eCount;
@@ -208,7 +208,7 @@ public class EExamEntity implements java.io.Serializable {
 	 */
 	
 	@Column(name ="E_DATE",nullable=true,length=20)
-	public java.util.Date getEDate(){
+	public java.lang.String getEDate(){
 		return this.eDate;
 	}
 
@@ -216,7 +216,7 @@ public class EExamEntity implements java.io.Serializable {
 	 *方法: 设置java.util.Date
 	 *@param: java.util.Date  考试时间
 	 */
-	public void setEDate(java.util.Date eDate){
+	public void setEDate(java.lang.String eDate){
 		this.eDate = eDate;
 	}
 	

@@ -30,6 +30,10 @@
   <t:base type="jquery,easyui,tools,DatePicker"></t:base>
   <script type="text/javascript">
   $(document).ready(function(){
+	  var ss = ${eExamPage};
+	  console.log(ss);
+	  var entity = JSON.parse(ss);
+	  console.log(entity);
 	$('#tt').tabs({
 	   onSelect:function(title){
 	       $('#tt .panel-body').css('width','auto');
@@ -40,15 +44,16 @@
  </script>
  </head>
  <body style="overflow-x: hidden;">
+ <h1>页面有没？</h1>
   <t:formvalid formid="formobj" dialog="true" usePlugin="password" layout="table" tiptype="1" action="eExamController.do?doUpdate" >
-					<input id="id" name="id" type="hidden" value="${eExamPage.id }"/>
+					<input id="id" name="id" type="hidden" value="entity.id"/>
 	<table cellpadding="0" cellspacing="1" class="formtable">
 		<tr>
 			<td align="right">
 				<label class="Validform_label">考试名称:</label>
 			</td>
 			<td class="value">
-		     	 <input id="eName" name="eName" type="text" maxlength="50" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eExamPage.eName}'/>
+		     	 <input id="eName" name="eName" type="text" maxlength="50" style="width: 150px" class="inputxt"  ignore="ignore"  value='entity.eName'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">考试名称</label>
 			</td>
@@ -56,7 +61,7 @@
 				<label class="Validform_label">考试状态:</label>
 			</td>
 			<td class="value">
-					<t:dictSelect field="eStatus" type="list"   typeGroupCode="ea_status"  defaultVal="${eExamPage.eStatus}" hasLabel="false"  title="考试状态"></t:dictSelect>     
+					<t:dictSelect field="eStatus" type="list"   typeGroupCode="ea_status"  defaultVal="entity.eStatus" hasLabel="false"  title="考试状态"></t:dictSelect>     
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">考试状态</label>
 			</td>
@@ -66,7 +71,7 @@
 				<label class="Validform_label">考试信息:</label>
 			</td>
 			<td class="value">
-		     	 <input id="eInfo" name="eInfo" type="text" maxlength="50" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eExamPage.eInfo}'/>
+		     	 <input id="eInfo" name="eInfo" type="text" maxlength="50" style="width: 150px" class="inputxt"  ignore="ignore"  value='entity.eInfo'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">考试信息</label>
 			</td>
@@ -74,8 +79,8 @@
 				<label class="Validform_label">考试时间:</label>
 			</td>
 			<td class="value">
-					  <input id="eDate" name="eDate" type="text" style="width: 150px"   ignore="ignore"  value='<fmt:formatDate value='${eExamPage.eDate}' type="date" pattern="yyyy-MM-dd"/>'/>
-				<span class="Validform_checktip"></span>
+					  <%-- <input id="eDate" name="eDate" type="text" style="width: 150px"   ignore="ignore"  value='<fmt:formatDate value='entity.eDate' type="date" pattern="yyyy-MM-dd"/>'/>
+				 --%><span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">考试时间</label>
 			</td>
 		</tr>
@@ -84,7 +89,7 @@
 				<label class="Validform_label">考试人数:</label>
 			</td>
 			<td class="value">
-		     	 <input id="eCount" name="eCount" type="text" maxlength="20" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eExamPage.eCount}'/>
+		     	 <input id="eCount" name="eCount" type="text" maxlength="20" style="width: 150px" class="inputxt"  ignore="ignore"  value='entity.eCount'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">考试人数</label>
 			</td>
@@ -92,10 +97,10 @@
 	
 			</table>
 			<div style="width: auto;height: 200px;">
-				<%-- 增加一个div，用于调节页面大小，否则默认太小 --%>
+				增加一个div，用于调节页面大小，否则默认太小
 				<div style="width:800px;height:1px;"></div>
 				<t:tabs id="tt" iframe="false" tabPosition="top" fit="false">
-				 <t:tab href="eExamController.do?ePlaceList&id=${eExamPage.id}" icon="icon-search" title="考场管理" id="ePlace"></t:tab>
+				 <t:tab href="eExamController.do?ePlaceList&id=entity.id" icon="icon-search" title="考场管理" id="ePlace"></t:tab>
 				</t:tabs>
 			</div>
 			</t:formvalid>
