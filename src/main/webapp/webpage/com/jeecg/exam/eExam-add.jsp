@@ -95,7 +95,7 @@
 				<%-- 增加一个div，用于调节页面大小，否则默认太小 --%>
 				<div style="width:800px;height:1px;"></div>
 				<t:tabs id="tt" iframe="false" tabPosition="top" fit="false">
-				 <t:tab href="eExamController.do?ePlaceList&id=${eExamPage.id}" icon="icon-search" title="考场信息" id="ePlace"></t:tab>
+				 <t:tab href="eExamController.do?ePlaceList&id=${eExamPage.id}" icon="icon-search" title="考场管理" id="ePlace"></t:tab>
 				</t:tabs>
 			</div>
 			</t:formvalid>

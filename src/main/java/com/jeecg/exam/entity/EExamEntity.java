@@ -21,7 +21,7 @@ import org.jeecgframework.poi.excel.annotation.Excel;
  * @Title: Entity
  * @Description: 考试表
  * @author onlineGenerator
- * @date 2018-10-29 15:34:56
+ * @date 2018-10-30 14:27:25
  * @version V1.0   
  *
  */

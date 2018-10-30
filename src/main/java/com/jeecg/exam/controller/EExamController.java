@@ -46,7 +46,7 @@ import java.util.Map;
  * @Title: Controller
  * @Description: 考试表
  * @author onlineGenerator
- * @date 2018-10-29 15:34:56
+ * @date 2018-10-30 14:27:25
  * @version V1.0   
  *
  */
@@ -221,7 +221,7 @@ public class EExamController extends BaseController {
 	
 	
 	/**
-	 * 加载明细列表[考场信息]
+	 * 加载明细列表[考场管理]
 	 * 
 	 * @return
 	 */
@@ -232,7 +232,7 @@ public class EExamController extends BaseController {
 		//获取参数
 		Object id0 = eExam.getId();
 		//===================================================================================
-		//查询-考场信息
+		//查询-考场管理
 	    String hql0 = "from EPlaceEntity where 1 = 1 AND examId = ? ";
 	    try{
 	    	List<EPlaceEntity> ePlaceEntityList = systemService.findHql(hql0,id0);

@@ -53,7 +53,7 @@ import org.jeecgframework.core.util.ExceptionUtil;
  * @Title: Controller  
  * @Description: 考生信息报名审核表
  * @author onlineGenerator
- * @date 2018-10-29 16:51:50
+ * @date 2018-10-30 14:31:04
  * @version V1.0   
  *
  */

@@ -255,69 +255,25 @@
 							<label class="Validform_label" style="display: none;">联系电话</label>
 						</td>
 					</tr>
-					<tr>
-						<td align="right">
-							<label class="Validform_label">
-								笔试成绩:
-							</label>
-						</td>
-						<td class="value">
-						    <input id="sWrittenScore" name="sWrittenScore" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.sWrittenScore}'/>
-							<span class="Validform_checktip"></span>
-							<label class="Validform_label" style="display: none;">笔试成绩</label>
-						</td>
-						<td align="right">
-							<label class="Validform_label">
-								面试成绩:
-							</label>
-						</td>
-						<td class="value">
-						    <input id="sInterviewScore" name="sInterviewScore" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.sInterviewScore}'/>
-							<span class="Validform_checktip"></span>
-							<label class="Validform_label" style="display: none;">面试成绩</label>
-						</td>
-					</tr>
-					<tr>
-						<td align="right">
-							<label class="Validform_label">
-								总成绩:
-							</label>
-						</td>
-						<td class="value">
-						    <input id="sTotalScore" name="sTotalScore" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.sTotalScore}'/>
-							<span class="Validform_checktip"></span>
-							<label class="Validform_label" style="display: none;">总成绩</label>
-						</td>
-						<td align="right">
-							<label class="Validform_label">
-								排名:
-							</label>
-						</td>
-						<td class="value">
-						    <input id="sRank" name="sRank" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.sRank}'/>
-							<span class="Validform_checktip"></span>
-							<label class="Validform_label" style="display: none;">排名</label>
-						</td>
-					</tr>
-					<tr>
-						<td align="right">
-							<label class="Validform_label">
-								备注:
-							</label>
-						</td>
-						<td class="value">
-						    <input id="sRemarks" name="sRemarks" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.sRemarks}'/>
-							<span class="Validform_checktip"></span>
-							<label class="Validform_label" style="display: none;">备注</label>
-						</td>
-				<td align="right">
-					<label class="Validform_label">
-					</label>
-				</td>
-				<td class="value">
-				</td>
-					</tr>
 				
+					<tr>
+						<td align="right">
+							<label class="Validform_label">
+								审核不通过原因:
+							</label>
+						</td>
+						<td class="value"  colspan="3" >
+									<script type="text/javascript"  charset="utf-8" src="plug-in/ueditor/ueditor.config.js"></script>
+									<script type="text/javascript"  charset="utf-8" src="plug-in/ueditor/ueditor.all.min.js"></script>
+                                <textarea name="sReason" id="sReason" style="width: 650px;height:300px">${eStudentPage.sReason }</textarea>
+
+                                <script type="text/javascript">
+							        var sReason_editor = UE.getEditor('sReason');
+								    </script>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">审核不通过原因</label>
+						</td>
+					</tr>
 			</table>
 		</t:formvalid>
  </body>

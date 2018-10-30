@@ -23,7 +23,7 @@ import org.jeecgframework.poi.excel.annotation.ExcelCollection;
  * @Title: Entity
  * @Description: 考试表
  * @author onlineGenerator
- * @date 2018-10-29 15:34:56
+ * @date 2018-10-30 14:27:25
  * @version V1.0   
  *
  */
@@ -205,8 +205,8 @@ public class EExamPage implements java.io.Serializable {
 		this.eCount = eCount;
 	}
 
-	/**保存-考场信息*/
-    @ExcelCollection(name="考场信息")
+	/**保存-考场管理*/
+    @ExcelCollection(name="考场管理")
 	private List<EPlaceEntity> ePlaceList = new ArrayList<EPlaceEntity>();
 		public List<EPlaceEntity> getEPlaceList() {
 		return ePlaceList;

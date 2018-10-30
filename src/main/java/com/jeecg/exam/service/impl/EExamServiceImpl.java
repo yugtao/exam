@@ -40,7 +40,7 @@ public class EExamServiceImpl extends CommonServiceImpl implements EExamServiceI
 			//保存主信息
 			this.save(eExam);
 		
-			/**保存-考场信息*/
+			/**保存-考场管理*/
 			for(EPlaceEntity ePlace:ePlaceList){
 				//外键设置
 				ePlace.setExamId(eExam.getId());
@@ -66,15 +66,15 @@ public class EExamServiceImpl extends CommonServiceImpl implements EExamServiceI
 		//获取参数
 		Object id0 = eExam.getId();
 		//===================================================================================
-		//1.查询出数据库的明细数据-考场信息
+		//1.查询出数据库的明细数据-考场管理
 	    String hql0 = "from EPlaceEntity where 1 = 1 AND examId = ? ";
 	    List<EPlaceEntity> ePlaceOldList = this.findHql(hql0,id0);
-		//2.筛选更新明细数据-考场信息
+		//2.筛选更新明细数据-考场管理
 		if(ePlaceList!=null&&ePlaceList.size()>0){
 		for(EPlaceEntity oldE:ePlaceOldList){
 			boolean isUpdate = false;
 				for(EPlaceEntity sendE:ePlaceList){
-					//需要更新的明细数据-考场信息
+					//需要更新的明细数据-考场管理
 					if(oldE.getId().equals(sendE.getId())){
 		    			try {
 							MyBeanUtils.copyBeanNotNull2Bean(sendE,oldE);
@@ -88,12 +88,12 @@ public class EExamServiceImpl extends CommonServiceImpl implements EExamServiceI
 		    		}
 		    	}
 	    		if(!isUpdate){
-		    		//如果数据库存在的明细，前台没有传递过来则是删除-考场信息
+		    		//如果数据库存在的明细，前台没有传递过来则是删除-考场管理
 		    		super.delete(oldE);
 	    		}
 	    		
 			}
-			//3.持久化新增的数据-考场信息
+			//3.持久化新增的数据-考场管理
 			for(EPlaceEntity ePlace:ePlaceList){
 				if(oConvertUtils.isEmpty(ePlace.getId())){
 					//外键设置
@@ -111,7 +111,7 @@ public class EExamServiceImpl extends CommonServiceImpl implements EExamServiceI
 		//获取参数
 		Object id0 = eExam.getId();
 		//===================================================================================
-		//删除-考场信息
+		//删除-考场管理
 	    String hql0 = "from EPlaceEntity where 1 = 1 AND examId = ? ";
 	    List<EPlaceEntity> ePlaceOldList = this.findHql(hql0,id0);
 		this.deleteAllEntitie(ePlaceOldList);
