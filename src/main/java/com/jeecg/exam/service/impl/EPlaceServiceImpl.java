@@ -1,7 +1,7 @@
 package com.jeecg.exam.service.impl;
-import com.jeecg.exam.service.EExamServiceI;
+import com.jeecg.exam.service.EPlaceServiceI;
 import org.jeecgframework.core.common.service.impl.CommonServiceImpl;
-import com.jeecg.exam.entity.EExamEntity;
+import com.jeecg.exam.entity.EPlaceEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.HashMap;
@@ -18,23 +18,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.jeecgframework.core.util.ResourceUtil;
 
-@Service("eExamService")
+@Service("ePlaceService")
 @Transactional
-public class EExamServiceImpl extends CommonServiceImpl implements EExamServiceI {
+public class EPlaceServiceImpl extends CommonServiceImpl implements EPlaceServiceI {
 
 	@Autowired
 	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 	
- 	public void delete(EExamEntity entity) throws Exception{
+ 	public void delete(EPlaceEntity entity) throws Exception{
  		super.delete(entity);
  	}
  	
- 	public Serializable save(EExamEntity entity) throws Exception{
+ 	public Serializable save(EPlaceEntity entity) throws Exception{
  		Serializable t = super.save(entity);
  		return t;
  	}
  	
- 	public void saveOrUpdate(EExamEntity entity) throws Exception{
+ 	public void saveOrUpdate(EPlaceEntity entity) throws Exception{
  		super.saveOrUpdate(entity);
  	}
  	

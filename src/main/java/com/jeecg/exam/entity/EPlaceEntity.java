@@ -1,4 +1,5 @@
 package com.jeecg.exam.entity;
+
 import java.math.BigDecimal;
 import java.util.Date;
 import java.lang.String;
@@ -19,9 +20,9 @@ import org.jeecgframework.poi.excel.annotation.Excel;
 
 /**   
  * @Title: Entity
- * @Description: 考场管理
+ * @Description: 考场表
  * @author onlineGenerator
- * @date 2018-10-30 14:27:25
+ * @date 2018-10-31 11:02:06
  * @version V1.0   
  *
  */
@@ -31,7 +32,8 @@ import org.jeecgframework.poi.excel.annotation.Excel;
 public class EPlaceEntity implements java.io.Serializable {
 	/**主键*/
 	private java.lang.String id;
-	/**考试id*/
+	/**所属考试*/
+	@Excel(name="所属考试",width=15,dictTable ="e_exam",dicCode ="id",dicText ="e_name")
 	private java.lang.String examId;
 	/**考场名称*/
 	@Excel(name="考场名称",width=15)
@@ -42,8 +44,6 @@ public class EPlaceEntity implements java.io.Serializable {
 	/**考场容纳人数*/
 	@Excel(name="考场容纳人数",width=15)
 	private java.lang.String pCount;
-	/**创建人*/
-	private java.lang.String pCreatby;
 	
 	/**
 	 *方法: 取得java.lang.String
@@ -52,7 +52,7 @@ public class EPlaceEntity implements java.io.Serializable {
 	@Id
 	@GeneratedValue(generator = "paymentableGenerator")
 	@GenericGenerator(name = "paymentableGenerator", strategy = "uuid")
-	
+
 	@Column(name ="ID",nullable=false,length=36)
 	public java.lang.String getId(){
 		return this.id;
@@ -65,31 +65,29 @@ public class EPlaceEntity implements java.io.Serializable {
 	public void setId(java.lang.String id){
 		this.id = id;
 	}
-	
 	/**
 	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  考试id
+	 *@return: java.lang.String  所属考试
 	 */
-	
-	@Column(name ="EXAM_ID",nullable=true,length=50)
+
+	@Column(name ="EXAM_ID",nullable=true,length=32)
 	public java.lang.String getExamId(){
 		return this.examId;
 	}
 
 	/**
 	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  考试id
+	 *@param: java.lang.String  所属考试
 	 */
 	public void setExamId(java.lang.String examId){
 		this.examId = examId;
 	}
-	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  考场名称
 	 */
-	
-	@Column(name ="P_NAME",nullable=true,length=50)
+
+	@Column(name ="P_NAME",nullable=true,length=32)
 	public java.lang.String getPName(){
 		return this.pName;
 	}
@@ -101,13 +99,12 @@ public class EPlaceEntity implements java.io.Serializable {
 	public void setPName(java.lang.String pName){
 		this.pName = pName;
 	}
-	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  考场地址信息
 	 */
-	
-	@Column(name ="P_INFO",nullable=true,length=20)
+
+	@Column(name ="P_INFO",nullable=true,length=32)
 	public java.lang.String getPInfo(){
 		return this.pInfo;
 	}
@@ -119,13 +116,12 @@ public class EPlaceEntity implements java.io.Serializable {
 	public void setPInfo(java.lang.String pInfo){
 		this.pInfo = pInfo;
 	}
-	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  考场容纳人数
 	 */
-	
-	@Column(name ="P_COUNT",nullable=true,length=50)
+
+	@Column(name ="P_COUNT",nullable=true,length=32)
 	public java.lang.String getPCount(){
 		return this.pCount;
 	}
@@ -137,23 +133,4 @@ public class EPlaceEntity implements java.io.Serializable {
 	public void setPCount(java.lang.String pCount){
 		this.pCount = pCount;
 	}
-	
-	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  创建人
-	 */
-	
-	@Column(name ="P_CREATBY",nullable=true,length=50)
-	public java.lang.String getPCreatby(){
-		return this.pCreatby;
-	}
-
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  创建人
-	 */
-	public void setPCreatby(java.lang.String pCreatby){
-		this.pCreatby = pCreatby;
-	}
-	
 }

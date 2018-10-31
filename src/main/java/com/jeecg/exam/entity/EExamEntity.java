@@ -1,4 +1,5 @@
 package com.jeecg.exam.entity;
+
 import java.math.BigDecimal;
 import java.util.Date;
 import java.lang.String;
@@ -21,7 +22,7 @@ import org.jeecgframework.poi.excel.annotation.Excel;
  * @Title: Entity
  * @Description: 考试表
  * @author onlineGenerator
- * @date 2018-10-30 14:27:25
+ * @date 2018-10-31 10:51:44
  * @version V1.0   
  *
  */
@@ -50,7 +51,7 @@ public class EExamEntity implements java.io.Serializable {
 	private java.lang.String sysCompanyCode;
 	/**考试时间*/
 	@Excel(name="考试时间",width=15,format = "yyyy-MM-dd")
-	private java.lang.String eDate;
+	private java.util.Date eDate;
 	/**考试人数*/
 	@Excel(name="考试人数",width=15)
 	private java.lang.String eCount;
@@ -62,7 +63,7 @@ public class EExamEntity implements java.io.Serializable {
 	@Id
 	@GeneratedValue(generator = "paymentableGenerator")
 	@GenericGenerator(name = "paymentableGenerator", strategy = "uuid")
-	
+
 	@Column(name ="ID",nullable=false,length=36)
 	public java.lang.String getId(){
 		return this.id;
@@ -75,12 +76,11 @@ public class EExamEntity implements java.io.Serializable {
 	public void setId(java.lang.String id){
 		this.id = id;
 	}
-	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  流程状态
 	 */
-	
+
 	@Column(name ="BPM_STATUS",nullable=true,length=32)
 	public java.lang.String getBpmStatus(){
 		return this.bpmStatus;
@@ -93,12 +93,11 @@ public class EExamEntity implements java.io.Serializable {
 	public void setBpmStatus(java.lang.String bpmStatus){
 		this.bpmStatus = bpmStatus;
 	}
-	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  创建人id
 	 */
-	
+
 	@Column(name ="E_CREATE_ID",nullable=true,length=50)
 	public java.lang.String getECreateId(){
 		return this.eCreateId;
@@ -111,12 +110,11 @@ public class EExamEntity implements java.io.Serializable {
 	public void setECreateId(java.lang.String eCreateId){
 		this.eCreateId = eCreateId;
 	}
-	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  考试名称
 	 */
-	
+
 	@Column(name ="E_NAME",nullable=true,length=50)
 	public java.lang.String getEName(){
 		return this.eName;
@@ -129,12 +127,11 @@ public class EExamEntity implements java.io.Serializable {
 	public void setEName(java.lang.String eName){
 		this.eName = eName;
 	}
-	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  考试状态
 	 */
-	
+
 	@Column(name ="E_STATUS",nullable=true,length=50)
 	public java.lang.String getEStatus(){
 		return this.eStatus;
@@ -147,12 +144,11 @@ public class EExamEntity implements java.io.Serializable {
 	public void setEStatus(java.lang.String eStatus){
 		this.eStatus = eStatus;
 	}
-	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  考试信息
 	 */
-	
+
 	@Column(name ="E_INFO",nullable=true,length=50)
 	public java.lang.String getEInfo(){
 		return this.eInfo;
@@ -165,12 +161,11 @@ public class EExamEntity implements java.io.Serializable {
 	public void setEInfo(java.lang.String eInfo){
 		this.eInfo = eInfo;
 	}
-	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  所属部门
 	 */
-	
+
 	@Column(name ="SYS_ORG_CODE",nullable=true,length=50)
 	public java.lang.String getSysOrgCode(){
 		return this.sysOrgCode;
@@ -183,12 +178,11 @@ public class EExamEntity implements java.io.Serializable {
 	public void setSysOrgCode(java.lang.String sysOrgCode){
 		this.sysOrgCode = sysOrgCode;
 	}
-	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  所属公司
 	 */
-	
+
 	@Column(name ="SYS_COMPANY_CODE",nullable=true,length=50)
 	public java.lang.String getSysCompanyCode(){
 		return this.sysCompanyCode;
@@ -201,14 +195,13 @@ public class EExamEntity implements java.io.Serializable {
 	public void setSysCompanyCode(java.lang.String sysCompanyCode){
 		this.sysCompanyCode = sysCompanyCode;
 	}
-	
 	/**
 	 *方法: 取得java.util.Date
 	 *@return: java.util.Date  考试时间
 	 */
-	
+
 	@Column(name ="E_DATE",nullable=true,length=20)
-	public java.lang.String getEDate(){
+	public java.util.Date getEDate(){
 		return this.eDate;
 	}
 
@@ -216,15 +209,14 @@ public class EExamEntity implements java.io.Serializable {
 	 *方法: 设置java.util.Date
 	 *@param: java.util.Date  考试时间
 	 */
-	public void setEDate(java.lang.String eDate){
+	public void setEDate(java.util.Date eDate){
 		this.eDate = eDate;
 	}
-	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  考试人数
 	 */
-	
+
 	@Column(name ="E_COUNT",nullable=true,length=20)
 	public java.lang.String getECount(){
 		return this.eCount;
@@ -237,5 +229,4 @@ public class EExamEntity implements java.io.Serializable {
 	public void setECount(java.lang.String eCount){
 		this.eCount = eCount;
 	}
-	
 }

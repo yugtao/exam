@@ -22,7 +22,7 @@ import org.jeecgframework.poi.excel.annotation.Excel;
  * @Title: Entity
  * @Description: 考生信息报名审核表
  * @author onlineGenerator
- * @date 2018-10-30 14:31:04
+ * @date 2018-10-31 13:39:38
  * @version V1.0   
  *
  */
@@ -101,20 +101,27 @@ public class EStudentEntity implements java.io.Serializable {
 	@Excel(name="联系电话",width=15)
 	private java.lang.String sTel;
 	/**笔试成绩*/
+	@Excel(name="笔试成绩",width=15)
 	private java.lang.String sWrittenScore;
 	/**面试成绩*/
+	@Excel(name="面试成绩",width=15)
 	private java.lang.String sInterviewScore;
 	/**总成绩*/
+	@Excel(name="总成绩",width=15)
 	private java.lang.String sTotalScore;
 	/**排名*/
+	@Excel(name="排名",width=15)
 	private java.lang.String sRank;
 	/**备注*/
+	@Excel(name="备注",width=15)
 	private java.lang.String sRemarks;
 	/**审核状态*/
+	@Excel(name="审核状态",width=15,dicCode="e_s_status")
 	private java.lang.String sStatus;
 	/**审核人*/
 	private java.lang.String sAuditor;
 	/**报名时间*/
+	@Excel(name="报名时间",width=15,format = "yyyy-MM-dd")
 	private java.util.Date sCreateDate;
 	/**审核不通过原因*/
 	@Excel(name="审核不通过原因",width=15)
