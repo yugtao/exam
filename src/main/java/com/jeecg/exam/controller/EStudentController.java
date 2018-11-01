@@ -1,5 +1,11 @@
 package com.jeecg.exam.controller;
+import com.jeecg.exam.entity.EExamEntity;
+import com.jeecg.exam.entity.EPlaceEntity;
+import com.jeecg.exam.entity.EProveEntity;
 import com.jeecg.exam.entity.EStudentEntity;
+import com.jeecg.exam.entity.EWorkEntity;
+import com.jeecg.exam.service.EExamServiceI;
+import com.jeecg.exam.service.EProveServiceI;
 import com.jeecg.exam.service.EStudentServiceI;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,11 +23,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import org.jeecgframework.core.common.controller.BaseController;
+import org.jeecgframework.core.common.dao.impl.CommonDao;
 import org.jeecgframework.core.common.exception.BusinessException;
 import org.jeecgframework.core.common.hibernate.qbc.CriteriaQuery;
 import org.jeecgframework.core.common.model.common.TreeChildCount;
 import org.jeecgframework.core.common.model.json.AjaxJson;
 import org.jeecgframework.core.common.model.json.DataGrid;
+import org.jeecgframework.core.common.service.CommonService;
 import org.jeecgframework.core.constant.Globals;
 import org.jeecgframework.core.util.StringUtil;
 import org.jeecgframework.tag.core.easyui.TagUtil;
@@ -68,7 +76,14 @@ public class EStudentController extends BaseController {
 	private EStudentServiceI eStudentService;
 	@Autowired
 	private SystemService systemService;
-	
+	@Autowired
+	private EProveServiceI eProveService;
+	@Autowired
+	private CommonService commonService;
+	@Autowired
+	private CommonDao commondao;
+	@Autowired
+	private EExamServiceI examService;
 
 
 	/**
@@ -117,7 +132,48 @@ public class EStudentController extends BaseController {
 		this.eStudentService.getDataGridReturn(cq, true);
 		TagUtil.datagrid(response, dataGrid);
 	}
-	
+	/**
+	 *生成并打印准考证
+	 */
+	@RequestMapping(params = "printProve")
+	public ModelAndView printProve(HttpServletRequest request,String stu) {
+		if (StringUtil.isNotEmpty(stu)) {
+			EStudentEntity eStudent = eStudentService.getEntity(EStudentEntity.class,stu);
+			EProveEntity eProve = new EProveEntity();
+			EExamEntity exam = examService.getEntity(EExamEntity.class, eStudent.getSExamId());
+			TSUser user = ResourceUtil.getSessionUser();
+			TSDepart depart = commonService.getEntity(TSDepart.class, eStudent.getSOrg());
+			EWorkEntity ework = commonService.getEntity(EWorkEntity.class, eStudent.getSWork());
+			@SuppressWarnings("unchecked")
+			List<EPlaceEntity> EPlaces = commondao.findByProperty(EPlaceEntity.class, "examId", exam.getId());
+			for (EPlaceEntity ePlaceEntity : EPlaces) {
+				String pCount = ePlaceEntity.getPCount();
+				int count = Integer.parseInt(pCount);
+				if(count>0) {
+					eProve.setProvePlace(ePlaceEntity.getPName());
+					eProve.setProveSeat(pCount);
+					count = count-1;
+					ePlaceEntity.setPCount(count+"");
+					commonService.saveOrUpdate(ePlaceEntity);
+					break;
+				}
+			}
+			commonService.getEntity(TSDepart.class, eStudent.getSOrg());
+			eProve.setProveCardCode(eStudent.getSCode());
+			eProve.setProveCode("不知道怎么生成");
+			eProve.setProveDate(exam.getEDate());
+			eProve.setProveExamId(exam.getId());
+			eProve.setProveExamName(exam.getEName());
+			eProve.setProveOrg(depart.getDepartname());
+			eProve.setProveStuId(eStudent.getId());
+			eProve.setProveStuName(eStudent.getSStudient());
+			eProve.setProveUserId(user.getId());
+			eProve.setProveWork(ework.getWName());
+			commonService.save(eProve);
+			//req.setAttribute("eStudentPage", eStudent);
+		}
+		return new ModelAndView("com/jeecg/exam/student/printProve");
+	}
 	/**
 	 *查看审核详情
 	 */
@@ -263,6 +319,7 @@ public class EStudentController extends BaseController {
 		AjaxJson j = new AjaxJson();
 		message = "考生信息报名审核表添加成功";
 		TSUser user = ResourceUtil.getSessionUser();
+		eStudent.setSStatus("2");
 		eStudent.setUserId(user.getId());
 		try{
 			eStudentService.save(eStudent);
