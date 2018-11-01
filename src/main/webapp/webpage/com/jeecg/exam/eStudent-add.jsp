@@ -332,12 +332,16 @@
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">报名时间</label>
 						</td>
-				<td align="right">
-					<label class="Validform_label">
-					</label>
-				</td>
-				<td class="value">
-				</td>
+					<td align="right">
+						<label class="Validform_label">
+							所属考试:
+						</label>
+					</td>
+					<td class="value">
+							  <t:dictSelect field="sExamId" type="list"  dictTable="e_exam" dictField="id" dictText="e_name"  defaultVal="${eStudentPage.sExamId}" hasLabel="false"  title="所属考试" ></t:dictSelect>     
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">所属考试</label>
+						</td>
 					</tr>
 				
 				

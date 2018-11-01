@@ -22,7 +22,7 @@ import org.jeecgframework.poi.excel.annotation.Excel;
  * @Title: Entity
  * @Description: 考生信息报名审核表
  * @author onlineGenerator
- * @date 2018-10-31 13:39:38
+ * @date 2018-11-01 08:46:46
  * @version V1.0   
  *
  */
@@ -126,6 +126,9 @@ public class EStudentEntity implements java.io.Serializable {
 	/**审核不通过原因*/
 	@Excel(name="审核不通过原因",width=15)
 	private java.lang.String sReason;
+	/**所属考试*/
+	@Excel(name="所属考试",width=15,dictTable ="e_exam",dicCode ="id",dicText ="e_name")
+	private java.lang.String sExamId;
 	
 	/**
 	 *方法: 取得java.lang.String
@@ -690,5 +693,22 @@ public class EStudentEntity implements java.io.Serializable {
 	 */
 	public void setSReason(java.lang.String sReason){
 		this.sReason = sReason;
+	}
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  所属考试
+	 */
+
+	@Column(name ="S_EXAM_ID",nullable=true,length=32)
+	public java.lang.String getSExamId(){
+		return this.sExamId;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  所属考试
+	 */
+	public void setSExamId(java.lang.String sExamId){
+		this.sExamId = sExamId;
 	}
 }

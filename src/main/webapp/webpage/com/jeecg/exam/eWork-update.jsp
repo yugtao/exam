@@ -20,7 +20,7 @@
 							</label>
 						</td>
 						<td class="value">
-									<t:dictSelect field="wOrg" type="list"  dictTable="t_s_depart" dictField="id" dictText="departname"   defaultVal="${eWorkPage.wOrg}" hasLabel="false"  title="职位所属单位" ></t:dictSelect>     
+									<t:dictSelect field="wOrg" type="list"  dictTable="t_s_depart" dictField="id" dictText="departname"   defaultVal="${eWorkPage.WOrg}" hasLabel="false"  title="职位所属单位" ></t:dictSelect>     
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">职位所属单位</label>
 						</td>
@@ -32,7 +32,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="wName" name="wName" type="text" maxlength="50" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eWorkPage.wName}'/>
+						    <input id="wName" name="wName" type="text" maxlength="50" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eWorkPage.WName}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">职位名称</label>
 						</td>
@@ -44,9 +44,45 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="wCount" name="wCount" type="text" maxlength="50" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eWorkPage.wCount}'/>
+						    <input id="wCount" name="wCount" type="text" maxlength="50" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eWorkPage.WCount}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">计划招收人数</label>
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							<label class="Validform_label">
+								实际招收人数:
+							</label>
+						</td>
+						<td class="value">
+						    <input id="wRCount" name="wRCount" type="text" maxlength="50" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eWorkPage.WRCount}'/>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">实际招收人数</label>
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							<label class="Validform_label">
+								解释:
+							</label>
+						</td>
+						<td class="value">
+						    <input id="wReason" name="wReason" type="text" maxlength="255" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eWorkPage.WReason}'/>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">解释</label>
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							<label class="Validform_label">
+								职位状态:
+							</label>
+						</td>
+						<td class="value">
+									<t:dictSelect field="wStatus" type="list"  typeGroupCode="ew_status"   defaultVal="${eWorkPage.WStatus}" hasLabel="false"  title="职位状态" ></t:dictSelect>     
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">职位状态</label>
 						</td>
 					</tr>
 				

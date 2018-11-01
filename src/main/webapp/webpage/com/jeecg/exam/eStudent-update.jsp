@@ -20,7 +20,7 @@
 							</label>
 						</td>
 						<td class="value">
-									<t:dictSelect field="sOrg" type="list"  dictTable="t_s_depart" dictField="id" dictText="departname"   defaultVal="${eStudentPage.SOrg}" hasLabel="false"  title="报名单位" ></t:dictSelect>     
+									<t:dictSelect field="sOrg" type="list"  dictTable="t_s_depart" dictField="id" dictText="departname"   defaultVal="${eStudentPage.sOrg}" hasLabel="false"  title="报名单位" ></t:dictSelect>     
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">报名单位</label>
 						</td>
@@ -30,7 +30,7 @@
 							</label>
 						</td>
 						<td class="value">
-									<t:dictSelect field="sWork" type="list"  dictTable="e_work" dictField="id" dictText="w_name"   defaultVal="${eStudentPage.SWork}" hasLabel="false"  title="报名职业" ></t:dictSelect>     
+									<t:dictSelect field="sWork" type="list"  dictTable="e_work" dictField="id" dictText="w_name"   defaultVal="${eStudentPage.sWork}" hasLabel="false"  title="报名职业" ></t:dictSelect>     
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">报名职业</label>
 						</td>
@@ -42,7 +42,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="sStudient" name="sStudient" type="text" maxlength="50" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.SStudient}'/>
+						    <input id="sStudient" name="sStudient" type="text" maxlength="50" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.sStudient}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">学员姓名</label>
 						</td>
@@ -52,7 +52,7 @@
 							</label>
 						</td>
 						<td class="value">
-									<t:dictSelect field="sSex" type="radio"  typeGroupCode="e_sex"   defaultVal="${eStudentPage.SSex}" hasLabel="false"  title="学员性别" ></t:dictSelect>     
+									<t:dictSelect field="sSex" type="radio"  typeGroupCode="e_sex"   defaultVal="${eStudentPage.sSex}" hasLabel="false"  title="学员性别" ></t:dictSelect>     
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">学员性别</label>
 						</td>
@@ -64,7 +64,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="sBirthday" name="sBirthday" type="text" maxlength="50" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.SBirthday}'/>
+						    <input id="sBirthday" name="sBirthday" type="text" maxlength="50" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.sBirthday}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">出生年月</label>
 						</td>
@@ -74,7 +74,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="sNation" name="sNation" type="text" maxlength="50" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.SNation}'/>
+						    <input id="sNation" name="sNation" type="text" maxlength="50" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.sNation}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">民族</label>
 						</td>
@@ -86,7 +86,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="sJiguan" name="sJiguan" type="text" maxlength="100" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.SJiguan}'/>
+						    <input id="sJiguan" name="sJiguan" type="text" maxlength="100" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.sJiguan}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">籍贯</label>
 						</td>
@@ -96,7 +96,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="sHukou" name="sHukou" type="text" maxlength="100" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.SHukou}'/>
+						    <input id="sHukou" name="sHukou" type="text" maxlength="100" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.sHukou}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">户口</label>
 						</td>
@@ -108,7 +108,7 @@
 							</label>
 						</td>
 						<td class="value">
-									<t:dictSelect field="sPolitics" type="list"  typeGroupCode=""   defaultVal="${eStudentPage.SPolitics}" hasLabel="false"  title="政治面貌" ></t:dictSelect>     
+									<t:dictSelect field="sPolitics" type="list"  typeGroupCode=""   defaultVal="${eStudentPage.sPolitics}" hasLabel="false"  title="政治面貌" ></t:dictSelect>     
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">政治面貌</label>
 						</td>
@@ -118,7 +118,7 @@
 							</label>
 						</td>
 						<td class="value">
-									<t:dictSelect field="sEducation" type="list"  typeGroupCode="e_edu"   defaultVal="${eStudentPage.SEducation}" hasLabel="false"  title="学历" ></t:dictSelect>     
+									<t:dictSelect field="sEducation" type="list"  typeGroupCode="e_edu"   defaultVal="${eStudentPage.sEducation}" hasLabel="false"  title="学历" ></t:dictSelect>     
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">学历</label>
 						</td>
@@ -130,7 +130,7 @@
 							</label>
 						</td>
 						<td class="value">
-									<t:dictSelect field="sDegree" type="list"  typeGroupCode="e_degree"   defaultVal="${eStudentPage.SDegree}" hasLabel="false"  title="学位" ></t:dictSelect>     
+									<t:dictSelect field="sDegree" type="list"  typeGroupCode="e_degree"   defaultVal="${eStudentPage.sDegree}" hasLabel="false"  title="学位" ></t:dictSelect>     
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">学位</label>
 						</td>
@@ -140,7 +140,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="sSchool" name="sSchool" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.SSchool}'/>
+						    <input id="sSchool" name="sSchool" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.sSchool}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">毕业学校</label>
 						</td>
@@ -152,7 +152,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="sMajor" name="sMajor" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.SMajor}'/>
+						    <input id="sMajor" name="sMajor" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.sMajor}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">专业</label>
 						</td>
@@ -162,7 +162,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="sGDate" name="sGDate" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.SGDate}'/>
+						    <input id="sGDate" name="sGDate" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.sGDate}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">毕业年月</label>
 						</td>
@@ -174,7 +174,7 @@
 							</label>
 						</td>
 						<td class="value">
-									<t:dictSelect field="sMarry" type="list"  typeGroupCode="e_marry"   defaultVal="${eStudentPage.SMarry}" hasLabel="false"  title="婚姻状况" ></t:dictSelect>     
+									<t:dictSelect field="sMarry" type="list"  typeGroupCode="e_marry"   defaultVal="${eStudentPage.sMarry}" hasLabel="false"  title="婚姻状况" ></t:dictSelect>     
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">婚姻状况</label>
 						</td>
@@ -184,7 +184,7 @@
 							</label>
 						</td>
 						<td class="value">
-									<t:dictSelect field="sIndntity" type="list"  typeGroupCode="e_identity"   defaultVal="${eStudentPage.SIndntity}" hasLabel="false"  title="本人身份" ></t:dictSelect>     
+									<t:dictSelect field="sIndntity" type="list"  typeGroupCode="e_identity"   defaultVal="${eStudentPage.sIndntity}" hasLabel="false"  title="本人身份" ></t:dictSelect>     
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">本人身份</label>
 						</td>
@@ -196,7 +196,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="sOrgNow" name="sOrgNow" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.SOrgNow}'/>
+						    <input id="sOrgNow" name="sOrgNow" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.sOrgNow}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">现工作单位</label>
 						</td>
@@ -206,7 +206,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="sJobNow" name="sJobNow" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.SJobNow}'/>
+						    <input id="sJobNow" name="sJobNow" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.sJobNow}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">现职务</label>
 						</td>
@@ -218,7 +218,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="sWorkDate" name="sWorkDate" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.SWorkDate}'/>
+						    <input id="sWorkDate" name="sWorkDate" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.sWorkDate}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">参加工作时间</label>
 						</td>
@@ -228,7 +228,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="sCode" name="sCode" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.SCode}'/>
+						    <input id="sCode" name="sCode" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.sCode}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">身份证号</label>
 						</td>
@@ -240,7 +240,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="sAdress" name="sAdress" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.SAdress}'/>
+						    <input id="sAdress" name="sAdress" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.sAdress}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">通讯地址</label>
 						</td>
@@ -250,7 +250,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="sTel" name="sTel" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.STel}'/>
+						    <input id="sTel" name="sTel" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.sTel}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">联系电话</label>
 						</td>
@@ -262,7 +262,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="sWrittenScore" name="sWrittenScore" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.SWrittenScore}'/>
+						    <input id="sWrittenScore" name="sWrittenScore" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.sWrittenScore}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">笔试成绩</label>
 						</td>
@@ -272,7 +272,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="sInterviewScore" name="sInterviewScore" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.SInterviewScore}'/>
+						    <input id="sInterviewScore" name="sInterviewScore" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.sInterviewScore}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">面试成绩</label>
 						</td>
@@ -284,7 +284,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="sTotalScore" name="sTotalScore" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.STotalScore}'/>
+						    <input id="sTotalScore" name="sTotalScore" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.sTotalScore}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">总成绩</label>
 						</td>
@@ -294,7 +294,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="sRank" name="sRank" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.SRank}'/>
+						    <input id="sRank" name="sRank" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.sRank}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">排名</label>
 						</td>
@@ -306,7 +306,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="sRemarks" name="sRemarks" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.SRemarks}'/>
+						    <input id="sRemarks" name="sRemarks" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.sRemarks}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">备注</label>
 						</td>
@@ -316,7 +316,7 @@
 							</label>
 						</td>
 						<td class="value">
-									<t:dictSelect field="sStatus" type="list"  typeGroupCode="e_s_status"   defaultVal="${eStudentPage.SStatus}" hasLabel="false"  title="审核状态" ></t:dictSelect>     
+									<t:dictSelect field="sStatus" type="list"  typeGroupCode="e_s_status"   defaultVal="${eStudentPage.sStatus}" hasLabel="false"  title="审核状态" ></t:dictSelect>     
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">审核状态</label>
 						</td>
@@ -328,16 +328,20 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="sCreateDate" name="sCreateDate" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.SCreateDate}'/>
+						    <input id="sCreateDate" name="sCreateDate" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.sCreateDate}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">报名时间</label>
 						</td>
-				<td align="right">
-					<label class="Validform_label">
-					</label>
-				</td>
-				<td class="value">
-				</td>
+						<td align="right">
+							<label class="Validform_label">
+								所属考试:
+							</label>
+						</td>
+						<td class="value">
+									<t:dictSelect field="sExamId" type="list"  dictTable="e_exam" dictField="id" dictText="e_name"   defaultVal="${eStudentPage.sExamId}" hasLabel="false"  title="所属考试" ></t:dictSelect>     
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">所属考试</label>
+						</td>
 					</tr>
 				
 					<tr>
@@ -349,7 +353,7 @@
 						<td class="value"  colspan="3" >
 									<script type="text/javascript"  charset="utf-8" src="plug-in/ueditor/ueditor.config.js"></script>
 									<script type="text/javascript"  charset="utf-8" src="plug-in/ueditor/ueditor.all.min.js"></script>
-                                <textarea name="sReason" id="sReason" style="width: 650px;height:300px">${eStudentPage.SReason }</textarea>
+                                <textarea name="sReason" id="sReason" style="width: 650px;height:300px">${eStudentPage.sReason }</textarea>
 
                                 <script type="text/javascript">
 							        var sReason_editor = UE.getEditor('sReason');

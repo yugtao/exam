@@ -3,9 +3,10 @@
 <t:base type="jquery,easyui,tools,DatePicker"></t:base>
 <div class="easyui-layout" fit="true">
   <div region="center" style="padding:0px;border:0px">
-  <t:datagrid name="eStudentList" checkbox="true" pagination="true" fitColumns="true" title="考生信息报名审核表" sortName="id" actionUrl="eStudentController.do?datagrid" idField="id" fit="true" queryMode="group">
+  <t:datagrid name="eStudentList" checkbox="true" pagination="true" fitColumns="true" title="考生信息报名审核表" sortName="id" actionUrl="eStudentController.do?myList" idField="id" fit="true" queryMode="group">
    <t:dgCol title="主键"  field="id"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="用户id"  field="userId"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
+    <t:dgCol title="所属考试"  field="sExamId"   queryMode="single"  dictionary="e_exam,id,e_name"  width="120"></t:dgCol>
    <t:dgCol title="报名单位"  field="sOrg"  queryMode="single"  dictionary="t_s_depart,id,departname"  width="120"></t:dgCol>
    <t:dgCol title="报名职业"  field="sWork"  queryMode="single"  dictionary="e_work,id,w_name"  width="120"></t:dgCol>
    <t:dgCol title="学员姓名"  field="sStudient"  queryMode="single"  width="120"></t:dgCol>

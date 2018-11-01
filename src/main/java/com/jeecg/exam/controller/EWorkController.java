@@ -53,7 +53,7 @@ import org.jeecgframework.core.util.ExceptionUtil;
  * @Title: Controller  
  * @Description: 职位表
  * @author onlineGenerator
- * @date 2018-10-29 15:03:11
+ * @date 2018-11-01 10:46:00
  * @version V1.0   
  *
  */

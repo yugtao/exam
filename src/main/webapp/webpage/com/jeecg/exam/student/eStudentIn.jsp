@@ -32,10 +32,10 @@
         }
           
           function setContentc(){
-        	 alert("表单提交前想干点啥呢");
+        	 //alert("表单提交前想干点啥呢");
           }
           function test(){
-        	  alert("表单提交后要干点啥呢");
+        	  alert("已成功提交，请耐心等待审核结果");
           }
 
   </SCRIPT>
@@ -44,9 +44,15 @@
 <t:formvalid formid="formobj" dialog="false" layout="div" callback="test" action="eStudentController.do?doAdd" beforeSubmit="setContentc">
 	 <fieldset class="step" style="padding-bottom: 20px;">
 	 <legend>考生信息填写</legend>
+	 	<div class="form">
+			<label class="Validform_label"> 报名考试: </label> 
+			<t:dictSelect field="sExamId" type="list"  dictTable="e_exam" dictField="id" dictText="e_name" datatype="*" dictCondition=" where e_status='2'"  defaultVal="${eStudentPage.sExamId}" hasLabel="false"  title="报名考试" ></t:dictSelect>
+			<span class="Validform_checktip"></span>
+		</div>
+		
 		<div class="form">
 			<label class="Validform_label"> 报名单位: </label> 
-			<t:dictSelect field="sOrg" type="list"  dictTable="t_s_depart" dictField="id" dictText="departname" datatype="*"  defaultVal="${eStudentPage.sOrg}" hasLabel="false"  title="报名单位" ></t:dictSelect>
+			<t:dictSelect field="sOrg" type="list"  dictTable="t_s_depart" dictCondition=" where description !='1'" dictField="id" dictText="departname" datatype="*"  defaultVal="${eStudentPage.sOrg}" hasLabel="false"  title="报名单位" ></t:dictSelect>
 			<span class="Validform_checktip"></span>
 		</div>
 		
@@ -156,26 +162,6 @@
 		<div class="form">
 			<label class="Validform_label"> 联系电话:</label> 
 			<input type="text" id="sTel" name="sTel" datatype="*"  > 
-			<span class="Validform_checktip"></span>
-		</div>
-		<div class="form">
-			<label class="Validform_label"> 笔试成绩: </label> 
-			<input type="text" name="sWrittenScore" id="sWrittenScore" datatype="*"  > 
-			<span class="Validform_checktip"></span>
-		</div>
-		<div class="form">
-			<label class="Validform_label"> 面试成绩: </label> 
-			<input type="text" name="sInterviewScore" id="sInterviewScore" datatype="*"  > 
-			<span class="Validform_checktip"></span>
-		</div>
-		<div class="form">
-			<label class="Validform_label"> 总成绩: </label> 
-			<input type="text" name="sTotalScore" id="sTotalScore" datatype="*"  > 
-			<span class="Validform_checktip"></span>
-		</div>
-		<div class="form">
-			<label class="Validform_label"> 排名: </label> 
-			<input type="text" name="sRank" id="sRank" datatype="*"  > 
 			<span class="Validform_checktip"></span>
 		</div>
 		<div style="text-align:center"><input class="btn" type="submit" value="提交" style="height:30px;width:100px !important;border-radius:5px"></div>

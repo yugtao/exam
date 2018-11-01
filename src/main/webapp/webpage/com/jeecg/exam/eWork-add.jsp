@@ -20,7 +20,7 @@
 						</label>
 					</td>
 					<td class="value">
-							  <t:dictSelect field="wOrg" type="list"  dictTable="t_s_depart" dictField="id" dictText="departname"  defaultVal="${eWorkPage.wOrg}" hasLabel="false"  title="职位所属单位" ></t:dictSelect>     
+							  <t:dictSelect field="wOrg" type="list" where description !='1'"  dictTable="t_s_depart" dictField="id" dictText="departname"  defaultVal="${eWorkPage.wOrg}" hasLabel="false"  title="职位所属单位" ></t:dictSelect>     
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">职位所属单位</label>
 						</td>
@@ -47,6 +47,42 @@
 					     	 <input id="wCount" name="wCount" type="text" maxlength="50" style="width: 150px" class="inputxt"  ignore="ignore" />
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">计划招收人数</label>
+						</td>
+				</tr>
+				<tr>
+					<td align="right">
+						<label class="Validform_label">
+							实际招收人数:
+						</label>
+					</td>
+					<td class="value">
+					     	 <input id="wRCount" name="wRCount" type="text" maxlength="50" style="width: 150px" class="inputxt"  ignore="ignore" />
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">实际招收人数</label>
+						</td>
+				</tr>
+				<tr>
+					<td align="right">
+						<label class="Validform_label">
+							解释:
+						</label>
+					</td>
+					<td class="value">
+					     	 <input id="wReason" name="wReason" type="text" maxlength="255" style="width: 150px" class="inputxt"  ignore="ignore" />
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">解释</label>
+						</td>
+				</tr>
+				<tr>
+					<td align="right">
+						<label class="Validform_label">
+							职位状态:
+						</label>
+					</td>
+					<td class="value">
+							  <t:dictSelect field="wStatus" type="list"  typeGroupCode="ew_status"  defaultVal="${eWorkPage.wStatus}" hasLabel="false"  title="职位状态" ></t:dictSelect>     
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">职位状态</label>
 						</td>
 				</tr>
 				

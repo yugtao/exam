@@ -9,11 +9,11 @@
    <t:dgCol title="创建人id"  field="eCreateId"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="考试名称"  field="eName"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="考试状态"  field="eStatus"  queryMode="single"  dictionary="ea_status"  width="120"></t:dgCol>
-   <t:dgCol title="考试信息"  field="eInfo"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="所属部门"  field="sysOrgCode"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="所属公司"  field="sysCompanyCode"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="考试时间"  field="eDate"  formatter="yyyy-MM-dd"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="考试时间"  field="eDate"  formatter="yyyy-MM-dd hh:mm:ss"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="考试人数"  field="eCount"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="考试信息"  field="eInfo" hidden="true" queryMode="single"  width="500"></t:dgCol>
    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
    <t:dgDelOpt title="删除" url="eExamController.do?doDel&id={id}" urlclass="ace_button"  urlfont="fa-trash-o"/>
    <t:dgToolBar title="录入" icon="icon-add" url="eExamController.do?goAdd" funname="add"></t:dgToolBar>

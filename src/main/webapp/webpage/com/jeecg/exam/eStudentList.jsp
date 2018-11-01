@@ -37,6 +37,7 @@
    <t:dgCol title="审核人"  field="sAuditor"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="报名时间"  field="sCreateDate"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="审核不通过原因"  field="sReason"  hidden="true"  queryMode="single"  width="500"></t:dgCol>
+   <t:dgCol title="所属考试"  field="sExamId"  hidden="true"  queryMode="single"  dictionary="e_exam,id,e_name"  width="120"></t:dgCol>
    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
    <t:dgDelOpt title="删除" url="eStudentController.do?doDel&id={id}" urlclass="ace_button"  urlfont="fa-trash-o"/>
 	<t:dgFunOpt funname="doPass2(id)" title="审核通过" urlclass="ace_button" urlfont="fa-wrench" />

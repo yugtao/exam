@@ -22,7 +22,7 @@ import org.jeecgframework.poi.excel.annotation.Excel;
  * @Title: Entity
  * @Description: 职位表
  * @author onlineGenerator
- * @date 2018-10-29 15:03:12
+ * @date 2018-11-01 10:46:00
  * @version V1.0   
  *
  */
@@ -42,10 +42,13 @@ public class EWorkEntity implements java.io.Serializable {
 	@Excel(name="计划招收人数",width=15)
 	private java.lang.String wCount;
 	/**实际招收人数*/
+	@Excel(name="实际招收人数",width=15)
 	private java.lang.String wRCount;
 	/**解释*/
+	@Excel(name="解释",width=15)
 	private java.lang.String wReason;
 	/**职位状态*/
+	@Excel(name="职位状态",width=15,dicCode="ew_status")
 	private java.lang.String wStatus;
 	
 	/**
@@ -141,7 +144,7 @@ public class EWorkEntity implements java.io.Serializable {
 	 *@return: java.lang.String  解释
 	 */
 
-	@Column(name ="W_REASON",nullable=true,length=50)
+	@Column(name ="W_REASON",nullable=true,length=255)
 	public java.lang.String getWReason(){
 		return this.wReason;
 	}

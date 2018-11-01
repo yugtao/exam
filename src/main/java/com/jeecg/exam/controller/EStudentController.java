@@ -26,6 +26,7 @@ import org.jeecgframework.core.constant.Globals;
 import org.jeecgframework.core.util.StringUtil;
 import org.jeecgframework.tag.core.easyui.TagUtil;
 import org.jeecgframework.web.system.pojo.base.TSDepart;
+import org.jeecgframework.web.system.pojo.base.TSUser;
 import org.jeecgframework.web.system.service.SystemService;
 import org.jeecgframework.core.util.MyBeanUtils;
 
@@ -39,6 +40,7 @@ import org.jeecgframework.poi.excel.entity.TemplateExportParams;
 import org.jeecgframework.poi.excel.entity.vo.NormalExcelConstants;
 import org.jeecgframework.poi.excel.entity.vo.TemplateExcelConstants;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.hibernate.criterion.Restrictions;
 import org.jeecgframework.core.util.ResourceUtil;
 import java.io.IOException;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -53,7 +55,7 @@ import org.jeecgframework.core.util.ExceptionUtil;
  * @Title: Controller  
  * @Description: 考生信息报名审核表
  * @author onlineGenerator
- * @date 2018-10-31 13:39:38
+ * @date 2018-11-01 08:46:46
  * @version V1.0   
  *
  */
@@ -78,31 +80,98 @@ public class EStudentController extends BaseController {
 	public ModelAndView list(HttpServletRequest request) {
 		return new ModelAndView("com/jeecg/exam/eStudentList");
 	}
+	
 	/**
-	 * 考生信息报名审核表列表 页面跳转
+	 * 考生信息报名页面
 	 * 
 	 * @return
+	 */
+	@RequestMapping(params = "goStuIn")
+	public ModelAndView stuIn(HttpServletRequest request) {
+		return new ModelAndView("com/jeecg/exam/student/eStudentIn");
+	}
+	/**
+	 *前往审核状态页面
+	 */
+	@RequestMapping(params = "goStuList")
+	public ModelAndView stuLits(HttpServletRequest request) {
+		return new ModelAndView("com/jeecg/exam/student/stu-eStudentList");
+	}
+	/**
+	 *获取我的考试数据
+	 */
+	@RequestMapping(params = "myList")
+	public void myList(EStudentEntity eStudent,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
+		TSUser user = ResourceUtil.getSessionUser();
+		String userId = user.getId();
+		CriteriaQuery cq = new CriteriaQuery(EStudentEntity.class, dataGrid);
+		//查询条件组装器
+		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, eStudent, request.getParameterMap());
+		try{
+			cq.add(Restrictions.eq("userId", userId));
+		//自定义追加查询条件
+		}catch (Exception e) {
+			throw new BusinessException(e.getMessage());
+		}
+		cq.add();
+		this.eStudentService.getDataGridReturn(cq, true);
+		TagUtil.datagrid(response, dataGrid);
+	}
+	
+	/**
+	 *查看审核详情
+	 */
+	@RequestMapping(params = "goStuInfo")
+	public ModelAndView stuInfo(HttpServletRequest request) {
+		return new ModelAndView("com/jeecg/exam/student/eStudentInfo");
+	}
+	
+	/**
+	 *查看审核列表
 	 */
 	@RequestMapping(params = "audiList")
 	public ModelAndView audiList(HttpServletRequest request) {
-		return new ModelAndView("com/jeecg/exam/audi/eStudentList");
+		return new ModelAndView("com/jeecg/exam/audi/eStudentList-audi");
 	}
-	
-	
 	/**
-	 * 考生信息报名审核表详情页面
-	 * 
-	 * @return
+	 *查看考生详情页面
 	 */
 	@RequestMapping(params = "goaudi")
-	public ModelAndView goaudi(EStudentEntity eStudent, HttpServletRequest req) {
+	public ModelAndView goaudi(EStudentEntity eStudent,HttpServletRequest req) {
 		if (StringUtil.isNotEmpty(eStudent.getId())) {
 			eStudent = eStudentService.getEntity(EStudentEntity.class, eStudent.getId());
 			req.setAttribute("eStudentPage", eStudent);
 		}
 		return new ModelAndView("com/jeecg/exam/audi/eStudent-audi");
 	}
-
+	
+	/**
+	 * easyui 查看单位下的报名考生列表
+	 * 
+	 * @param request
+	 * @param response
+	 * @param dataGrid
+	 * @param user
+	 */
+	@RequestMapping(params = "getOrgStu")
+	public void getOrgStu(EStudentEntity eStudent,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
+		TSUser user = ResourceUtil.getSessionUser();
+		String departid = user.getDepartid();
+		CriteriaQuery cq = new CriteriaQuery(EStudentEntity.class, dataGrid);
+		//查询条件组装器
+		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, eStudent, request.getParameterMap());
+		try{
+			cq.add(Restrictions.eq("SOrg", departid));
+		//自定义追加查询条件
+		}catch (Exception e) {
+			throw new BusinessException(e.getMessage());
+		}
+		cq.add();
+		this.eStudentService.getDataGridReturn(cq, true);
+		TagUtil.datagrid(response, dataGrid);
+	}
+	
+	
 	/**
 	 * easyui AJAX请求数据
 	 * 
@@ -114,6 +183,7 @@ public class EStudentController extends BaseController {
 
 	@RequestMapping(params = "datagrid")
 	public void datagrid(EStudentEntity eStudent,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
+		
 		CriteriaQuery cq = new CriteriaQuery(EStudentEntity.class, dataGrid);
 		//查询条件组装器
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, eStudent, request.getParameterMap());
@@ -192,6 +262,8 @@ public class EStudentController extends BaseController {
 		String message = null;
 		AjaxJson j = new AjaxJson();
 		message = "考生信息报名审核表添加成功";
+		TSUser user = ResourceUtil.getSessionUser();
+		eStudent.setUserId(user.getId());
 		try{
 			eStudentService.save(eStudent);
 			systemService.addLog(message, Globals.Log_Type_INSERT, Globals.Log_Leavel_INFO);

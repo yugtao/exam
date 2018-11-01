@@ -22,7 +22,7 @@ import org.jeecgframework.poi.excel.annotation.Excel;
  * @Title: Entity
  * @Description: 考试表
  * @author onlineGenerator
- * @date 2018-10-31 10:51:44
+ * @date 2018-11-01 11:08:16
  * @version V1.0   
  *
  */
@@ -42,9 +42,6 @@ public class EExamEntity implements java.io.Serializable {
 	/**考试状态*/
 	@Excel(name="考试状态",width=15,dicCode="ea_status")
 	private java.lang.String eStatus;
-	/**考试信息*/
-	@Excel(name="考试信息",width=15)
-	private java.lang.String eInfo;
 	/**所属部门*/
 	private java.lang.String sysOrgCode;
 	/**所属公司*/
@@ -55,6 +52,9 @@ public class EExamEntity implements java.io.Serializable {
 	/**考试人数*/
 	@Excel(name="考试人数",width=15)
 	private java.lang.String eCount;
+	/**考试信息*/
+	@Excel(name="考试信息",width=15)
+	private java.lang.String eInfo;
 	
 	/**
 	 *方法: 取得java.lang.String
@@ -146,23 +146,6 @@ public class EExamEntity implements java.io.Serializable {
 	}
 	/**
 	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  考试信息
-	 */
-
-	@Column(name ="E_INFO",nullable=true,length=50)
-	public java.lang.String getEInfo(){
-		return this.eInfo;
-	}
-
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  考试信息
-	 */
-	public void setEInfo(java.lang.String eInfo){
-		this.eInfo = eInfo;
-	}
-	/**
-	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  所属部门
 	 */
 
@@ -228,5 +211,22 @@ public class EExamEntity implements java.io.Serializable {
 	 */
 	public void setECount(java.lang.String eCount){
 		this.eCount = eCount;
+	}
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  考试信息
+	 */
+
+	@Column(name ="E_INFO",nullable=true,length=255)
+	public java.lang.String getEInfo(){
+		return this.eInfo;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  考试信息
+	 */
+	public void setEInfo(java.lang.String eInfo){
+		this.eInfo = eInfo;
 	}
 }

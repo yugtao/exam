@@ -40,23 +40,11 @@
 				<tr>
 					<td align="right">
 						<label class="Validform_label">
-							考试信息:
-						</label>
-					</td>
-					<td class="value">
-					     	 <input id="eInfo" name="eInfo" type="text" maxlength="50" style="width: 150px" class="inputxt"  ignore="ignore" />
-							<span class="Validform_checktip"></span>
-							<label class="Validform_label" style="display: none;">考试信息</label>
-						</td>
-				</tr>
-				<tr>
-					<td align="right">
-						<label class="Validform_label">
 							考试时间:
 						</label>
 					</td>
 					<td class="value">
-							   <input id="eDate" name="eDate" type="text" style="width: 150px" class="Wdate" onClick="WdatePicker()"  ignore="ignore" />    
+							   <input id="eDate" name="eDate" type="text" style="width: 150px" class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})"  ignore="ignore" />
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">考试时间</label>
 						</td>
@@ -75,6 +63,23 @@
 				</tr>
 				
 				
+				<tr>
+					<td align="right">
+						<label class="Validform_label">
+							考试信息:
+						</label>
+					</td>
+					<td class="value" >
+								<script type="text/javascript"  charset="utf-8" src="plug-in/ueditor/ueditor.config.js"></script>
+								<script type="text/javascript"  charset="utf-8" src="plug-in/ueditor/ueditor.all.min.js"></script>
+						    	<textarea name="eInfo" id="eInfo" style="width: 650px;height:300px"></textarea>
+							    <script type="text/javascript">
+							        var eInfo_editor = UE.getEditor('eInfo');
+							    </script>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">考试信息</label>
+						</td>
+					</tr>
 			</table>
 		</t:formvalid>
  </body>

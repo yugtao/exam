@@ -8,9 +8,9 @@
    <t:dgCol title="职位所属单位"  field="wOrg"  queryMode="single"  dictionary="t_s_depart,id,departname"  width="120"></t:dgCol>
    <t:dgCol title="职位名称"  field="wName"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="计划招收人数"  field="wCount"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="实际招收人数"  field="wRCount"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="解释"  field="wReason"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="职位状态"  field="wStatus"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="实际招收人数"  field="wRCount"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="解释"  field="wReason"  queryMode="single"  width="250"></t:dgCol>
+   <t:dgCol title="职位状态"  field="wStatus"  queryMode="single"  dictionary="ew_status"  width="120"></t:dgCol>
    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
    <t:dgDelOpt title="删除" url="eWorkController.do?doDel&id={id}" urlclass="ace_button"  urlfont="fa-trash-o"/>
    <t:dgToolBar title="录入" icon="icon-add" url="eWorkController.do?goAdd" funname="add"></t:dgToolBar>

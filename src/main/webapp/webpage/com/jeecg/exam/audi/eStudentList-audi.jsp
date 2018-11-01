@@ -3,7 +3,7 @@
 <t:base type="jquery,easyui,tools,DatePicker"></t:base>
 <div class="easyui-layout" fit="true">
   <div region="center" style="padding:0px;border:0px">
-  <t:datagrid name="eStudentList" checkbox="true" pagination="true" fitColumns="true" title="考生信息报名审核表" sortName="id" actionUrl="eStudentController.do?datagrid" idField="id" fit="true" queryMode="group">
+  <t:datagrid name="eStudentList" checkbox="true" pagination="true" fitColumns="true" title="考生信息报名审核表" sortName="id" actionUrl="eStudentController.do?getOrgStu" idField="id" fit="true" queryMode="group">
    <t:dgCol title="主键"  field="id"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="用户id"  field="userId"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="报名单位"  field="sOrg"  queryMode="single"  dictionary="t_s_depart,id,departname"  width="120"></t:dgCol>
@@ -28,10 +28,10 @@
    <t:dgCol title="身份证号"  field="sCode"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="通讯地址"  field="sAdress"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="联系电话"  field="sTel"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="笔试成绩"  field="sWrittenScore"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="面试成绩"  field="sInterviewScore"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="总成绩"  field="sTotalScore"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="排名"  field="sRank"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="笔试成绩"  field="sWrittenScore"    queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="面试成绩"  field="sInterviewScore"   queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="总成绩"  field="sTotalScore"    queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="排名"  field="sRank"    queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="备注"  field="sRemarks"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="审核状态"  field="sStatus"  query="true"  queryMode="single"  dictionary="e_s_status"  width="120"></t:dgCol>
    <t:dgCol title="审核人"  field="sAuditor"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
