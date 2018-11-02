@@ -22,7 +22,7 @@ import org.jeecgframework.poi.excel.annotation.Excel;
  * @Title: Entity
  * @Description: 准考证表
  * @author onlineGenerator
- * @date 2018-11-01 17:00:44
+ * @date 2018-11-02 14:16:01
  * @version V1.0   
  *
  */
@@ -66,8 +66,11 @@ public class EProveEntity implements java.io.Serializable {
 	@Excel(name="考试名",width=15)
 	private java.lang.String proveExamName;
 	/**考试时间*/
-	@Excel(name="考试时间",width=15,format = "yyyy-MM-dd")
-	private java.util.Date proveDate;
+	@Excel(name="考试时间",width=15)
+	private java.lang.String proveDate;
+	/**考场*/
+	@Excel(name="考场",width=15)
+	private java.lang.String proveRoom;
 	
 	/**
 	 *方法: 取得java.lang.String
@@ -277,20 +280,37 @@ public class EProveEntity implements java.io.Serializable {
 		this.proveExamName = proveExamName;
 	}
 	/**
-	 *方法: 取得java.util.Date
-	 *@return: java.util.Date  考试时间
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  考试时间
 	 */
 
 	@Column(name ="PROVE_DATE",nullable=true,length=32)
-	public java.util.Date getProveDate(){
+	public java.lang.String getProveDate(){
 		return this.proveDate;
 	}
 
 	/**
-	 *方法: 设置java.util.Date
-	 *@param: java.util.Date  考试时间
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  考试时间
 	 */
-	public void setProveDate(java.util.Date proveDate){
+	public void setProveDate(java.lang.String proveDate){
 		this.proveDate = proveDate;
+	}
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  考场
+	 */
+
+	@Column(name ="PROVE_ROOM",nullable=true,length=32)
+	public java.lang.String getProveRoom(){
+		return this.proveRoom;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  考场
+	 */
+	public void setProveRoom(java.lang.String proveRoom){
+		this.proveRoom = proveRoom;
 	}
 }

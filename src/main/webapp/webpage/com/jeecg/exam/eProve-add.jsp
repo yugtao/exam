@@ -145,6 +145,24 @@
 							<label class="Validform_label" style="display: none;">考试时间</label>
 						</td>
 					</tr>
+				<tr>
+					<td align="right">
+						<label class="Validform_label">
+							考场:
+						</label>
+					</td>
+					<td class="value">
+					     	 <input id="proveRoom" name="proveRoom" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">考场</label>
+						</td>
+				<td align="right">
+					<label class="Validform_label">
+					</label>
+				</td>
+				<td class="value">
+				</td>
+					</tr>
 				
 				
 			</table>

@@ -17,6 +17,7 @@
    <t:dgCol title="考试id"  field="proveExamId"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="考试名"  field="proveExamName"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="考试时间"  field="proveDate"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="考场"  field="proveRoom"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
    <t:dgDelOpt title="删除" url="eProveController.do?doDel&id={id}" urlclass="ace_button"  urlfont="fa-trash-o"/>
    <t:dgToolBar title="录入" icon="icon-add" url="eProveController.do?goAdd" funname="add"></t:dgToolBar>

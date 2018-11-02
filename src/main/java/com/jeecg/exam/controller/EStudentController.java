@@ -137,9 +137,13 @@ public class EStudentController extends BaseController {
 	 */
 	@RequestMapping(params = "printProve")
 	public ModelAndView printProve(HttpServletRequest request,String stu) {
+		ModelAndView model =new ModelAndView("com/jeecg/exam/student/printProve");
 		if (StringUtil.isNotEmpty(stu)) {
 			EStudentEntity eStudent = eStudentService.getEntity(EStudentEntity.class,stu);
 			EProveEntity eProve = new EProveEntity();
+			@SuppressWarnings("unchecked")
+			List<EProveEntity> eProves = commondao.findByProperty(EProveEntity.class, "proveStuId", stu);
+			if(eProves.isEmpty()) {
 			EExamEntity exam = examService.getEntity(EExamEntity.class, eStudent.getSExamId());
 			TSUser user = ResourceUtil.getSessionUser();
 			TSDepart depart = commonService.getEntity(TSDepart.class, eStudent.getSOrg());
@@ -150,7 +154,8 @@ public class EStudentController extends BaseController {
 				String pCount = ePlaceEntity.getPCount();
 				int count = Integer.parseInt(pCount);
 				if(count>0) {
-					eProve.setProvePlace(ePlaceEntity.getPName());
+					eProve.setProvePlace(ePlaceEntity.getPInfo());
+					eProve.setProveRoom(ePlaceEntity.getPName());
 					eProve.setProveSeat(pCount);
 					count = count-1;
 					ePlaceEntity.setPCount(count+"");
@@ -161,7 +166,8 @@ public class EStudentController extends BaseController {
 			commonService.getEntity(TSDepart.class, eStudent.getSOrg());
 			eProve.setProveCardCode(eStudent.getSCode());
 			eProve.setProveCode("不知道怎么生成");
-			eProve.setProveDate(exam.getEDate());
+			String date = new SimpleDateFormat("yyyy-MM-dd HH:mm").format(exam.getEDate());
+			eProve.setProveDate(date);
 			eProve.setProveExamId(exam.getId());
 			eProve.setProveExamName(exam.getEName());
 			eProve.setProveOrg(depart.getDepartname());
@@ -170,9 +176,13 @@ public class EStudentController extends BaseController {
 			eProve.setProveUserId(user.getId());
 			eProve.setProveWork(ework.getWName());
 			commonService.save(eProve);
+			}else {
+				eProve=eProves.get(0);
+			}
 			//req.setAttribute("eStudentPage", eStudent);
+			model.addObject("prove", eProve);
 		}
-		return new ModelAndView("com/jeecg/exam/student/printProve");
+		return model;
 	}
 	/**
 	 *查看审核详情
