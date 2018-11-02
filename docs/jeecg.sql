@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50724
 File Encoding         : 65001
 
-Date: 2018-11-01 17:56:36
+Date: 2018-11-02 14:25:47
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -624,7 +624,8 @@ INSERT INTO `cgform_field` VALUES ('4028d73c66ce79c30166ce8021fb0014', '考生id
 INSERT INTO `cgform_field` VALUES ('4028d73c66ce79c30166ce8021fb0015', '考生账户id', 'admin', '2018-11-01 16:59:56', '管理员', '', '', '', '', '', '120', 'prove_user_id', '', 'N', 'N', 'Y', 'N', 'Y', 'Y', '32', '', '', 'prove_user_id', '10', '0', 'single', 'text', 'string', null, null, null, '4028d73c66ce79c30166ce8021f3000b', '', '');
 INSERT INTO `cgform_field` VALUES ('4028d73c66ce79c30166ce8021fc0016', '考试id', 'admin', '2018-11-01 16:59:56', '管理员', '', '', '', '', '', '120', 'prove_exam_id', '', 'N', 'N', 'Y', 'N', 'Y', 'Y', '32', '', '', 'prove_exam_id', '11', '0', 'single', 'text', 'string', null, null, null, '4028d73c66ce79c30166ce8021f3000b', '', '');
 INSERT INTO `cgform_field` VALUES ('4028d73c66ce79c30166ce8021fc0017', '考试名', 'admin', '2018-11-01 16:59:56', '管理员', '', '', '', '', '', '120', 'prove_exam_name', '', 'N', 'N', 'Y', 'N', 'Y', 'Y', '32', '', '', 'prove_exam_name', '12', '0', 'single', 'text', 'string', null, null, null, '4028d73c66ce79c30166ce8021f3000b', '', '');
-INSERT INTO `cgform_field` VALUES ('4028d73c66ce79c30166ce8021fd0018', '考试时间', 'admin', '2018-11-01 16:59:56', '管理员', '', '', '', '', '', '120', 'prove_date', '', 'N', 'N', 'Y', 'N', 'Y', 'Y', '32', '', '', 'prove_date', '13', '0', 'single', 'text', 'Date', null, null, null, '4028d73c66ce79c30166ce8021f3000b', '', '');
+INSERT INTO `cgform_field` VALUES ('4028d73c66ce79c30166ce8021fd0018', '考试时间', 'admin', '2018-11-01 16:59:56', '管理员', '', '', '', '', '', '120', 'prove_date', '', 'N', 'N', 'Y', 'N', 'Y', 'Y', '32', '', '', 'prove_date', '13', '0', 'single', 'text', 'string', 'admin', '2018-11-02 14:15:15', '管理员', '4028d73c66ce79c30166ce8021f3000b', '', '');
+INSERT INTO `cgform_field` VALUES ('4028d73c66d27d000166d2d332f60001', '考场', 'admin', '2018-11-02 13:09:08', '管理员', '', '', '', '', '', '120', 'prove_room', '', 'N', 'N', 'Y', 'N', 'Y', 'Y', '32', '', '', 'prove_room', '14', '0', 'single', 'text', 'string', null, null, null, '4028d73c66ce79c30166ce8021f3000b', '', '');
 INSERT INTO `cgform_field` VALUES ('8a8ab0b246dc81120146dc8184940140', '主键', 'admin', '2014-06-27 16:46:54', '管理员', '', '', '', '', '', '0', 'id', '', 'N', 'Y', 'N', 'N', 'N', 'N', '36', '', '', 'id', '1', '0', 'single', 'text', 'string', 'admin', '2018-02-28 19:18:37', '管理员', '8a8ab0b246dc81120146dc81847e013b', '', '');
 INSERT INTO `cgform_field` VALUES ('8a8ab0b246dc81120146dc81849b0141', '订单号', 'admin', '2014-06-27 16:46:54', '管理员', '', '', '', '', '', '120', 'order_code', 'only', 'N', 'N', 'Y', 'Y', 'Y', 'Y', '50', '', '', 'order_code', '2', '0', 'single', 'text', 'string', 'admin', '2018-05-14 16:14:03', '管理员', '8a8ab0b246dc81120146dc81847e013b', '', '');
 INSERT INTO `cgform_field` VALUES ('8a8ab0b246dc81120146dc81849d0142', '订单日期', 'admin', '2014-06-27 16:46:54', '管理员', '', '', '', '', '', '0', 'order_date', '', 'N', 'N', 'Y', 'Y', 'Y', 'Y', '20', '', '', 'order_date', '3', '0', 'single', 'date', 'Date', 'admin', '2018-02-28 19:18:37', '管理员', '8a8ab0b246dc81120146dc81847e013b', '', '');
@@ -806,7 +807,7 @@ INSERT INTO `cgform_head` VALUES ('4028d73c66be6afd0166be9a481b0022', '职位表
 INSERT INTO `cgform_head` VALUES ('4028d73c66bec7bd0166bed6f1fd0000', '考生信息报名审核表', 'admin', '2018-10-29 16:00:50', '管理员', 'Y', 'Y', 'Y', 'N', '', 'UUID', '1', '33', 'group', '0', null, null, 'e_student', 'admin', '2018-11-01 08:46:37', '管理员', null, 'id', null, 'bdfl_fzbd', 'ledefault', '', '', null, null);
 INSERT INTO `cgform_head` VALUES ('4028d73c66c345160166c346d5a30001', '订单明细', 'admin', '2018-10-30 12:41:31', '管理员', 'N', 'N', 'Y', 'N', '', 'UUID', '1', '1', 'single', '0', null, '11', 'jfrom_order_line__0', null, null, null, null, 'id', null, 'bdfl_ptbd', '', '', '1', '0', 'ff8080816021b031016021feb0c00016');
 INSERT INTO `cgform_head` VALUES ('4028d73c66c809940166c80e1a6c0010', '考场表', 'admin', '2018-10-31 10:57:39', '管理员', 'Y', 'Y', 'Y', 'N', '', 'UUID', '1', '2', 'group', '0', null, null, 'e_place', 'admin', '2018-10-31 11:01:54', '管理员', null, 'id', null, 'bdfl_ptbd', 'ledefault', '', '', null, null);
-INSERT INTO `cgform_head` VALUES ('4028d73c66ce79c30166ce8021f3000b', '准考证表', 'admin', '2018-11-01 16:59:56', '管理员', 'Y', 'Y', 'Y', 'N', '', 'UUID', '1', '1', 'group', '0', null, null, 'e_prove', 'admin', '2018-11-01 17:00:00', '管理员', null, 'id', null, 'bdfl_ptbd', 'ledefault', '', '', null, null);
+INSERT INTO `cgform_head` VALUES ('4028d73c66ce79c30166ce8021f3000b', '准考证表', 'admin', '2018-11-01 16:59:56', '管理员', 'Y', 'Y', 'Y', 'N', '', 'UUID', '1', '3', 'group', '0', null, null, 'e_prove', 'admin', '2018-11-02 14:15:19', '管理员', null, 'id', null, 'bdfl_ptbd', 'ledefault', '', '', null, null);
 INSERT INTO `cgform_head` VALUES ('4028ef815673c48f015673c557af0003', '地铁站点', 'admin', '2016-08-10 17:25:28', '管理员', 'N', 'N', 'Y', 'N', '', 'UUID', '1', '1', 'single', '0', null, null, 'test_ditie__0', 'admin', '2016-08-10 17:28:08', '管理员', null, 'id', null, 'bdfl_ptbd', 'RowsEdit', '', '1', '0', '4028ef8156176adb015617801ebd0001');
 INSERT INTO `cgform_head` VALUES ('4028ef815673c48f015673c775d70012', '地铁站点', 'admin', '2016-08-10 17:27:46', '管理员', 'N', 'N', 'Y', 'N', '', 'UUID', '1', '1', 'single', '0', null, null, 'test_ditie__1', null, null, null, null, 'id', null, 'bdfl_ptbd', 'RowsEdit', '', '1', '1', '4028ef8156176adb015617801ebd0001');
 INSERT INTO `cgform_head` VALUES ('4028ef815673ecb9015673f080160001', '工作信息表', 'admin', '2016-08-10 18:12:36', '管理员', 'Y', 'N', 'Y', 'N', '', 'UUID', '3', '1', 'group', '0', null, null, 'jform_resume_exp_info__0', 'admin', '2017-03-01 21:57:47', '管理员', null, 'id', null, 'bdfl_ptbd', '', '', '1', '0', '402881e4534c0aea01534c0cfca50012');
@@ -1044,7 +1045,7 @@ CREATE TABLE `e_place` (
 -- ----------------------------
 -- Records of e_place
 -- ----------------------------
-INSERT INTO `e_place` VALUES ('4028d73c66cd40450166cd4996d8000c', '4028d73c66cd40450166cd43d3160003', '考场1', '清华大学', '30');
+INSERT INTO `e_place` VALUES ('4028d73c66cd40450166cd4996d8000c', '4028d73c66cd40450166cd43d3160003', '考场1', '清华大学', '27');
 INSERT INTO `e_place` VALUES ('4028d73c66cd40450166cd49f758000e', '4028d73c66cd40450166cd43d3160003', '考场2', '北京大学301', '50');
 
 -- ----------------------------
@@ -1052,7 +1053,7 @@ INSERT INTO `e_place` VALUES ('4028d73c66cd40450166cd49f758000e', '4028d73c66cd4
 -- ----------------------------
 DROP TABLE IF EXISTS `e_prove`;
 CREATE TABLE `e_prove` (
-  `id` varchar(36) NOT NULL,
+  `id` varchar(36) NOT NULL COMMENT '主键',
   `prove_stu_name` varchar(32) DEFAULT NULL COMMENT '考生名',
   `prove_card_code` varchar(32) DEFAULT NULL COMMENT '身份证号',
   `prove_org` varchar(32) DEFAULT NULL COMMENT '报考单位',
@@ -1064,13 +1065,15 @@ CREATE TABLE `e_prove` (
   `prove_user_id` varchar(32) DEFAULT NULL COMMENT '考生账户id',
   `prove_exam_id` varchar(32) DEFAULT NULL COMMENT '考试id',
   `prove_exam_name` varchar(32) DEFAULT NULL COMMENT '考试名',
-  `prove_date` datetime DEFAULT NULL COMMENT '考试时间',
+  `prove_date` varchar(32) DEFAULT NULL COMMENT '考试时间',
+  `prove_room` varchar(32) DEFAULT NULL COMMENT '考场',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of e_prove
 -- ----------------------------
+INSERT INTO `e_prove` VALUES ('4028d73c66d3117f0166d31288620002', '男神', '389389389389', '广西农业广播电视学校', '财务', '不知道怎么生成', '清华大学', '28', '4028d73c66cd40450166cd4e5f9c0016', '4028d73c66cd2aab0166cd34fe76001a', '4028d73c66cd40450166cd43d3160003', '2018年职业考试', '2018-11-01 11:14', '考场1');
 
 -- ----------------------------
 -- Table structure for e_student
@@ -6147,6 +6150,27 @@ INSERT INTO `t_s_log` VALUES ('4028d73c66ce79c30166ce80215f0009', 'Chrome', '错
 INSERT INTO `t_s_log` VALUES ('4028d73c66ce79c30166ce802178000a', 'Chrome', '错误异常: NullPointerException,错误描述：null', '6', '本地', '2018-11-01 16:59:56', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
 INSERT INTO `t_s_log` VALUES ('4028d73c66ce79c30166ce8022ba0019', 'Chrome', '创建成功', '1', '本地', '2018-11-01 16:59:56', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
 INSERT INTO `t_s_log` VALUES ('4028d73c66ce79c30166ce805858001a', 'Chrome', '删除成功', '1', '本地', '2018-11-01 17:00:10', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028d73c66d1ed450166d20e10bd0000', 'Chrome', '用户: student[社会大众]common.login.success', '1', '192.168.87.188', '2018-11-02 09:33:49', '1', '4028d73c66cd2aab0166cd34fe76001a', 'student', '考生');
+INSERT INTO `t_s_log` VALUES ('4028d73c66d21a510166d21af4320000', 'Chrome', '用户: admin[自治区农业厅]common.login.success', '1', '192.168.87.188', '2018-11-02 09:47:53', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028d73c66d21a510166d21b13d50001', 'Chrome', 'admin', '1', '本地', '2018-11-02 09:48:02', '2', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028d73c66d21a510166d21b4df70002', 'Chrome', '用户: student[社会大众]common.login.success', '1', '192.168.87.188', '2018-11-02 09:48:16', '1', '4028d73c66cd2aab0166cd34fe76001a', 'student', '考生');
+INSERT INTO `t_s_log` VALUES ('4028d73c66d21a510166d21bb0120003', 'Chrome', '错误异常: ClassCastException,错误描述：java.util.ArrayList cannot be cast to com.jeecg.exam.entity.EProveEntity', '6', '本地', '2018-11-02 09:48:42', '3', '4028d73c66cd2aab0166cd34fe76001a', 'student', '考生');
+INSERT INTO `t_s_log` VALUES ('4028d73c66d21e1e0166d23e9d9e0000', 'Chrome', '用户: admin[自治区农业厅]common.login.success', '1', '192.168.87.188', '2018-11-02 10:26:50', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028d73c66d21e1e0166d23eaf150001', 'Chrome', 'admin', '1', '本地', '2018-11-02 10:26:55', '2', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028d73c66d21e1e0166d23ee2a20002', 'Chrome', '用户: student[社会大众]common.login.success', '1', '192.168.87.188', '2018-11-02 10:27:08', '1', '4028d73c66cd2aab0166cd34fe76001a', 'student', '考生');
+INSERT INTO `t_s_log` VALUES ('4028d73c66d242990166d2432c720000', 'Chrome', '用户: admin[自治区农业厅]common.login.success', '1', '192.168.87.188', '2018-11-02 10:31:49', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028d73c66d242990166d24339650001', 'Chrome', 'admin', '1', '本地', '2018-11-02 10:31:53', '2', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028d73c66d242990166d2436f280002', 'Chrome', '用户: student[社会大众]common.login.success', '1', '192.168.87.188', '2018-11-02 10:32:06', '1', '4028d73c66cd2aab0166cd34fe76001a', 'student', '考生');
+INSERT INTO `t_s_log` VALUES ('4028d73c66d242990166d2739e3a0003', 'Chrome', '用户: admin[自治区农业厅]common.login.success', '1', '192.168.87.188', '2018-11-02 11:24:44', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028d73c66d242990166d273bcb80004', 'Chrome', 'admin', '1', '本地', '2018-11-02 11:24:52', '2', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028d73c66d242990166d273eaee0005', 'Chrome', '用户: student[社会大众]common.login.success', '1', '192.168.87.188', '2018-11-02 11:25:04', '1', '4028d73c66cd2aab0166cd34fe76001a', 'student', '考生');
+INSERT INTO `t_s_log` VALUES ('4028d73c66d27d000166d2d02bb30000', 'Chrome', '用户: admin[自治区农业厅]common.login.success', '1', '192.168.87.188', '2018-11-02 13:05:49', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028d73c66d27d000166d2d333730002', 'Chrome', '修改成功', '1', '本地', '2018-11-02 13:09:09', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028d73c66d2d8260166d2dab9090000', 'Chrome', '用户: student[社会大众]common.login.success', '1', '192.168.87.188', '2018-11-02 13:17:21', '1', '4028d73c66cd2aab0166cd34fe76001a', 'student', '考生');
+INSERT INTO `t_s_log` VALUES ('4028d73c66d30e650166d30f7e640000', 'Chrome', '用户: admin[自治区农业厅]common.login.success', '1', '192.168.87.188', '2018-11-02 14:14:59', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028d73c66d30e650166d30fbacd0001', 'Chrome', '修改成功', '1', '本地', '2018-11-02 14:15:15', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028d73c66d3117f0166d31228d50000', 'Chrome', 'admin', '1', '本地', '2018-11-02 14:17:55', '2', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028d73c66d3117f0166d3125fdf0001', 'Chrome', '用户: student[社会大众]common.login.success', '1', '192.168.87.188', '2018-11-02 14:18:08', '1', '4028d73c66cd2aab0166cd34fe76001a', 'student', '考生');
 
 -- ----------------------------
 -- Table structure for t_s_muti_lang
