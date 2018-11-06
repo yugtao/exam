@@ -51,7 +51,7 @@
               <i class="ace-icon fa fa-leaf green"></i>
                	人才测试系统
             </h1>
-            <h4 class="blue" id="id-company-text">www.jeecg.org</h4>
+            <h4 class="blue" id="id-company-text">...</h4>
           </div>
           <div class="space-6"></div>
           <div class="position-relative">
