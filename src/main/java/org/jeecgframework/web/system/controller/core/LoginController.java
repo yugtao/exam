@@ -30,6 +30,7 @@ import org.jeecgframework.core.util.LogUtil;
 import org.jeecgframework.core.util.MutiLangUtil;
 import org.jeecgframework.core.util.PasswordUtil;
 import org.jeecgframework.core.util.ResourceUtil;
+import org.jeecgframework.core.util.StringUtil;
 import org.jeecgframework.core.util.SysThemesUtil;
 import org.jeecgframework.core.util.oConvertUtils;
 import org.jeecgframework.web.system.manager.ClientManager;
@@ -764,5 +765,53 @@ public class LoginController extends BaseController{
 	public ModelAndView adminlteHome(HttpServletRequest request) {
 		return new ModelAndView("main/adminlte_home");
 	}
+	/**
+	 * 用户录入
+	 * 
+	 * @param user
+	 * @param req
+	 * @return
+	 */
+	@RequestMapping(params = "saveUser")
+	@ResponseBody
+	public AjaxJson saveUser(HttpServletRequest req, TSUser user) {
+		String message = null;
+		AjaxJson j = new AjaxJson();
 
+		Short logType=Globals.Log_Type_UPDATE;
+		// 得到用户的角色
+		String roleid = oConvertUtils.getString(req.getParameter("roleid"));
+		String orgid=oConvertUtils.getString(req.getParameter("orgIds"));
+		if (StringUtil.isNotEmpty(user.getId())) {
+			TSUser users = systemService.getEntity(TSUser.class, user.getId());
+			users.setEmail(user.getEmail());
+			users.setOfficePhone(user.getOfficePhone());
+			users.setMobilePhone(user.getMobilePhone());
+			users.setDevFlag(user.getDevFlag());
+			users.setRealName(user.getRealName());
+			users.setStatus(Globals.User_Normal);
+			users.setActivitiSync(user.getActivitiSync());
+			this.userService.saveOrUpdate(users, orgid.split(","), roleid.split(","));
+			message = "用户: " + users.getUserName() + "更新成功";
+		} else {
+			TSUser users = systemService.findUniqueByProperty(TSUser.class, "userName",user.getUserName());
+			if (users != null) {
+				message = "用户: " + users.getUserName() + "已经存在";
+			} else {
+				user.setPassword(PasswordUtil.encrypt(user.getUserName(), oConvertUtils.getString(req.getParameter("password")), PasswordUtil.getStaticSalt()));
+				user.setStatus(Globals.User_Normal);
+				user.setDeleteFlag(Globals.Delete_Normal);
+				//默认添加为系统用户
+				user.setUserType(Globals.USER_TYPE_SYSTEM);
+				this.userService.saveOrUpdate(user, orgid.split(","), roleid.split(","));				
+				message = "用户: " + user.getUserName() + "添加成功";
+				logType=Globals.Log_Type_INSERT;
+			}
+		}
+		systemService.addLog(message, logType, Globals.Log_Leavel_INFO);
+		j.setMsg(message);
+		log.info("["+IpUtil.getIpAddr(req)+"][用户注册]"+message);
+		return j;
+
+	}
 }
