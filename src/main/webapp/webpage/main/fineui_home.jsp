@@ -228,7 +228,7 @@
                 <div class="col-sm-5">
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
-                            <h5>待办事项</h5>
+                            <h5>系统简介</h5>
                             <div class="ibox-tools">
                                 <a class="collapse-link">
                                     <i class="fa fa-chevron-up"></i>
@@ -236,20 +236,14 @@
                             </div>
                         </div>
                         <div class="ibox-content">
-                    <p>为什么选择jeecg？</p>
+                    <p>测试系统</p>
                     <ol>
-                        <li>采用主流框架，容易上手，学习成本低；</li>
-                        <li>强大代码生成器和在线配置能力，提高开发效率，大大缩短项目周期；</li>
-                        <li>开源免费，万人活跃社区；</li>
-                        <li>封装基础用户权限，报表等功能模块，无需再次开发；</li>
-                        <li>采用SpringMVC + Hibernate + Minidao+ Easyui+Jquery+Boostrap等基础架构</li>
-                        <li>支持多浏览器，多数据库；</li>
-                        <li>支持移动开发，可以完美兼容电脑、手机、pad等多平台；</li>
+                        <li>不啦不啦</li>
+                        <li>不啦不啦</li>
                         <li>……</li>
                     </ol>
                     <hr>
-                    <div class="alert alert-warning">JEECG智能开发平台，可以应用在任何J2EE项目的开发中，尤其适合企业信息管理系统（MIS）、内部办公系统（OA）、企业资源计划系统（ERP） 、客户关系管理系统（CRM）等，其半智能手工Merge的开发方式，可以显著提高开发效率60%以上，极大降低开发成本。
-                    </div>
+                    <div class="alert alert-warning">随便写写</div>
                 </div>
                     </div>
                 </div>
