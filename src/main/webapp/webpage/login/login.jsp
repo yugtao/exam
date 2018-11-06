@@ -49,7 +49,7 @@
           <div class="center">
             <h1 id="id-text2" class="grey">
               <i class="ace-icon fa fa-leaf green"></i>
-               JEECG 演示系统
+               	人才测试系统
             </h1>
             <h4 class="blue" id="id-company-text">www.jeecg.org</h4>
           </div>
@@ -117,7 +117,7 @@
                 </form>
               </div>
             </div>
-            <div class="center"><h4 class="blue" id="id-company-text">&copy; JEECG版权所有 v_3.8</h4></div>
+            <div class="center"><h4 class="blue" id="id-company-text"></h4></div>
             <div class="navbar-fixed-top align-right">
               <br />
               &nbsp;
