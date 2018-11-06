@@ -108,7 +108,7 @@
 							</label>
 						</td>
 						<td class="value">
-									<t:dictSelect field="sPolitics" type="list" readonly="readonly"  typeGroupCode=""   defaultVal="${eStudentPage.SPolitics}" hasLabel="false"  title="政治面貌" ></t:dictSelect>     
+									<t:dictSelect field="sPolitics" type="list" readonly="readonly"  typeGroupCode="e_politics"   defaultVal="${eStudentPage.SPolitics}" hasLabel="false"  title="政治面貌" ></t:dictSelect>     
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">政治面貌</label>
 						</td>
