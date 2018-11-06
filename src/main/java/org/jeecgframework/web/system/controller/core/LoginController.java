@@ -772,9 +772,9 @@ public class LoginController extends BaseController{
 	 * @param req
 	 * @return
 	 */
-	@RequestMapping(params = "saveUser")
+	@RequestMapping(params = "register")
 	@ResponseBody
-	public AjaxJson saveUser(HttpServletRequest req, TSUser user) {
+	public AjaxJson register(HttpServletRequest req, TSUser user) {
 		String message = null;
 		AjaxJson j = new AjaxJson();
 
@@ -813,5 +813,9 @@ public class LoginController extends BaseController{
 		log.info("["+IpUtil.getIpAddr(req)+"][用户注册]"+message);
 		return j;
 
+	}
+	@RequestMapping(params = "toRegister")
+	public ModelAndView toRegister(HttpServletRequest request) {
+		return new ModelAndView("login/register");
 	}
 }
