@@ -329,15 +329,21 @@ public class EStudentController extends BaseController {
 		AjaxJson j = new AjaxJson();
 		message = "考生信息报名审核表添加成功";
 		TSUser user = ResourceUtil.getSessionUser();
-		eStudent.setSStatus("2");
-		eStudent.setUserId(user.getId());
-		try{
-			eStudentService.save(eStudent);
-			systemService.addLog(message, Globals.Log_Type_INSERT, Globals.Log_Leavel_INFO);
-		}catch(Exception e){
-			e.printStackTrace();
-			message = "考生信息报名审核表添加失败";
-			throw new BusinessException(e.getMessage());
+		@SuppressWarnings("unchecked")
+		List<EStudentEntity> findByExample = eStudentService.findByExample(EStudentEntity.class.getName(), eStudent);
+		if(findByExample.isEmpty()) {
+			eStudent.setSStatus("2");
+			eStudent.setUserId(user.getId());
+			try{
+				eStudentService.save(eStudent);
+				systemService.addLog(message, Globals.Log_Type_INSERT, Globals.Log_Leavel_INFO);
+			}catch(Exception e){
+				e.printStackTrace();
+				message = "考生信息报名审核表添加失败";
+				throw new BusinessException(e.getMessage());
+			}
+		}else{
+			message = "您已经报名该考试不能重复报名";
 		}
 		j.setMsg(message);
 		return j;
