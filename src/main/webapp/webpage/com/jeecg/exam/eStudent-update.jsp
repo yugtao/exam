@@ -108,7 +108,7 @@
 							</label>
 						</td>
 						<td class="value">
-									<t:dictSelect field="sPolitics" type="list"  typeGroupCode=""   defaultVal="${eStudentPage.SPolitics}" hasLabel="false"  title="政治面貌" ></t:dictSelect>     
+									<t:dictSelect field="sPolitics" type="list"  typeGroupCode="e_politics"   defaultVal="${eStudentPage.SPolitics}" hasLabel="false"  title="政治面貌" ></t:dictSelect>     
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">政治面貌</label>
 						</td>
@@ -246,6 +246,18 @@
 						</td>
 						<td align="right">
 							<label class="Validform_label">
+								邮箱:
+							</label>
+						</td>
+						<td class="value">
+						    <input id="sEmail" name="sEmail" type="text" maxlength="32" style="width: 150px" class="inputxt"  datatype="e" ignore="ignore"  value='${eStudentPage.SEmail}'/>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">邮箱</label>
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							<label class="Validform_label">
 								联系电话:
 							</label>
 						</td>
@@ -254,8 +266,6 @@
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">联系电话</label>
 						</td>
-					</tr>
-					<tr>
 						<td align="right">
 							<label class="Validform_label">
 								笔试成绩:
@@ -266,6 +276,8 @@
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">笔试成绩</label>
 						</td>
+					</tr>
+					<tr>
 						<td align="right">
 							<label class="Validform_label">
 								面试成绩:
@@ -276,8 +288,6 @@
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">面试成绩</label>
 						</td>
-					</tr>
-					<tr>
 						<td align="right">
 							<label class="Validform_label">
 								总成绩:
@@ -288,6 +298,8 @@
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">总成绩</label>
 						</td>
+					</tr>
+					<tr>
 						<td align="right">
 							<label class="Validform_label">
 								排名:
@@ -298,8 +310,6 @@
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">排名</label>
 						</td>
-					</tr>
-					<tr>
 						<td align="right">
 							<label class="Validform_label">
 								备注:
@@ -310,6 +320,8 @@
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">备注</label>
 						</td>
+					</tr>
+					<tr>
 						<td align="right">
 							<label class="Validform_label">
 								审核状态:
@@ -320,8 +332,6 @@
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">审核状态</label>
 						</td>
-					</tr>
-					<tr>
 						<td align="right">
 							<label class="Validform_label">
 								报名时间:
@@ -332,6 +342,8 @@
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">报名时间</label>
 						</td>
+					</tr>
+					<tr>
 						<td align="right">
 							<label class="Validform_label">
 								所属考试:
@@ -342,6 +354,12 @@
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">所属考试</label>
 						</td>
+				<td align="right">
+					<label class="Validform_label">
+					</label>
+				</td>
+				<td class="value">
+				</td>
 					</tr>
 				
 					<tr>

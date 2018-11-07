@@ -34,8 +34,9 @@
           function setContentc(){
         	 //alert("表单提交前想干点啥呢");
           }
-          function test(){
-        	  alert("已成功提交，请耐心等待审核结果");
+          function test(data){
+        	  console.log(data);
+        	  alert(data.msg);
           }
 
   </SCRIPT>
@@ -156,6 +157,11 @@
 		<div class="form">
 			<label class="Validform_label"> 通讯地址: </label> 
 			<input type="text" id="sAdress" name="sAdress" datatype="*"  > 
+			<span class="Validform_checktip"></span>
+		</div>
+		<div class="form">
+			<label class="Validform_label"> 邮箱:</label> 
+			<input type="text" id="sTel" name="sEmail" datatype="e"  > 
 			<span class="Validform_checktip"></span>
 		</div>
 		<div class="form">

@@ -330,12 +330,16 @@ public class EStudentController extends BaseController {
 		message = "考生信息报名审核表添加成功";
 		TSUser user = ResourceUtil.getSessionUser();
 		@SuppressWarnings("unchecked")
-		List<EStudentEntity> findByExample = eStudentService.findByExample(EStudentEntity.class.getName(), eStudent);
+		EStudentEntity eStudent2 = new EStudentEntity();
+		eStudent2.setUserId(user.getId());
+		eStudent2.setSExamId(eStudent.getSExamId());
+		List<EStudentEntity> findByExample = eStudentService.findByExample(EStudentEntity.class.getName(), eStudent2);
 		if(findByExample.isEmpty()) {
 			eStudent.setSStatus("2");
 			eStudent.setUserId(user.getId());
 			try{
 				eStudentService.save(eStudent);
+				message="您已成功报名，请耐心等待审核结果";
 				systemService.addLog(message, Globals.Log_Type_INSERT, Globals.Log_Leavel_INFO);
 			}catch(Exception e){
 				e.printStackTrace();

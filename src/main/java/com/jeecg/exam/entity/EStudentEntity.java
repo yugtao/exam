@@ -22,7 +22,7 @@ import org.jeecgframework.poi.excel.annotation.Excel;
  * @Title: Entity
  * @Description: 考生信息报名审核表
  * @author onlineGenerator
- * @date 2018-11-01 08:46:46
+ * @date 2018-11-07 22:15:29
  * @version V1.0   
  *
  */
@@ -47,7 +47,7 @@ public class EStudentEntity implements java.io.Serializable {
 	@Excel(name="学员性别",width=15,dicCode="e_sex")
 	private java.lang.String sSex;
 	/**出生年月*/
-	@Excel(name="考试出生",width=15,format = "yyyy-MM-dd")
+	@Excel(name="出生年月",width=15,format = "yyyy-MM-dd")
 	private java.util.Date sBirthday;
 	/**民族*/
 	@Excel(name="民族",width=15)
@@ -56,10 +56,10 @@ public class EStudentEntity implements java.io.Serializable {
 	@Excel(name="籍贯",width=15)
 	private java.lang.String sJiguan;
 	/**户口*/
-	@Excel(name="户口",width=15,dicCode="e_politics")
+	@Excel(name="户口",width=15)
 	private java.lang.String sHukou;
 	/**政治面貌*/
-	@Excel(name="政治面貌",width=15)
+	@Excel(name="政治面貌",width=15,dicCode="e_politics")
 	private java.lang.String sPolitics;
 	/**学历*/
 	@Excel(name="学历",width=15,dicCode="e_edu")
@@ -97,6 +97,9 @@ public class EStudentEntity implements java.io.Serializable {
 	/**通讯地址*/
 	@Excel(name="通讯地址",width=15)
 	private java.lang.String sAdress;
+	/**邮箱*/
+	@Excel(name="邮箱",width=15)
+	private java.lang.String sEmail;
 	/**联系电话*/
 	@Excel(name="联系电话",width=15)
 	private java.lang.String sTel;
@@ -236,8 +239,8 @@ public class EStudentEntity implements java.io.Serializable {
 		this.sSex = sSex;
 	}
 	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  出生年月
+	 *方法: 取得java.util.Date
+	 *@return: java.util.Date  出生年月
 	 */
 
 	@Column(name ="S_BIRTHDAY",nullable=true,length=50)
@@ -246,8 +249,8 @@ public class EStudentEntity implements java.io.Serializable {
 	}
 
 	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  出生年月
+	 *方法: 设置java.util.Date
+	 *@param: java.util.Date  出生年月
 	 */
 	public void setSBirthday(java.util.Date sBirthday){
 		this.sBirthday = sBirthday;
@@ -523,6 +526,23 @@ public class EStudentEntity implements java.io.Serializable {
 	 */
 	public void setSAdress(java.lang.String sAdress){
 		this.sAdress = sAdress;
+	}
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  邮箱
+	 */
+
+	@Column(name ="S_EMAIL",nullable=true,length=32)
+	public java.lang.String getSEmail(){
+		return this.sEmail;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  邮箱
+	 */
+	public void setSEmail(java.lang.String sEmail){
+		this.sEmail = sEmail;
 	}
 	/**
 	 *方法: 取得java.lang.String
