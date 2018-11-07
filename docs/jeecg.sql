@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost_3306
-Source Server Version : 50724
-Source Host           : localhost:3306
+Source Server         : 本地连接
+Source Server Version : 50722
+Source Host           : 127.0.0.1:3306
 Source Database       : jeecg
 
 Target Server Type    : MYSQL
-Target Server Version : 50724
+Target Server Version : 50722
 File Encoding         : 65001
 
-Date: 2018-11-07 17:11:44
+Date: 2018-11-07 22:46:49
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -479,6 +479,7 @@ INSERT INTO `cgform_field` VALUES ('4028838e6026232f0160263f2f9a002e', '结束�
 INSERT INTO `cgform_field` VALUES ('4028838e6026232f0160263f2f9a002f', '学校名称', 'admin', '2017-12-05 18:36:03', '管理员', '', '', '', '', '', '120', 'school_name', '', 'N', 'N', 'Y', 'N', 'Y', 'Y', '100', null, null, 'school_name', '5', '0', 'group', 'text', 'string', null, null, null, '4028ef81568c5de601568c6437d10015', '', null);
 INSERT INTO `cgform_field` VALUES ('4028838e6026232f0160263f2f9a0030', '专业', 'admin', '2017-12-05 18:36:03', '管理员', '', '', '', '', '', '120', 'major', '', 'N', 'N', 'Y', 'N', 'Y', 'Y', '100', null, null, 'major', '6', '0', 'group', 'text', 'string', null, null, null, '4028ef81568c5de601568c6437d10015', '', null);
 INSERT INTO `cgform_field` VALUES ('4028838e6026232f0160263f2f9d0031', '学历', 'admin', '2017-12-05 18:36:03', '管理员', '', '', '', '', '', '120', 'degree', '', 'N', 'N', 'Y', 'N', 'N', 'Y', '30', null, null, 'degree', '7', '0', 'group', 'text', 'string', null, null, null, '4028ef81568c5de601568c6437d10015', '', null);
+INSERT INTO `cgform_field` VALUES ('402883a666ee83530166ee8682410000', '邮箱', 'admin', '2018-11-07 22:14:45', '管理员', '', '', '', '', '', '120', 's_email', 'e', 'N', 'N', 'Y', 'N', 'Y', 'N', '32', '', '', 's_email', '24', '0', 'single', 'text', 'string', null, null, null, '4028d73c66bec7bd0166bed6f1fd0000', '', '');
 INSERT INTO `cgform_field` VALUES ('402885d8506e5d9201506e72f4950002', '主键', 'admin', '2015-10-16 10:20:39', '管理员', '', '', '', '', '', '120', 'id', '', 'N', 'Y', 'N', 'N', 'N', 'N', '36', '', '', 'id', '1', '0', 'single', 'text', 'string', 'admin', '2018-07-03 10:37:01', '管理员', '402885d8506e5d9201506e72f4920001', '', '');
 INSERT INTO `cgform_field` VALUES ('402885d8506e5d9201506e72f4a80003', '创建人名称', 'admin', '2015-10-16 10:20:39', '管理员', '', '', '', '', '', '120', 'create_name', '', 'N', 'N', 'Y', 'N', 'N', 'N', '50', '', '', 'create_name', '2', '0', 'single', 'text', 'string', 'admin', '2018-07-03 10:37:01', '管理员', '402885d8506e5d9201506e72f4920001', '', '');
 INSERT INTO `cgform_field` VALUES ('402885d8506e5d9201506e72f4ab0004', '创建人登录名称', 'admin', '2015-10-16 10:20:39', '管理员', '', '', '', '', '', '120', 'create_by', '', 'N', 'N', 'Y', 'N', 'N', 'N', '50', '', '', 'create_by', '3', '0', 'single', 'text', 'string', 'admin', '2018-07-03 10:37:01', '管理员', '402885d8506e5d9201506e72f4920001', '', '');
@@ -567,8 +568,8 @@ INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166bed6f2210006', '学员�
 INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166bed6f2220007', '出生年月', 'admin', '2018-10-29 16:00:50', '管理员', '', '', '', '', '', '120', 's_birthday', '', 'N', 'N', 'Y', 'N', 'Y', 'N', '50', '', '', 'sys_org_code', '7', '0', 'single', 'date', 'Date', 'admin', '2018-11-07 16:49:41', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
 INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166bed6f2230008', '民族', 'admin', '2018-10-29 16:00:50', '管理员', '', '', '', '', '', '120', 's_nation', '', 'N', 'N', 'Y', 'N', 'Y', 'N', '50', '', '', 'sys_company_code', '8', '0', 'single', 'text', 'string', 'admin', '2018-10-30 12:44:06', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
 INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166bee436ec0012', '籍贯', 'admin', '2018-10-29 16:15:19', '管理员', '', '', '', '', '', '120', 's_jiguan', '', 'N', 'N', 'Y', 'N', 'Y', 'N', '100', '', '', 's_jiguan', '9', '0', 'single', 'text', 'string', 'admin', '2018-10-30 12:44:06', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
-INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166bee436ed0013', '户口', 'admin', '2018-10-29 16:15:19', '管理员', 'e_politics', '', '', '', '', '120', 's_hukou', '', 'N', 'N', 'Y', 'N', 'Y', 'N', '100', '', '', 's_hukou', '10', '0', 'single', 'text', 'string', 'admin', '2018-10-30 12:44:06', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
-INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166bee4f8600015', '政治面貌', 'admin', '2018-10-29 16:16:09', '管理员', '', '', '', '', '', '120', 's_politics', '', 'N', 'N', 'Y', 'N', 'Y', 'N', '32', '', '', 's_politics', '11', '0', 'single', 'list', 'string', 'admin', '2018-10-30 12:44:06', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
+INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166bee436ed0013', '户口', 'admin', '2018-10-29 16:15:19', '管理员', '', '', '', '', '', '120', 's_hukou', '', 'N', 'N', 'Y', 'N', 'Y', 'N', '100', '', '', 's_hukou', '10', '0', 'single', 'text', 'string', 'admin', '2018-11-07 22:14:45', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
+INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166bee4f8600015', '政治面貌', 'admin', '2018-10-29 16:16:09', '管理员', 'e_politics', '', '', '', '', '120', 's_politics', '', 'N', 'N', 'Y', 'N', 'Y', 'N', '32', '', '', 's_politics', '11', '0', 'single', 'list', 'string', 'admin', '2018-11-07 22:14:45', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
 INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166bee4f8610016', '学历', 'admin', '2018-10-29 16:16:09', '管理员', 'e_edu', '', '', '', '', '120', 's_education', '', 'N', 'N', 'Y', 'N', 'Y', 'Y', '32', '', '', 's_education', '12', '0', 'single', 'list', 'string', 'admin', '2018-10-29 16:47:05', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
 INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166bee62b090018', '学位', 'admin', '2018-10-29 16:17:27', '管理员', 'e_degree', '', '', '', '', '120', 's_degree', '', 'N', 'N', 'Y', 'N', 'Y', 'Y', '32', '', '', 's_degree', '13', '0', 'single', 'list', 'string', 'admin', '2018-10-29 16:47:05', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
 INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166bee62b090019', '毕业学校', 'admin', '2018-10-29 16:17:27', '管理员', '', '', '', '', '', '120', 's_school', '', 'N', 'N', 'Y', 'N', 'Y', 'N', '32', '', '', 's_school', '14', '0', 'single', 'text', 'string', 'admin', '2018-10-30 12:55:49', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
@@ -581,16 +582,16 @@ INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166beec46910021', '现职�
 INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166beec46910022', '参加工作时间', 'admin', '2018-10-29 16:24:08', '管理员', '', '', '', '', '', '120', 's_work_date', '', 'N', 'N', 'Y', 'N', 'Y', 'N', '32', '', '', 's_work_date', '21', '0', 'single', 'text', 'string', 'admin', '2018-10-30 12:44:06', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
 INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166beec46920023', '身份证号', 'admin', '2018-10-29 16:24:08', '管理员', '', '', '', '', '', '120', 's_code', '', 'N', 'N', 'Y', 'N', 'Y', 'N', '32', '', '', 's_code', '22', '0', 'single', 'text', 'string', 'admin', '2018-10-30 12:44:06', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
 INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166bef183a90025', '通讯地址', 'admin', '2018-10-29 16:29:51', '管理员', '', '', '', '', '', '120', 's_adress', '', 'N', 'N', 'Y', 'N', 'Y', 'N', '32', '', '', 's_adress', '23', '0', 'single', 'text', 'string', 'admin', '2018-10-30 12:44:06', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
-INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166bef183a90026', '联系电话', 'admin', '2018-10-29 16:29:51', '管理员', '', '', '', '', '', '120', 's_tel', '', 'N', 'N', 'Y', 'N', 'Y', 'N', '32', '', '', 's_tel', '24', '0', 'single', 'text', 'string', 'admin', '2018-10-30 12:44:06', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
-INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166bef183a90027', '笔试成绩', 'admin', '2018-10-29 16:29:51', '管理员', '', '', '', '', '', '120', 's_written_score', '', 'N', 'N', 'Y', 'N', 'Y', 'N', '32', '', '', 's_written_score', '25', '0', 'single', 'text', 'string', 'admin', '2018-10-31 13:38:46', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
-INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166bef183a90028', '面试成绩', 'admin', '2018-10-29 16:29:51', '管理员', '', '', '', '', '', '120', 's_interview_score', '', 'N', 'N', 'Y', 'N', 'Y', 'N', '32', '', '', 's_interview_score', '26', '0', 'single', 'text', 'string', 'admin', '2018-10-31 13:38:46', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
-INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166bef183aa0029', '总成绩', 'admin', '2018-10-29 16:29:51', '管理员', '', '', '', '', '', '120', 's_total_score', '', 'N', 'N', 'Y', 'N', 'Y', 'N', '32', '', '', 's_total_score', '27', '0', 'single', 'text', 'string', 'admin', '2018-10-31 13:38:46', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
-INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166bef183aa002a', '排名', 'admin', '2018-10-29 16:29:51', '管理员', '', '', '', '', '', '120', 's_rank', '', 'N', 'N', 'Y', 'N', 'Y', 'N', '32', '', '', 's_rank', '28', '0', 'single', 'text', 'string', 'admin', '2018-10-31 13:38:46', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
-INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166bef183aa002b', '备注', 'admin', '2018-10-29 16:29:51', '管理员', '', '', '', '', '', '120', 's_remarks', '', 'N', 'N', 'Y', 'N', 'Y', 'N', '32', '', '', 's_remarks', '29', '0', 'single', 'text', 'string', 'admin', '2018-10-31 13:38:46', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
-INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166bef183ab002c', '审核状态', 'admin', '2018-10-29 16:29:51', '管理员', 'e_s_status', '', '', '', '', '120', 's_status', '', 'N', 'N', 'Y', 'Y', 'Y', 'Y', '32', '', '', 's_status', '30', '0', 'single', 'list', 'string', 'admin', '2018-10-31 13:38:46', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
-INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166bef183ad002d', '审核人', 'admin', '2018-10-29 16:29:51', '管理员', '', '', '', '', '', '120', 's_auditor', '', 'N', 'N', 'Y', 'N', 'N', 'N', '32', '', '', 's_auditor', '31', '0', 'single', 'text', 'string', 'admin', '2018-10-29 16:47:05', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
-INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166bef183ad002e', '报名时间', 'admin', '2018-10-29 16:29:51', '管理员', '', '', '', '', '', '120', 's_create_date', '', 'N', 'N', 'Y', 'N', 'Y', 'N', '32', '', '', 's_create_date', '32', '0', 'single', 'text', 'Date', 'admin', '2018-10-31 13:38:46', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
-INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166bef183ae002f', '审核不通过原因', 'admin', '2018-10-29 16:29:51', '管理员', '', '', '', '', '', '500', 's_reason', '', 'N', 'N', 'Y', 'N', 'Y', 'N', '500', '', '', 's_reason', '33', '0', 'single', 'umeditor', 'Text', 'admin', '2018-10-30 12:55:49', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
+INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166bef183a90026', '联系电话', 'admin', '2018-10-29 16:29:51', '管理员', '', '', '', '', '', '120', 's_tel', '', 'N', 'N', 'Y', 'N', 'Y', 'N', '32', '', '', 's_tel', '25', '0', 'single', 'text', 'string', 'admin', '2018-11-07 22:14:45', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
+INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166bef183a90027', '笔试成绩', 'admin', '2018-10-29 16:29:51', '管理员', '', '', '', '', '', '120', 's_written_score', '', 'N', 'N', 'Y', 'N', 'Y', 'N', '32', '', '', 's_written_score', '26', '0', 'single', 'text', 'string', 'admin', '2018-11-07 22:14:45', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
+INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166bef183a90028', '面试成绩', 'admin', '2018-10-29 16:29:51', '管理员', '', '', '', '', '', '120', 's_interview_score', '', 'N', 'N', 'Y', 'N', 'Y', 'N', '32', '', '', 's_interview_score', '27', '0', 'single', 'text', 'string', 'admin', '2018-11-07 22:14:45', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
+INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166bef183aa0029', '总成绩', 'admin', '2018-10-29 16:29:51', '管理员', '', '', '', '', '', '120', 's_total_score', '', 'N', 'N', 'Y', 'N', 'Y', 'N', '32', '', '', 's_total_score', '28', '0', 'single', 'text', 'string', 'admin', '2018-11-07 22:14:45', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
+INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166bef183aa002a', '排名', 'admin', '2018-10-29 16:29:51', '管理员', '', '', '', '', '', '120', 's_rank', '', 'N', 'N', 'Y', 'N', 'Y', 'N', '32', '', '', 's_rank', '29', '0', 'single', 'text', 'string', 'admin', '2018-11-07 22:14:45', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
+INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166bef183aa002b', '备注', 'admin', '2018-10-29 16:29:51', '管理员', '', '', '', '', '', '120', 's_remarks', '', 'N', 'N', 'Y', 'N', 'Y', 'N', '32', '', '', 's_remarks', '30', '0', 'single', 'text', 'string', 'admin', '2018-11-07 22:14:45', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
+INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166bef183ab002c', '审核状态', 'admin', '2018-10-29 16:29:51', '管理员', 'e_s_status', '', '', '', '', '120', 's_status', '', 'N', 'N', 'Y', 'Y', 'Y', 'Y', '32', '', '', 's_status', '31', '0', 'single', 'list', 'string', 'admin', '2018-11-07 22:14:45', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
+INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166bef183ad002d', '审核人', 'admin', '2018-10-29 16:29:51', '管理员', '', '', '', '', '', '120', 's_auditor', '', 'N', 'N', 'Y', 'N', 'N', 'N', '32', '', '', 's_auditor', '32', '0', 'single', 'text', 'string', 'admin', '2018-11-07 22:14:45', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
+INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166bef183ad002e', '报名时间', 'admin', '2018-10-29 16:29:51', '管理员', '', '', '', '', '', '120', 's_create_date', '', 'N', 'N', 'Y', 'N', 'Y', 'N', '32', '', '', 's_create_date', '33', '0', 'single', 'text', 'Date', 'admin', '2018-11-07 22:14:45', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
+INSERT INTO `cgform_field` VALUES ('4028d73c66bec7bd0166bef183ae002f', '审核不通过原因', 'admin', '2018-10-29 16:29:51', '管理员', '', '', '', '', '', '500', 's_reason', '', 'N', 'N', 'Y', 'N', 'Y', 'N', '500', '', '', 's_reason', '34', '0', 'single', 'umeditor', 'Text', 'admin', '2018-11-07 22:14:45', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
 INSERT INTO `cgform_field` VALUES ('4028d73c66c345160166c346d5a60002', '主键', 'admin', '2018-10-30 12:41:31', '管理员', '', '', '', '', '', '120', 'id', '', 'N', 'Y', 'N', 'N', 'N', 'N', '36', null, null, 'id', '1', '0', 'single', 'text', 'string', null, null, null, '4028d73c66c345160166c346d5a30001', '', null);
 INSERT INTO `cgform_field` VALUES ('4028d73c66c345160166c346d5a70003', '创建人名称', 'admin', '2018-10-30 12:41:31', '管理员', '', '', '', '', '', '120', 'create_name', '', 'N', 'N', 'Y', 'N', 'N', 'N', '50', null, null, 'create_name', '2', '0', 'single', 'text', 'string', null, null, null, '4028d73c66c345160166c346d5a30001', '', null);
 INSERT INTO `cgform_field` VALUES ('4028d73c66c345160166c346d5a80004', '创建人登录名称', 'admin', '2018-10-30 12:41:31', '管理员', '', '', '', '', '', '120', 'create_by', '', 'N', 'N', 'Y', 'N', 'N', 'N', '50', null, null, 'create_by', '3', '0', 'single', 'text', 'string', null, null, null, '4028d73c66c345160166c346d5a30001', '', null);
@@ -611,7 +612,7 @@ INSERT INTO `cgform_field` VALUES ('4028d73c66c809940166c80e1a6d0012', '所属�
 INSERT INTO `cgform_field` VALUES ('4028d73c66c809940166c80e1a6e0013', '考场名称', 'admin', '2018-10-31 10:57:39', '管理员', '', '', '', '', '', '120', 'p_name', '', 'N', 'N', 'Y', 'N', 'Y', 'Y', '32', '', '', 'p_name', '3', '0', 'single', 'text', 'string', null, null, null, '4028d73c66c809940166c80e1a6c0010', '', '');
 INSERT INTO `cgform_field` VALUES ('4028d73c66c809940166c80e1a6f0014', '考场地址信息', 'admin', '2018-10-31 10:57:39', '管理员', '', '', '', '', '', '120', 'p_info', '', 'N', 'N', 'Y', 'N', 'Y', 'Y', '32', '', '', 'p_info', '4', '0', 'single', 'text', 'string', null, null, null, '4028d73c66c809940166c80e1a6c0010', '', '');
 INSERT INTO `cgform_field` VALUES ('4028d73c66c809940166c80e1a6f0015', '考场容纳人数', 'admin', '2018-10-31 10:57:39', '管理员', '', '', '', '', '', '120', 'p_count', '', 'N', 'N', 'Y', 'N', 'Y', 'Y', '32', '', '', 'p_count', '5', '0', 'single', 'text', 'string', null, null, null, '4028d73c66c809940166c80e1a6c0010', '', '');
-INSERT INTO `cgform_field` VALUES ('4028d73c66ccaf180166ccb60de90002', '所属考试', 'admin', '2018-11-01 08:39:35', '管理员', 'id', 'e_exam', 'e_name', '', '', '120', 's_exam_id', '', 'N', 'N', 'Y', 'N', 'Y', 'N', '32', '', '', 's_exam_id', '34', '0', 'single', 'list', 'string', 'admin', '2018-11-01 08:46:37', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
+INSERT INTO `cgform_field` VALUES ('4028d73c66ccaf180166ccb60de90002', '所属考试', 'admin', '2018-11-01 08:39:35', '管理员', 'id', 'e_exam', 'e_name', '', '', '120', 's_exam_id', '', 'N', 'N', 'Y', 'N', 'Y', 'N', '32', '', '', 's_exam_id', '35', '0', 'single', 'list', 'string', 'admin', '2018-11-07 22:14:45', '管理员', '4028d73c66bec7bd0166bed6f1fd0000', '', '');
 INSERT INTO `cgform_field` VALUES ('4028d73c66ce79c30166ce8021f5000c', '主键', 'admin', '2018-11-01 16:59:56', '管理员', '', '', '', '', '', '120', 'id', '', 'N', 'Y', 'N', 'N', 'N', 'N', '36', '', '', 'id', '1', '0', 'single', 'text', 'string', null, null, null, '4028d73c66ce79c30166ce8021f3000b', '', '');
 INSERT INTO `cgform_field` VALUES ('4028d73c66ce79c30166ce8021f6000d', '考生名', 'admin', '2018-11-01 16:59:56', '管理员', '', '', '', '', '', '120', 'prove_stu_name', '', 'N', 'N', 'Y', 'N', 'Y', 'Y', '32', '', '', 'prove_stu_name', '2', '0', 'single', 'text', 'string', null, null, null, '4028d73c66ce79c30166ce8021f3000b', '', '');
 INSERT INTO `cgform_field` VALUES ('4028d73c66ce79c30166ce8021f7000e', '身份证号', 'admin', '2018-11-01 16:59:56', '管理员', '', '', '', '', '', '120', 'prove_card_code', '', 'N', 'N', 'Y', 'N', 'Y', 'Y', '32', '', '', 'prove_card_code', '3', '0', 'single', 'text', 'string', null, null, null, '4028d73c66ce79c30166ce8021f3000b', '', '');
@@ -804,7 +805,7 @@ INSERT INTO `cgform_head` VALUES ('4028ab775afa555c015afa5958660007', '入职员
 INSERT INTO `cgform_head` VALUES ('4028b881535b12bd01535b1ae3680001', '个人通讯录', 'admin', '2016-03-09 19:20:02', '管理员', 'Y', 'Y', 'Y', 'N', '', 'UUID', '1', '69', 'group', '0', null, null, 'jform_contact', 'admin', '2018-02-22 17:18:13', '管理员', null, 'id', null, 'bdfl_ptbd', 'ledefault', '', '', null, null);
 INSERT INTO `cgform_head` VALUES ('4028d73c66be6afd0166be743ae80001', '考试表', 'admin', '2018-10-29 14:13:00', '管理员', 'Y', 'Y', 'Y', 'N', '', 'UUID', '1', '16', 'group', '0', '', null, 'e_exam', 'admin', '2018-11-01 11:07:07', '管理员', 'id', 'id', '考场信息', 'bdfl_ptbd', 'ledefault', '', '', null, null);
 INSERT INTO `cgform_head` VALUES ('4028d73c66be6afd0166be9a481b0022', '职位表', 'admin', '2018-10-29 14:54:34', '管理员', 'Y', 'Y', 'Y', 'N', '', 'UUID', '1', '9', 'group', '0', null, null, 'e_work', 'admin', '2018-11-01 10:45:21', '管理员', null, 'id', null, 'bdfl_ptbd', 'ledefault', '', '', null, null);
-INSERT INTO `cgform_head` VALUES ('4028d73c66bec7bd0166bed6f1fd0000', '考生信息报名审核表', 'admin', '2018-10-29 16:00:50', '管理员', 'Y', 'Y', 'Y', 'N', '', 'UUID', '1', '34', 'group', '0', null, null, 'e_student', 'admin', '2018-11-07 16:49:44', '管理员', null, 'id', null, 'bdfl_fzbd', 'ledefault', '', '', null, null);
+INSERT INTO `cgform_head` VALUES ('4028d73c66bec7bd0166bed6f1fd0000', '考生信息报名审核表', 'admin', '2018-10-29 16:00:50', '管理员', 'Y', 'Y', 'Y', 'N', '', 'UUID', '1', '35', 'group', '0', null, null, 'e_student', 'admin', '2018-11-07 22:14:50', '管理员', null, 'id', null, 'bdfl_fzbd', 'ledefault', '', '', null, null);
 INSERT INTO `cgform_head` VALUES ('4028d73c66c345160166c346d5a30001', '订单明细', 'admin', '2018-10-30 12:41:31', '管理员', 'N', 'N', 'Y', 'N', '', 'UUID', '1', '1', 'single', '0', null, '11', 'jfrom_order_line__0', null, null, null, null, 'id', null, 'bdfl_ptbd', '', '', '1', '0', 'ff8080816021b031016021feb0c00016');
 INSERT INTO `cgform_head` VALUES ('4028d73c66c809940166c80e1a6c0010', '考场表', 'admin', '2018-10-31 10:57:39', '管理员', 'Y', 'Y', 'Y', 'N', '', 'UUID', '1', '2', 'group', '0', null, null, 'e_place', 'admin', '2018-10-31 11:01:54', '管理员', null, 'id', null, 'bdfl_ptbd', 'ledefault', '', '', null, null);
 INSERT INTO `cgform_head` VALUES ('4028d73c66ce79c30166ce8021f3000b', '准考证表', 'admin', '2018-11-01 16:59:56', '管理员', 'Y', 'Y', 'Y', 'N', '', 'UUID', '1', '3', 'group', '0', null, null, 'e_prove', 'admin', '2018-11-02 14:15:19', '管理员', null, 'id', null, 'bdfl_ptbd', 'ledefault', '', '', null, null);
@@ -1114,13 +1115,47 @@ CREATE TABLE `e_student` (
   `s_create_date` datetime DEFAULT NULL COMMENT '报名时间',
   `s_reason` text COMMENT '审核不通过原因',
   `s_exam_id` varchar(32) DEFAULT NULL COMMENT '所属考试',
+  `s_email` varchar(32) DEFAULT NULL COMMENT '邮箱',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of e_student
 -- ----------------------------
-INSERT INTO `e_student` VALUES ('4028d73c66ed4fe80166ed5581490003', '4028d73c66ed2c280166ed2e038b0000', '4028d73c66cceb1d0166cd0f10480030', '4028d73c66cd2aab0166cd391da60030', '阿萨德', '1', '2018-11-07 00:00:00', '汉族', '河南信阳', '陕西西安', '1', '2', '1', '清华大学', '计算机', '2011年6月', '1', '2', '航天', '工程师', '2011年7月', '389389389389', '北京海淀', '18888888888', null, null, null, null, null, '2', null, null, null, '4028d73c66cd40450166cd43d3160003');
+INSERT INTO `e_student` VALUES ('402883a666ee90530166ee95e0060001', '4028d73c66ed2c280166ed2e038b0000', '4028d73c66cceb1d0166cd03b3800014', '4028d73c66cd2aab0166cd391da60030', '下次', '1', '2018-11-21 00:00:00', '汉族', '陕西西安', '河南信阳', '1', '1', '1', '清华大学', '环境工程', '2011年3月', '1', '1', '教师', '教师', '啊', '411524198802238829', '很那', '12435126778', null, null, null, null, null, '2', null, null, null, '4028d73c66cd40450166cd43d3160003', '123@qq.com');
+
+-- ----------------------------
+-- Table structure for e_user
+-- ----------------------------
+DROP TABLE IF EXISTS `e_user`;
+CREATE TABLE `e_user` (
+  `id` varchar(36) NOT NULL,
+  `user_id` varchar(50) DEFAULT NULL COMMENT '用户id',
+  `real_name` varchar(50) DEFAULT NULL COMMENT '真实姓名',
+  `user_sex` varchar(50) DEFAULT NULL COMMENT '学员性别',
+  `user_birthday` datetime DEFAULT NULL COMMENT '出生日期',
+  `user_nation` varchar(50) DEFAULT NULL COMMENT '民族',
+  `user_jiguan` varchar(100) DEFAULT NULL COMMENT '籍贯',
+  `user_hukou` varchar(100) DEFAULT NULL COMMENT '户口',
+  `user_politics` varchar(50) DEFAULT NULL COMMENT '政治面貌',
+  `user_education` varchar(32) DEFAULT NULL COMMENT '学历',
+  `user_degree` varchar(32) DEFAULT NULL COMMENT '学位',
+  `user_school` varchar(32) DEFAULT NULL COMMENT '毕业学校',
+  `user_major` varchar(32) DEFAULT NULL COMMENT '专业',
+  `user_g_date` varchar(32) DEFAULT NULL COMMENT '毕业年月',
+  `user_marry` varchar(32) DEFAULT NULL COMMENT '婚姻状况',
+  `user_indntity` varchar(32) DEFAULT NULL COMMENT '本人身份',
+  `user_work_date` varchar(32) DEFAULT NULL COMMENT '参加工作时间',
+  `user_code` varchar(32) DEFAULT NULL COMMENT '身份证号码',
+  `user_adress` varchar(32) DEFAULT NULL COMMENT '联系地址',
+  `user_tel` varchar(32) DEFAULT NULL COMMENT '电话',
+  `user_email` varchar(32) DEFAULT NULL COMMENT '邮箱',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of e_user
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for e_work
@@ -6213,6 +6248,11 @@ INSERT INTO `t_s_log` VALUES ('4028d73c66ed4fe80166ed5c440a0006', 'Chrome', '用
 INSERT INTO `t_s_log` VALUES ('4028d73c66ed4fe80166ed5cea550007', 'Chrome', '修改成功', '1', '本地', '2018-11-07 16:49:41', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
 INSERT INTO `t_s_log` VALUES ('4028d73c66ed4fe80166ed5f1a020008', 'Chrome', 'admin', '1', '本地', '2018-11-07 16:52:05', '2', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
 INSERT INTO `t_s_log` VALUES ('4028d73c66ed4fe80166ed6099310009', 'Chrome', '用户: taotao[社会大众]common.login.success', '1', '192.168.87.188', '2018-11-07 16:53:42', '1', '4028d73c66ed2c280166ed2e038b0000', 'taotao', null);
+INSERT INTO `t_s_log` VALUES ('402883a666ee81990166ee820add0000', 'Chrome', '用户: admin[自治区农业厅]common.login.success', '1', '192.168.3.38', '2018-11-07 22:09:51', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('402883a666ee83530166ee8682bb0001', 'Chrome', '修改成功', '1', '本地', '2018-11-07 22:14:45', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('402883a666ee88480166ee8c45320000', 'Chrome', '用户: taotao[社会大众]common.login.success', '1', '192.168.3.38', '2018-11-07 22:21:02', '1', '4028d73c66ed2c280166ed2e038b0000', 'taotao', null);
+INSERT INTO `t_s_log` VALUES ('402883a666ee90530166ee90cb5f0000', 'Chrome', '用户: taotao[社会大众]common.login.success', '1', '192.168.3.38', '2018-11-07 22:25:58', '1', '4028d73c66ed2c280166ed2e038b0000', 'taotao', null);
+INSERT INTO `t_s_log` VALUES ('402883a666ee90530166ee95e0110002', 'Chrome', '考生信息报名审核表添加成功', '1', '本地', '2018-11-07 22:31:32', '3', '4028d73c66ed2c280166ed2e038b0000', 'taotao', null);
 
 -- ----------------------------
 -- Table structure for t_s_muti_lang
