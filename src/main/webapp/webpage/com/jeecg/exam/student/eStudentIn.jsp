@@ -71,10 +71,9 @@
 			 <t:dictSelect field="sSex" type="radio"  typeGroupCode="e_sex"  defaultVal="${eStudentPage.sSex}" datatype="*" hasLabel="false"  title="学员性别" ></t:dictSelect>  
 		    <span class="Validform_checktip"></span>
 		</div>
-		  
-		<div class="form">
+		 <div class="form">
 			<label class="Validform_label"> 出生年月： </label> 
-			<input type="text" id="sBirthday" name="sBirthday" datatype="*"  > 
+			<input type="text" name="sBirthday" id="sBirthday" class="easyui-datebox" > 
 			<span class="Validform_checktip"></span>
 		</div>
 		
@@ -150,8 +149,8 @@
 			<span class="Validform_checktip"></span>
 		</div>
 		<div class="form">
-			<label class="Validform_label"> 身份证号:： </label> 
-			<input type="text" id="sCode" name="sCode" datatype="*"  > 
+			<label class="Validform_label"> 身份证号: </label> 
+			<input type="text" id="sCode" name="sCode"  datatype="/(^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$)|(^[1-9]\d{5}\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{2}$)/" errormsg="身份证格式不正确" > 
 			<span class="Validform_checktip"></span>
 		</div>
 		<div class="form">

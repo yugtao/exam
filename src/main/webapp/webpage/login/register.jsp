@@ -1,152 +1,253 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@page import="org.jeecgframework.core.util.SysThemesUtil,org.jeecgframework.core.enums.SysThemesEnum"%> 
+<%@page import="org.jeecgframework.core.util.SysThemesUtil,org.jeecgframework.core.enums.SysThemesEnum"%>
 <%@include file="/context/mytags.jsp"%>
-<!DOCTYPE html>
 <%
-String lang = org.jeecgframework.core.util.BrowserUtils.getBrowserLanguage(request);
-String langurl = "plug-in/mutiLang/" + lang +".js";
-SysThemesEnum sysTheme = SysThemesUtil.getSysTheme(request);
-String lhgdialogTheme = SysThemesUtil.getLhgdialogTheme(sysTheme);
+  session.setAttribute("lang","zh-cn");
+  SysThemesEnum sysTheme = SysThemesUtil.getSysTheme(request);
+  String lhgdialogTheme = SysThemesUtil.getLhgdialogTheme(sysTheme);
 %>
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title></title>
-<link rel="shortcut icon" href="resources/fc/images/icon/favicon.ico">
-<script src=<%=langurl%> type="text/javascript"></script>
-<!--[if lt IE 9]>
-   <script src="plug-in/login/js/html5.js"></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta charset="utf-8" />
+  <title><t:mutiLang langKey="jeect.platform"/></title>
+   <link rel="shortcut icon" href="images/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <!-- bootstrap & fontawesome -->
+  <link rel="stylesheet" href="plug-in/ace/css/bootstrap.css" />
+  <link rel="stylesheet" href="plug-in/ace/css/font-awesome.css" />
+  <link rel="stylesheet" type="text/css" href="plug-in/accordion/css/accordion.css">
+  <!-- text fonts -->
+  <link rel="stylesheet" href="plug-in/ace/css/ace-fonts.css" />
+
+  <link rel="stylesheet" href="plug-in/ace/css/jquery-ui.css" />
+  <!-- ace styles -->
+  <link rel="stylesheet" href="plug-in/ace/css/ace.css" class="ace-main-stylesheet" id="main-ace-style" />
+  <!--[if lte IE 9]>
+  <link rel="stylesheet" href="plug-in/ace/css/ace-part2.css" class="ace-main-stylesheet" />
   <![endif]-->
-<!--[if lt IE 7]>
-  <script src="plug-in/login/js/iepng.js" type="text/javascript"></script>
-  <script type="text/javascript">
-	EvPNG.fix('div, ul, img, li, input'); //EvPNG.fix('包含透明PNG图片的标签'); 多个标签之间用英文逗号隔开。
-</script>
+
+  <!--[if lte IE 9]>
+  <link rel="stylesheet" href="plug-in/ace/css/ace-ie.css" />
   <![endif]-->
-<link href="plug-in/login/css/zice.style.css" rel="stylesheet" type="text/css" />
-<link href="plug-in/login/css/buttons.css" rel="stylesheet" type="text/css" />
-<link href="plug-in/login/css/icon.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" type="text/css" href="plug-in/login/css/tipsy.css" media="all" />
-<style type="text/css">
-html {
-	background-image: none;
-}
+  <!-- ace settings handler -->
+  <script src="plug-in/ace/js/ace-extra.js"></script>
 
-label.iPhoneCheckLabelOn span {
-	padding-left: 0px
-}
+  <!--[if lte IE 8]>
+  <script src="plug-in/ace/js/html5shiv.js"></script>
+  <script src="plug-in/ace/js/respond.js"></script>
+  <![endif]-->
 
-#versionBar {
-	background-color: #212121;
-	position: fixed;
-	width: 100%;
-	height: 35px;
-	bottom: 0;
-	left: 0;
-	text-align: center;
-	line-height: 35px;
-	z-index: 11;
-	-webkit-box-shadow: black 0px 10px 10px -10px inset;
-	-moz-box-shadow: black 0px 10px 10px -10px inset;
-	box-shadow: black 0px 10px 10px -10px inset;
-}
-
-.copyright {
-	text-align: center;
-	font-size: 10px;
-	color: #CCC;
-}
-
-.copyright a {
-	color: #A31F1A;
-	text-decoration: none
-}
-
-.on_off_checkbox {
-	width: 0px;
-}
-
-#login .logo {
-	width: 500px;
-	height: 51px;
-}
-</style>
 </head>
-<body>
-    <div id="alertMessage"></div>
-    <div id="successLogin"></div>
-    <div class="text_success"><img src="plug-in/login/images/loader_green.gif" alt="Please wait" /> <span><t:mutiLang langKey="common.login.success.wait"/></span></div>
-    <div id="login">
-        <div class="ribbon" style="background-image: url(plug-in/login/images/typelogin.png);"></div>
-        <div class="inner">
-            <div class="logo"><h1>人才测试系统注册</h1><!-- <img src="plug-in/login/images/head.png" /><img src="plug-in/login/images/foot.png" /> --></div>
-            <div class="formLogin">
-                <form name="formLogin" id="formLogin" action="loginController.do?login" check="loginController.do?checkuser" method="post">
-                    <input name="userKey" type="hidden" id="userKey" value="D1B5CC2FE46C4CC983C073BCA897935608D926CD32992B5900" />
-                    <div class="tip">
-                    	<span style="width:60px;">用户名：</span>
-                        <input class="userName" name="userName" type="text" id="userName" title="" iscookie="true" value="admin" nullmsg="" />
-                    </div>
-                    <div class="tip">
-                    	<span style="width:60px;">密码：</span>
-                        <input class="password" name="password" type="password" id="password" title="" value="123456" nullmsg="" />
-                    </div>
-                     <div class="tip">
-                    	<span style="width:60px;">确认密码：</span>
-                        <input class="password" name="password" type="password" id="password" title="" value="123456" nullmsg="" />
-                    </div>
-                    <div>
-                        <div style="float: right; margin-left:-150px; margin-right: 20px;">
-                            <img id="randCodeImage" src="randCodeImage" />
+<body class="login-layout light-login">
+<div class="main-container">
+  <div class="main-content">
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1">
+        <div class="login-container">
+          <div class="center">
+            <h1 id="id-text2" class="grey">
+              <i class="ace-icon fa fa-leaf green"></i>
+               	人才测试系统
+            </h1>
+            <h4 class="blue" id="id-company-text">...</h4>
+          </div>
+          <div class="space-6"></div>
+          <div class="position-relative">
+            <div id="login-box" class="login-box visible widget-box no-border">
+              <div class="widget-body">
+                <form id="loinForm" class="form-horizontal"    method="post">
+                <!-- 单点登录参数 -->
+                <input type="hidden" id="ReturnURL"  name="ReturnURL" value="${ReturnURL }"/>
+                <div class="widget-main">
+                 <div class="alert alert-warning alert-dismissible" role="alert" id="errMsgContiner">
+				  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				  <div id="showErrMsg"></div>
+				</div>
+                  <h4 class="header blue lighter bigger">
+                    <i class="ace-icon fa fa-coffee green"></i>
+                	    用户注册
+                  </h4>
+                  <div class="space-6"></div>
+                      <label class="block clearfix">
+                      
+                    	
+								<span class="block input-icon input-icon-right">
+									<input type="text"  name="userName" iscookie="true" class="form-control" placeholder="请输入用户名"  id="userName" />
+									<i class="ace-icon fa fa-user"></i>
+								</span>
+                      </label>
+                      <label class="block clearfix">
+								<span class="block input-icon input-icon-right">
+									<input type="password" name="password" class="form-control" placeholder="请输入密码" id="password" >
+									<i class="ace-icon fa fa-lock"></i>
+								</span>
+                      </label>
+                      <label class="block clearfix">
+								<span class="block input-icon input-icon-right">
+									<input type="password" name="repassword" class="form-control" placeholder="确认密码" id="repassword" />
+									<i class="ace-icon fa fa-lock"></i>
+								</span>
+                      </label>
+                      <label class="block clearfix">
+                        <div class="input-group">
+                          <input type="text" style="width:150px" name="randCode" class="form-control" placeholder="请输入验证码"  id="randCode"/>
+                          <span class="input-group-addon" style="padding: 0px;"><img id="randCodeImage" src="randCodeImage"  /></span>
                         </div>
-                        <span style="width:60px;">验证码：</span>
-                        <input class="randCode" name="randCode" type="text" id="randCode" title="" value="" nullmsg="" />
-                    </div>
-                   
-                    <div class="loginButton">
-                        <div style="float: left; margin-left: -9px;">
-                            <input type="checkbox" id="on_off" name="remember" checked="ture" class="on_off_checkbox" value="0" />
-                            <span class="f_help"><t:mutiLang langKey="common.remember.user"/></span>
-                        </div>                        
-                        <div style="float: right; padding: 3px 0; margin-right: -12px;">
-                            <div>
-                                <ul class="uibutton-group">
-                                    <li><a class="uibutton normal" href="#" id="but_login"><t:mutiLang langKey="common.login"/></a></li>
-                                    <li><a class="uibutton normal" href="#" id="forgetpass"><t:mutiLang langKey="common.reset"/></a></li>
-                                </ul>
-                            </div>
-                            <%-- 
-                            <div style="float: left; margin-left: 30px;"><a href="init.jsp"><span class="f_help"><t:mutiLang langKey="common.init.data"/></span></a></div>
-                            --%>
-                            <br>                            
-                            <t:dictSelect id="langCode" field="langCode" typeGroupCode="lang" hasLabel="false" defaultVal="zh-cn"></t:dictSelect>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                    <div>
-                        <div style="float: right; margin-left:-30px; margin-right: 40px;">
-                           	 技术支持： <font color="red">JEECG开源社区</font>   &nbsp;&nbsp;&nbsp;  QQ群: <font color="red">106838471</font> &nbsp;&nbsp;&nbsp;  官网: <font color="red"><a href="http://www.jeecg.org"  target="_blank" >www.jeecg.org</a></font> 
-                        </div>
-                    </div>
+                      </label>
+                      <div class="space"></div>
+                      <div class="clearfix">
+                        <label class="inline">
+                          <input type="checkbox" class="ace" id="on_off"  name="remember" value="yes"/>
+                         
+                        </label>
+                        <button type="button" id="but_login"  onclick="checkUser()" class="width-35 pull-right btn btn-sm btn-primary">
+                          <i class="ace-icon fa fa-key"></i>
+                          <span class="bigger-110" >注册</span>
+                        </button>
+                        <a href="loginController.do?login" class="btn btn-link">已有账号?前往登录</a>
+                      </div>
+                      <div class="space-4"></div>
+
+                </div>
+                <div class="toolbar clearfix">
+                  <div style="float: right">
+                    <a href="#"  class="forgot-password-link">
+                    	  语言
+                      <i class="ace-icon fa fa-arrow-right"></i>
+                      <t:dictSelect id="langCode" field="langCode" typeGroupCode="lang" hasLabel="false" extendJson="{style:'padding:2px; width:80px;'}" defaultVal="zh-cn"></t:dictSelect>
+                    </a>
+                  </div>
+                </div>
                 </form>
+              </div>
             </div>
+            <div class="center"><h4 class="blue" id="id-company-text"></h4></div>
+            <div class="navbar-fixed-top align-right">
+              <br />
+              &nbsp;
+              <a id="btn-login-dark" class="blue" href="#" onclick="darkStyle()">Dark</a>
+              &nbsp;
+              <span class="blue">/</span>
+              &nbsp;
+              <a id="btn-login-blur" class="blue" href="#" onclick="blurStyle()">Blur</a>
+              &nbsp;
+              <span class="blue">/</span>
+              &nbsp;
+              <a id="btn-login-light" class="blue" href="#" onclick="lightStyle()">Light</a>
+              &nbsp; &nbsp; &nbsp;
+            </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="shadow"></div>
+      </div>
     </div>
-    <!--Login div-->
-    <div class="clear"></div>
-    <div id="versionBar">
-        <div class="copyright">&copy; <t:mutiLang langKey="common.copyright"/> <span class="tip"><a href="http://www.jeecg.org"  target="_blank" title=<t:mutiLang langKey="common.platform"/>>jeecg</a> <t:mutiLang langKey="common.browser.recommend"/><a href="http://www.jeecg.org" target="_blank" title=<t:mutiLang langKey="common.platform"/>> Jeecg社区</a></span></div>
-    </div>
-    <!-- Link JScript-->
-    <script type="text/javascript" src="plug-in/jquery/jquery-1.8.3.min.js"></script>
-    <script type="text/javascript" src="plug-in/jquery/jquery.cookie.js"></script>
-    <script type="text/javascript" src="plug-in/login/js/jquery-jrumble.js"></script>
-    <script type="text/javascript" src="plug-in/login/js/jquery.tipsy.js"></script>
-    <script type="text/javascript" src="plug-in/login/js/iphone.check.js"></script>
-    <script type="text/javascript" src="plug-in/login/js/login.js"></script>
- <!--    <script type="text/javascript" src="plug-in/lhgDialog/lhgdialog.min.js"></script> -->
-    <%=lhgdialogTheme %>
+
+<script type="text/javascript" src="plug-in/jquery/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="plug-in/jquery/jquery.cookie.js"></script>
+<script type="text/javascript" src="plug-in/mutiLang/en.js"></script>
+<script type="text/javascript" src="plug-in/mutiLang/zh-cn.js"></script>
+<script type="text/javascript" src="plug-in/login/js/jquery.tipsy.js"></script>
+<script type="text/javascript" src="plug-in/login/js/iphone.check.js"></script>
+<script type="text/javascript" src="webpage/login/login-ace.js"></script>
+<%=lhgdialogTheme %>
+<script type="text/javascript">
+	$(function(){
+		optErrMsg();
+	});
+	$("#errMsgContiner").hide();
+
+   //输入验证码，回车登录
+  $(document).bind('keyup', function(event) {
+	　　if (event.keyCode == "13") {
+	　　　　$('#but_login').click();
+	　　}
+  });
+
+  //验证用户信息
+  function checkUser(){
+    if(!validForm2()){
+      return false;
+    }
+    newRegister();
+  }
+  function validForm2(){
+	    if($.trim($("#userName").val()).length==0){
+	      showErrorMsg("请输入用户名");
+	      return false;
+	    }
+
+	    if($.trim($("#password").val()).length==0){
+	      showErrorMsg("请输入密码");
+	      return false;
+	    }
+	    if($.trim($("#repassword").val()).length==0){
+		      showErrorMsg("请确认密码");
+		      return false;
+		}
+	    if($.trim($("#repassword").val())!==$.trim($("#password").val())){
+		      showErrorMsg("两次密码不一致");
+		      return false;
+		}
+	    if($.trim($("#randCode").val()).length==0){
+	      showErrorMsg("请输入验证码");
+	      return false;
+	    }
+	    return true;
+	  }
+//登录处理函数
+  function newRegister(orgId) {
+    setCookie();
+    var actionurl="loginController.do?login";//提交路径
+    var rejisterurl="loginController.do?register";//验证路径
+    var formData = new Object();
+    var data=$(":input").each(function() {
+      formData[this.name] =$("#"+this.name ).val();
+    });
+    formData['orgId'] = orgId ? orgId : "";
+    //语言
+    formData['langCode']=$("#langCode").val();
+    formData['langCode'] = $("#langCode option:selected").val();
+    $.ajax({
+      async : false,
+      cache : false,
+      type : 'POST',
+      url : rejisterurl,// 请求的action路径
+      data : formData,
+      error : function() {// 请求失败处理函数
+      },
+      success : function(data) {
+        var d = $.parseJSON(data);
+        if (d.success) {
+        	window.location.href = actionurl;
+       } else {
+			showErrorMsg(d.msg);
+		  	if(d.msg === "用户名已存在" || d.msg === "验证码错误")
+		  		reloadRandCodeImage();
+        }
+      }
+    });
+  }
+  /**
+   * 刷新验证码
+   */
+  $('#randCodeImage').click(function(){
+	    reloadRandCodeImage();
+  });
+	
+</script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?098e6e84ab585bf0c2e6853604192b8b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 
 </body>
 </html>

@@ -47,8 +47,8 @@ public class EStudentEntity implements java.io.Serializable {
 	@Excel(name="学员性别",width=15,dicCode="e_sex")
 	private java.lang.String sSex;
 	/**出生年月*/
-	@Excel(name="出生年月",width=15)
-	private java.lang.String sBirthday;
+	@Excel(name="考试出生",width=15,format = "yyyy-MM-dd")
+	private java.util.Date sBirthday;
 	/**民族*/
 	@Excel(name="民族",width=15)
 	private java.lang.String sNation;
@@ -241,7 +241,7 @@ public class EStudentEntity implements java.io.Serializable {
 	 */
 
 	@Column(name ="S_BIRTHDAY",nullable=true,length=50)
-	public java.lang.String getSBirthday(){
+	public java.util.Date getSBirthday(){
 		return this.sBirthday;
 	}
 
@@ -249,7 +249,7 @@ public class EStudentEntity implements java.io.Serializable {
 	 *方法: 设置java.lang.String
 	 *@param: java.lang.String  出生年月
 	 */
-	public void setSBirthday(java.lang.String sBirthday){
+	public void setSBirthday(java.util.Date sBirthday){
 		this.sBirthday = sBirthday;
 	}
 	/**

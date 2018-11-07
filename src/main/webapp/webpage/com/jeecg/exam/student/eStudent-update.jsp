@@ -64,7 +64,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="sBirthday" name="sBirthday" type="text" maxlength="50" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.SBirthday}'/>
+									  <input id="sBirthday" name="sBirthday" type="text" style="width: 150px"  class="Wdate" onClick="WdatePicker()"  ignore="ignore" value='<fmt:formatDate value='${eStudentPage.SBirthday}' type="date" pattern="yyyy-MM-dd"/>'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">出生年月</label>
 						</td>
