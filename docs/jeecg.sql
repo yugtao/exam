@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 本地连接
-Source Server Version : 50722
-Source Host           : 127.0.0.1:3306
+Source Server         : localhost_3306
+Source Server Version : 50724
+Source Host           : localhost:3306
 Source Database       : jeecg
 
 Target Server Type    : MYSQL
-Target Server Version : 50722
+Target Server Version : 50724
 File Encoding         : 65001
 
-Date: 2018-11-07 22:46:49
+Date: 2018-11-08 17:36:28
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -1046,7 +1046,7 @@ CREATE TABLE `e_place` (
 -- ----------------------------
 -- Records of e_place
 -- ----------------------------
-INSERT INTO `e_place` VALUES ('4028d73c66cd40450166cd4996d8000c', '4028d73c66cd40450166cd43d3160003', '考场1', '清华大学', '27');
+INSERT INTO `e_place` VALUES ('4028d73c66cd40450166cd4996d8000c', '4028d73c66cd40450166cd43d3160003', '考场1', '清华大学', '26');
 INSERT INTO `e_place` VALUES ('4028d73c66cd40450166cd49f758000e', '4028d73c66cd40450166cd43d3160003', '考场2', '北京大学301', '50');
 
 -- ----------------------------
@@ -1075,6 +1075,7 @@ CREATE TABLE `e_prove` (
 -- Records of e_prove
 -- ----------------------------
 INSERT INTO `e_prove` VALUES ('4028d73c66d3117f0166d31288620002', '男神', '389389389389', '广西农业广播电视学校', '财务', '不知道怎么生成', '清华大学', '28', '4028d73c66cd40450166cd4e5f9c0016', '4028d73c66cd2aab0166cd34fe76001a', '4028d73c66cd40450166cd43d3160003', '2018年职业考试', '2018-11-01 11:14', '考场1');
+INSERT INTO `e_prove` VALUES ('4028d73c66f298480166f299db9a0003', '猜猜我是谁', '411538198812020916', '自治区农业厅', '财务', '不知道怎么生成', '清华大学', '27', '4028d73c66f298480166f2996ca20001', '4028d73c66ed2c280166ed2e038b0000', '4028d73c66cd40450166cd43d3160003', '2018年职业考试', '2018-11-01 11:14', '考场1');
 
 -- ----------------------------
 -- Table structure for e_student
@@ -1122,7 +1123,7 @@ CREATE TABLE `e_student` (
 -- ----------------------------
 -- Records of e_student
 -- ----------------------------
-INSERT INTO `e_student` VALUES ('402883a666ee90530166ee95e0060001', '4028d73c66ed2c280166ed2e038b0000', '4028d73c66cceb1d0166cd03b3800014', '4028d73c66cd2aab0166cd391da60030', '下次', '1', '2018-11-21 00:00:00', '汉族', '陕西西安', '河南信阳', '1', '1', '1', '清华大学', '环境工程', '2011年3月', '1', '1', '教师', '教师', '啊', '411524198802238829', '很那', '12435126778', null, null, null, null, null, '2', null, null, null, '4028d73c66cd40450166cd43d3160003', '123@qq.com');
+INSERT INTO `e_student` VALUES ('4028d73c66f298480166f2996ca20001', '4028d73c66ed2c280166ed2e038b0000', '4028d73c66cceb1d0166cd03b3800014', '4028d73c66cd2aab0166cd391da60030', '猜猜我是谁', '1', '2018-11-08 00:00:00', '汉族', '陕西西安', '陕西西安', '1', '2', '2', '北京大学', '播音主持', '2015年3月', '1', '1', '航天', '工程师', '2016年1月', '411538198812020916', '北京海淀', '阿达', null, null, null, null, null, '2', null, null, null, '4028d73c66cd40450166cd43d3160003', '365448@qq.com');
 
 -- ----------------------------
 -- Table structure for e_user
@@ -1156,6 +1157,7 @@ CREATE TABLE `e_user` (
 -- ----------------------------
 -- Records of e_user
 -- ----------------------------
+INSERT INTO `e_user` VALUES ('4028d73c66f264ce0166f2771f01000a', '4028d73c66ed2c280166ed2e038b0000', '猜猜我是谁', '1', '2018-11-08 00:00:00', '汉族', '陕西西安', '陕西西安', '1', '2', '2', '北京大学', '播音主持', '2015年3月', '1', '1', '2016年1月', '411538198812020916', '北京海淀', '阿达', '365448@qq.com');
 
 -- ----------------------------
 -- Table structure for e_work
@@ -4108,12 +4110,13 @@ INSERT INTO `t_s_function` VALUES ('4028d73c66bdca9e0166bdcc4ae30003', null, '0'
 INSERT INTO `t_s_function` VALUES ('4028d73c66bdca9e0166bdcc84040005', null, '0', '考生管理', '3', '', null, '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', 'fa-headphones', 'admin', '管理员', 'admin', '2018-10-31 15:04:28', '2018-10-29 11:09:49', '管理员');
 INSERT INTO `t_s_function` VALUES ('4028d73c66bdca9e0166bdccbe3a0007', null, '0', '分析统计', '4', '', null, '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', 'fa-bar-chart-o', 'admin', '管理员', 'admin', '2018-10-29 11:13:16', '2018-10-29 11:10:04', '管理员');
 INSERT INTO `t_s_function` VALUES ('4028d73c66bddbdd0166bde23b850001', null, '1', '考试添加', '3', 'eExamController.do?list', '4028d73c66bdca9e0166bdcc4ae30003', '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', '', 'admin', '管理员', 'admin', '2018-11-01 10:53:32', '2018-10-29 11:33:32', '管理员');
-INSERT INTO `t_s_function` VALUES ('4028d73c66c26a1c0166c270627f0001', null, '1', '我要报名', '1', 'eStudentController.do?goStuIn', '4028d73c66bdca9e0166bdcbc7c90001', '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', '', 'admin', '管理员', 'admin', '2018-10-31 11:12:09', '2018-10-30 08:47:17', '管理员');
+INSERT INTO `t_s_function` VALUES ('4028d73c66c26a1c0166c270627f0001', null, '1', '我要报名', '2', 'eStudentController.do?goStuIn', '4028d73c66bdca9e0166bdcbc7c90001', '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', '', 'admin', '管理员', 'admin', '2018-11-08 16:12:55', '2018-10-30 08:47:17', '管理员');
 INSERT INTO `t_s_function` VALUES ('4028d73c66c2c7960166c2cee7610002', null, '1', '审核及记分', '1', 'eStudentController.do?audiList', '4028d73c66bdca9e0166bdcc84040005', '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', '', 'admin', '管理员', 'admin', '2018-10-31 15:04:48', '2018-10-30 10:30:32', '管理员');
 INSERT INTO `t_s_function` VALUES ('4028d73c66c809940166c80b2b870001', null, '1', '考场添加', '4', 'ePlaceController.do?list', '4028d73c66bdca9e0166bdcc4ae30003', '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', '', 'admin', '管理员', 'admin', '2018-11-01 10:53:19', '2018-10-31 10:54:27', '管理员');
 INSERT INTO `t_s_function` VALUES ('4028d73c66cd2aab0166cd2ebb7f0001', null, '1', '机构添加', '1', 'organzationController.do?myDepart', '4028d73c66bdca9e0166bdcc4ae30003', '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', '', 'admin', '管理员', 'admin', '2018-11-01 10:52:41', '2018-11-01 10:51:24', '管理员');
 INSERT INTO `t_s_function` VALUES ('4028d73c66cd2aab0166cd2f93380003', null, '1', '职业添加', '2', 'eWorkController.do?list', '4028d73c66bdca9e0166bdcc4ae30003', '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', '', 'admin', '管理员', null, null, '2018-11-01 10:52:19', null);
-INSERT INTO `t_s_function` VALUES ('4028d73c66cd58a80166cdd7c4f40004', null, '1', '我的考试', '2', 'eStudentController.do?goStuList', '4028d73c66bdca9e0166bdcbc7c90001', '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', '', 'admin', '管理员', 'admin', '2018-11-01 14:08:53', '2018-11-01 13:56:02', '管理员');
+INSERT INTO `t_s_function` VALUES ('4028d73c66cd58a80166cdd7c4f40004', null, '1', '我的考试', '3', 'eStudentController.do?goStuList', '4028d73c66bdca9e0166bdcbc7c90001', '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', '', 'admin', '管理员', 'admin', '2018-11-08 16:13:05', '2018-11-01 13:56:02', '管理员');
+INSERT INTO `t_s_function` VALUES ('4028d73c66f25c9f0166f261719d0001', null, '1', '我的信息', '1', 'eUserController.do?myInfo', '4028d73c66bdca9e0166bdcbc7c90001', '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', '', 'admin', '管理员', 'admin', '2018-11-08 16:21:40', '2018-11-08 16:12:44', '管理员');
 INSERT INTO `t_s_function` VALUES ('4028ef81535fff5101536001bb8d0005', null, '1', '招聘管理', '2', 'cgAutoListController.do?list&id=jform_resume_info', '402880e74d76e784014d76f5505a0012', '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', '', null, null, 'admin', '2017-03-01 11:51:06', null, '管理员');
 INSERT INTO `t_s_function` VALUES ('4028ef815373fb53015373fef1c50003', null, '1', '通讯录分组', '9', 'cgAutoListController.do?list&id=jform_contact_group', '402880e74d76e784014d76f5505a0012', '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', null, null, null, 'admin', '2016-06-27 18:16:01', null, '管理员');
 INSERT INTO `t_s_function` VALUES ('4028ef815373fb53015373ff521d0005', null, '1', '通讯录', '10', 'cgAutoListController.do?list&id=jform_contact', '402880e74d76e784014d76f5505a0012', '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', null, null, null, 'admin', '2016-06-27 18:16:09', null, '管理员');
@@ -6253,6 +6256,27 @@ INSERT INTO `t_s_log` VALUES ('402883a666ee83530166ee8682bb0001', 'Chrome', '修
 INSERT INTO `t_s_log` VALUES ('402883a666ee88480166ee8c45320000', 'Chrome', '用户: taotao[社会大众]common.login.success', '1', '192.168.3.38', '2018-11-07 22:21:02', '1', '4028d73c66ed2c280166ed2e038b0000', 'taotao', null);
 INSERT INTO `t_s_log` VALUES ('402883a666ee90530166ee90cb5f0000', 'Chrome', '用户: taotao[社会大众]common.login.success', '1', '192.168.3.38', '2018-11-07 22:25:58', '1', '4028d73c66ed2c280166ed2e038b0000', 'taotao', null);
 INSERT INTO `t_s_log` VALUES ('402883a666ee90530166ee95e0110002', 'Chrome', '考生信息报名审核表添加成功', '1', '本地', '2018-11-07 22:31:32', '3', '4028d73c66ed2c280166ed2e038b0000', 'taotao', null);
+INSERT INTO `t_s_log` VALUES ('4028d73c66f21eb90166f21fcc050000', 'Chrome', '用户: admin[自治区农业厅]common.login.success', '1', '192.168.87.188', '2018-11-08 15:01:02', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028d73c66f25c9f0166f26052c50000', 'Chrome', '用户: admin[自治区农业厅]common.login.success', '1', '192.168.87.188', '2018-11-08 16:11:30', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028d73c66f25c9f0166f261720d0002', 'Chrome', '菜单 录入成功', '1', '本地', '2018-11-08 16:12:44', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028d73c66f25c9f0166f2619d310003', 'Chrome', '菜单 更新成功', '1', '本地', '2018-11-08 16:12:55', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028d73c66f25c9f0166f261c1630004', 'Chrome', '菜单 更新成功', '1', '本地', '2018-11-08 16:13:05', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028d73c66f264ce0166f26898af0001', 'Chrome', 'admin', '1', '本地', '2018-11-08 16:20:33', '2', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028d73c66f264ce0166f268c27a0002', 'Chrome', '用户: taotao[社会大众]common.login.success', '1', '192.168.87.188', '2018-11-08 16:20:43', '1', '4028d73c66ed2c280166ed2e038b0000', 'taotao', null);
+INSERT INTO `t_s_log` VALUES ('4028d73c66f264ce0166f26918970003', 'Chrome', 'taotao', '1', '本地', '2018-11-08 16:21:06', '2', '4028d73c66ed2c280166ed2e038b0000', 'taotao', null);
+INSERT INTO `t_s_log` VALUES ('4028d73c66f264ce0166f26938270004', 'Chrome', '用户: admin[自治区农业厅]common.login.success', '1', '192.168.87.188', '2018-11-08 16:21:13', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028d73c66f264ce0166f269a0370005', 'Chrome', '菜单 更新成功', '1', '本地', '2018-11-08 16:21:41', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028d73c66f264ce0166f269d22a0006', 'Chrome', 'admin', '1', '本地', '2018-11-08 16:21:53', '2', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028d73c66f264ce0166f269f8f20007', 'Chrome', '用户: taotao[社会大众]common.login.success', '1', '192.168.87.188', '2018-11-08 16:22:03', '1', '4028d73c66ed2c280166ed2e038b0000', 'taotao', null);
+INSERT INTO `t_s_log` VALUES ('4028d73c66f264ce0166f26a87f90008', 'Chrome', 'taotao', '1', '本地', '2018-11-08 16:22:40', '2', '4028d73c66ed2c280166ed2e038b0000', 'taotao', null);
+INSERT INTO `t_s_log` VALUES ('4028d73c66f264ce0166f272ec520009', 'Chrome', '用户: taotao[社会大众]common.login.success', '1', '192.168.87.188', '2018-11-08 16:31:49', '1', '4028d73c66ed2c280166ed2e038b0000', 'taotao', null);
+INSERT INTO `t_s_log` VALUES ('4028d73c66f264ce0166f2771f71000b', 'Chrome', '注册用户信息表添加成功', '1', '本地', '2018-11-08 16:36:25', '3', '4028d73c66ed2c280166ed2e038b0000', 'taotao', null);
+INSERT INTO `t_s_log` VALUES ('4028d73c66f28ff10166f2908e170000', 'Chrome', '用户: admin[自治区农业厅]common.login.success', '1', '192.168.87.188', '2018-11-08 17:04:11', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028d73c66f28ff10166f2909bcd0001', 'Chrome', 'admin', '1', '本地', '2018-11-08 17:04:15', '2', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028d73c66f28ff10166f290c3d10002', 'Chrome', '用户: taotao[社会大众]common.login.success', '1', '192.168.87.188', '2018-11-08 17:04:25', '1', '4028d73c66ed2c280166ed2e038b0000', 'taotao', null);
+INSERT INTO `t_s_log` VALUES ('4028d73c66f28ff10166f290d79e0003', 'Chrome', '个人信息表更新成功', '1', '本地', '2018-11-08 17:04:31', '3', '4028d73c66ed2c280166ed2e038b0000', 'taotao', null);
+INSERT INTO `t_s_log` VALUES ('4028d73c66f298480166f2990bd40000', 'Chrome', '用户: taotao[社会大众]common.login.success', '1', '192.168.87.188', '2018-11-08 17:13:28', '1', '4028d73c66ed2c280166ed2e038b0000', 'taotao', null);
+INSERT INTO `t_s_log` VALUES ('4028d73c66f298480166f2996ccf0002', 'Chrome', '考生信息报名审核表添加成功', '1', '本地', '2018-11-08 17:13:53', '3', '4028d73c66ed2c280166ed2e038b0000', 'taotao', null);
 
 -- ----------------------------
 -- Table structure for t_s_muti_lang
@@ -11431,6 +11455,7 @@ INSERT INTO `t_s_role_function` VALUES ('4028d73c66cd2aab0166cd31b7c60017', null
 INSERT INTO `t_s_role_function` VALUES ('4028d73c66cd2aab0166cd31d1c40018', null, '4028d73c66c26a1c0166c270627f0001', '402880e74d75c4dd014d75d3c5f40001', null);
 INSERT INTO `t_s_role_function` VALUES ('4028d73c66cd2aab0166cd31d1d00019', null, '4028d73c66bdca9e0166bdcbc7c90001', '402880e74d75c4dd014d75d3c5f40001', null);
 INSERT INTO `t_s_role_function` VALUES ('4028d73c66cde1200166cde3ca360004', null, '4028d73c66cd58a80166cdd7c4f40004', '402880e74d75c4dd014d75d3c5f40001', null);
+INSERT INTO `t_s_role_function` VALUES ('4028d73c66f264ce0166f2688c8b0000', null, '4028d73c66f25c9f0166f261719d0001', '402880e74d75c4dd014d75d3c5f40001', null);
 INSERT INTO `t_s_role_function` VALUES ('ff8080815ffd3b5d015ffd3f36800003', null, 'ff8080815ffd3b5d015ffd3e74b40001', '8a8ab0b246dc81120146dc8181870050', null);
 
 -- ----------------------------
