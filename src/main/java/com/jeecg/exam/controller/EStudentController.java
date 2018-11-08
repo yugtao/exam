@@ -44,6 +44,7 @@ import com.jeecg.exam.entity.EExamEntity;
 import com.jeecg.exam.entity.EPlaceEntity;
 import com.jeecg.exam.entity.EProveEntity;
 import com.jeecg.exam.entity.EStudentEntity;
+import com.jeecg.exam.entity.EUserEntity;
 import com.jeecg.exam.entity.EWorkEntity;
 import com.jeecg.exam.service.EExamServiceI;
 import com.jeecg.exam.service.EProveServiceI;
@@ -93,6 +94,13 @@ public class EStudentController extends BaseController {
 	 */
 	@RequestMapping(params = "goStuIn")
 	public ModelAndView stuIn(HttpServletRequest request) {
+		TSUser user = ResourceUtil.getSessionUser();
+		String userId = user.getId();
+		List<EUserEntity> findByProperty = commonService.findByProperty(EUserEntity.class, "userId", userId);
+		if (!findByProperty.isEmpty()) {
+			EUserEntity eUser = findByProperty.get(0);
+			request.setAttribute("eUserPage", eUser);
+		}
 		return new ModelAndView("com/jeecg/exam/student/eStudentIn");
 	}
 	/**

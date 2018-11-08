@@ -26,6 +26,7 @@ import org.jeecgframework.core.constant.Globals;
 import org.jeecgframework.core.util.StringUtil;
 import org.jeecgframework.tag.core.easyui.TagUtil;
 import org.jeecgframework.web.system.pojo.base.TSDepart;
+import org.jeecgframework.web.system.pojo.base.TSUser;
 import org.jeecgframework.web.system.service.SystemService;
 import org.jeecgframework.core.util.MyBeanUtils;
 
@@ -66,7 +67,6 @@ public class EUserController extends BaseController {
 	private EUserServiceI eUserService;
 	@Autowired
 	private SystemService systemService;
-	
 
 
 	/**
@@ -78,7 +78,23 @@ public class EUserController extends BaseController {
 	public ModelAndView list(HttpServletRequest request) {
 		return new ModelAndView("com/jeecg/exam/eUserList");
 	}
-
+	/**
+	 * 前往我的信息页
+	 * 
+	 * @return
+	 */
+	@RequestMapping(params = "myInfo")
+	public ModelAndView myInfo(HttpServletRequest request) {
+		TSUser user = ResourceUtil.getSessionUser();
+		String userId = user.getId();
+		List<EUserEntity> findByProperty = eUserService.findByProperty(EUserEntity.class, "userId", userId);
+		if (!findByProperty.isEmpty()) {
+			EUserEntity eUser = findByProperty.get(0);
+			request.setAttribute("eUserPage", eUser);
+		}
+		return new ModelAndView("com/jeecg/exam/student/myInfo");
+	}
+	
 	/**
 	 * easyui AJAX请求数据
 	 * 
@@ -167,13 +183,20 @@ public class EUserController extends BaseController {
 	public AjaxJson doAdd(EUserEntity eUser, HttpServletRequest request) {
 		String message = null;
 		AjaxJson j = new AjaxJson();
-		message = "注册用户信息表添加成功";
+		if(StringUtil.isEmpty(eUser.getId())) {
+		message = "个人信息表添加成功";
+		}else {
+			message = "个人信息表更新成功";
+		}
+		TSUser user = ResourceUtil.getSessionUser();
+		String userId = user.getId();
+		eUser.setUserId(userId);
 		try{
-			eUserService.save(eUser);
+			eUserService.saveOrUpdate(eUser);
 			systemService.addLog(message, Globals.Log_Type_INSERT, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
-			message = "注册用户信息表添加失败";
+			message = "个人信息表添加失败";
 			throw new BusinessException(e.getMessage());
 		}
 		j.setMsg(message);
