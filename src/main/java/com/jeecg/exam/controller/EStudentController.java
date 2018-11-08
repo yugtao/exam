@@ -131,11 +131,16 @@ public class EStudentController extends BaseController {
 		TagUtil.datagrid(response, dataGrid);
 	}
 	/**
-	 *生成并打印准考证
+	 *生成准考证
 	 */
 	@RequestMapping(params = "printProve")
-	public ModelAndView printProve(HttpServletRequest request,String stu) {
+	public AjaxJson printProve(HttpServletRequest request,String stu) {
 		ModelAndView model =new ModelAndView("com/jeecg/exam/student/printProve");
+		AjaxJson j = new AjaxJson();
+		String message = null;
+		message = "考生信息报名审核表添加成功";
+		j.setSuccess(true);
+		j.s
 		if (StringUtil.isNotEmpty(stu)) {
 			EStudentEntity eStudent = eStudentService.getEntity(EStudentEntity.class,stu);
 			EProveEntity eProve = new EProveEntity();
@@ -181,6 +186,14 @@ public class EStudentController extends BaseController {
 			model.addObject("prove", eProve);
 		}
 		return model;
+	}
+	/**
+	 * 打印准考证
+	 * @return
+	 */
+	public ModelAndView printProvePage() {
+		ModelAndView model =new ModelAndView("com/jeecg/exam/student/printProve");
+		return null;
 	}
 	/**
 	 *查看审核详情
