@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50724
 File Encoding         : 65001
 
-Date: 2018-11-08 17:36:28
+Date: 2018-11-09 11:01:43
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -6277,6 +6277,12 @@ INSERT INTO `t_s_log` VALUES ('4028d73c66f28ff10166f290c3d10002', 'Chrome', '用
 INSERT INTO `t_s_log` VALUES ('4028d73c66f28ff10166f290d79e0003', 'Chrome', '个人信息表更新成功', '1', '本地', '2018-11-08 17:04:31', '3', '4028d73c66ed2c280166ed2e038b0000', 'taotao', null);
 INSERT INTO `t_s_log` VALUES ('4028d73c66f298480166f2990bd40000', 'Chrome', '用户: taotao[社会大众]common.login.success', '1', '192.168.87.188', '2018-11-08 17:13:28', '1', '4028d73c66ed2c280166ed2e038b0000', 'taotao', null);
 INSERT INTO `t_s_log` VALUES ('4028d73c66f298480166f2996ccf0002', 'Chrome', '考生信息报名审核表添加成功', '1', '本地', '2018-11-08 17:13:53', '3', '4028d73c66ed2c280166ed2e038b0000', 'taotao', null);
+INSERT INTO `t_s_log` VALUES ('4028d73c66f6202b0166f621141c0000', 'Chrome', '用户: admin[自治区农业厅]common.login.success', '1', '192.168.87.188', '2018-11-09 09:40:54', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028d73c66f6281e0166f6330a8a0000', 'Chrome', '用户: taotao[社会大众]common.login.success', '1', '192.168.87.188', '2018-11-09 10:00:32', '1', '4028d73c66ed2c280166ed2e038b0000', 'taotao', null);
+INSERT INTO `t_s_log` VALUES ('4028d73c66f6281e0166f63d9e5a0001', 'Chrome', 'taotao', '1', '本地', '2018-11-09 10:12:05', '2', '4028d73c66ed2c280166ed2e038b0000', 'taotao', null);
+INSERT INTO `t_s_log` VALUES ('4028d73c66f6281e0166f63e226a0002', 'Chrome', '用户: taotao[社会大众]common.login.success', '1', '192.168.87.188', '2018-11-09 10:12:39', '1', '4028d73c66ed2c280166ed2e038b0000', 'taotao', null);
+INSERT INTO `t_s_log` VALUES ('4028d73c66f64b670166f64d1f320000', 'Chrome', '用户: taotao[社会大众]common.login.success', '1', '192.168.87.188', '2018-11-09 10:29:01', '1', '4028d73c66ed2c280166ed2e038b0000', 'taotao', null);
+INSERT INTO `t_s_log` VALUES ('4028d73c66f65e610166f65fbea60000', 'Chrome', '用户: taotao[社会大众]common.login.success', '1', '192.168.87.188', '2018-11-09 10:49:21', '1', '4028d73c66ed2c280166ed2e038b0000', 'taotao', null);
 
 -- ----------------------------
 -- Table structure for t_s_muti_lang

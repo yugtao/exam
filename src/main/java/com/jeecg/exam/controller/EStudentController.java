@@ -1,4 +1,5 @@
 package com.jeecg.exam.controller;
+
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -50,13 +51,12 @@ import com.jeecg.exam.service.EExamServiceI;
 import com.jeecg.exam.service.EProveServiceI;
 import com.jeecg.exam.service.EStudentServiceI;
 
-
-/**   
- * @Title: Controller  
+/**
+ * @Title: Controller
  * @Description: 考生信息报名审核表
  * @author onlineGenerator
  * @date 2018-11-01 08:46:46
- * @version V1.0   
+ * @version V1.0
  *
  */
 @Controller
@@ -68,14 +68,13 @@ public class EStudentController extends BaseController {
 	private EStudentServiceI eStudentService;
 	@Autowired
 	private SystemService systemService;
-	
+
 	@Autowired
 	private CommonService commonService;
 	@Autowired
 	private CommonDao commondao;
 	@Autowired
 	private EExamServiceI examService;
-
 
 	/**
 	 * 考生信息报名审核表列表 页面跳转
@@ -86,7 +85,7 @@ public class EStudentController extends BaseController {
 	public ModelAndView list(HttpServletRequest request) {
 		return new ModelAndView("com/jeecg/exam/eStudentList");
 	}
-	
+
 	/**
 	 * 考生信息报名页面
 	 * 
@@ -103,125 +102,173 @@ public class EStudentController extends BaseController {
 		}
 		return new ModelAndView("com/jeecg/exam/student/eStudentIn");
 	}
+
 	/**
-	 *前往审核状态页面
+	 * 前往审核状态页面
 	 */
 	@RequestMapping(params = "goStuList")
 	public ModelAndView stuLits(HttpServletRequest request) {
 		return new ModelAndView("com/jeecg/exam/student/stu-eStudentList");
 	}
+
 	/**
-	 *获取我的考试数据
+	 * 获取我的考试数据
 	 */
 	@RequestMapping(params = "myList")
-	public void myList(EStudentEntity eStudent,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
+	public void myList(EStudentEntity eStudent, HttpServletRequest request, HttpServletResponse response,
+			DataGrid dataGrid) {
 		TSUser user = ResourceUtil.getSessionUser();
 		String userId = user.getId();
 		CriteriaQuery cq = new CriteriaQuery(EStudentEntity.class, dataGrid);
-		//查询条件组装器
+		// 查询条件组装器
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, eStudent, request.getParameterMap());
-		try{
+		try {
 			cq.add(Restrictions.eq("userId", userId));
-		//自定义追加查询条件
-		}catch (Exception e) {
+			// 自定义追加查询条件
+		} catch (Exception e) {
 			throw new BusinessException(e.getMessage());
 		}
 		cq.add();
 		this.eStudentService.getDataGridReturn(cq, true);
 		TagUtil.datagrid(response, dataGrid);
 	}
+
 	/**
-	 *生成准考证
+	 * 生成准考证
 	 */
 	@RequestMapping(params = "printProve")
-	public AjaxJson printProve(HttpServletRequest request,String stu) {
-		ModelAndView model =new ModelAndView("com/jeecg/exam/student/printProve");
+	@ResponseBody
+	public AjaxJson printProve(HttpServletRequest request, String stu) {
 		AjaxJson j = new AjaxJson();
 		String message = null;
-		message = "考生信息报名审核表添加成功";
-		j.setSuccess(true);
-		j.s
 		if (StringUtil.isNotEmpty(stu)) {
-			EStudentEntity eStudent = eStudentService.getEntity(EStudentEntity.class,stu);
-			EProveEntity eProve = new EProveEntity();
-			@SuppressWarnings("unchecked")
-			List<EProveEntity> eProves = commondao.findByProperty(EProveEntity.class, "proveStuId", stu);
-			if(eProves.isEmpty()) {
-			EExamEntity exam = examService.getEntity(EExamEntity.class, eStudent.getSExamId());
-			TSUser user = ResourceUtil.getSessionUser();
-			TSDepart depart = commonService.getEntity(TSDepart.class, eStudent.getSOrg());
-			EWorkEntity ework = commonService.getEntity(EWorkEntity.class, eStudent.getSWork());
-			@SuppressWarnings("unchecked")
-			List<EPlaceEntity> EPlaces = commondao.findByProperty(EPlaceEntity.class, "examId", exam.getId());
-			for (EPlaceEntity ePlaceEntity : EPlaces) {
-				String pCount = ePlaceEntity.getPCount();
-				int count = Integer.parseInt(pCount);
-				if(count>0) {
-					eProve.setProvePlace(ePlaceEntity.getPInfo());
-					eProve.setProveRoom(ePlaceEntity.getPName());
-					eProve.setProveSeat(pCount);
-					count = count-1;
-					ePlaceEntity.setPCount(count+"");
-					commonService.saveOrUpdate(ePlaceEntity);
-					break;
-				}
+			j.setSuccess(true);
+			EStudentEntity eStudent = eStudentService.getEntity(EStudentEntity.class, stu);
+			// 状态审核成功才能执行
+			message="准考证生成成功";
+			if ("3".equals(eStudent.getSStatus())) {
+				@SuppressWarnings("unchecked")
+				List<EProveEntity> eProves = commondao.findByProperty(EProveEntity.class, "proveStuId", stu);
+				//没有现生成
+				if (eProves.isEmpty()) {
+					EExamEntity exam = examService.getEntity(EExamEntity.class, eStudent.getSExamId());
+					TSDepart depart = commonService.getEntity(TSDepart.class, eStudent.getSOrg());
+					EWorkEntity ework = commonService.getEntity(EWorkEntity.class, eStudent.getSWork());
+					@SuppressWarnings("unchecked")
+					List<EPlaceEntity> EPlaces = commondao.findByProperty(EPlaceEntity.class, "examId", exam.getId());
+					// 有考场才能执行
+					if (EPlaces.isEmpty()) {
+						message = "抱歉，该考试暂时不能报名";
+						j.setSuccess(false);
+					} else {
+						boolean saveProve = this.saveProve(eStudent, exam, EPlaces, depart, ework);
+						if(!saveProve) {
+							message = "准考证生成失败";
+							j.setSuccess(false);
+						}			
+					}
+				} 
+			} else {
+				message = "抱歉，您的信息还未审核，请耐心等待";
+				j.setSuccess(false);
 			}
-			commonService.getEntity(TSDepart.class, eStudent.getSOrg());
-			eProve.setProveCardCode(eStudent.getSCode());
-			eProve.setProveCode("不知道怎么生成");
-			String date = new SimpleDateFormat("yyyy-MM-dd HH:mm").format(exam.getEDate());
-			eProve.setProveDate(date);
-			eProve.setProveExamId(exam.getId());
-			eProve.setProveExamName(exam.getEName());
-			eProve.setProveOrg(depart.getDepartname());
-			eProve.setProveStuId(eStudent.getId());
-			eProve.setProveStuName(eStudent.getSStudient());
-			eProve.setProveUserId(user.getId());
-			eProve.setProveWork(ework.getWName());
-			commonService.save(eProve);
-			}else {
-				eProve=eProves.get(0);
-			}
-			//req.setAttribute("eStudentPage", eStudent);
-			model.addObject("prove", eProve);
+		}else {
+			message = "出现错误,不能正确获得报名信息";
+			j.setSuccess(false);
 		}
-		return model;
+		j.setMsg(message);
+		return j;
 	}
+/**
+ * 生成准考证
+ * @param eStudent
+ * @param exam
+ * @param EPlaces
+ * @param depart
+ * @param ework
+ * @return
+ */
+	public boolean saveProve(EStudentEntity eStudent, EExamEntity exam, List<EPlaceEntity> EPlaces, TSDepart depart,
+			EWorkEntity ework) {
+		boolean result = true;
+		TSUser user = ResourceUtil.getSessionUser();
+		EProveEntity eProve = new EProveEntity();
+		// 确定考场是否还有座位
+		for (EPlaceEntity ePlaceEntity : EPlaces) {
+			String pCount = ePlaceEntity.getPCount();
+			int count = Integer.parseInt(pCount);
+			if (count > 0) {
+				eProve.setProvePlace(ePlaceEntity.getPInfo());
+				eProve.setProveRoom(ePlaceEntity.getPName());
+				eProve.setProveSeat(pCount);
+				count = count - 1;
+				ePlaceEntity.setPCount(count + "");
+				commonService.saveOrUpdate(ePlaceEntity);
+				break;
+			}
+		}
+		commonService.getEntity(TSDepart.class, eStudent.getSOrg());
+		eProve.setProveCardCode(eStudent.getSCode());
+		eProve.setProveCode("不知道怎么生成");
+		String date = new SimpleDateFormat("yyyy-MM-dd HH:mm").format(exam.getEDate());
+		eProve.setProveDate(date);
+		eProve.setProveExamId(exam.getId());
+		eProve.setProveExamName(exam.getEName());
+		eProve.setProveOrg(depart.getDepartname());
+		eProve.setProveStuId(eStudent.getId());
+		eProve.setProveStuName(eStudent.getSStudient());
+		eProve.setProveUserId(user.getId());
+		eProve.setProveWork(ework.getWName());
+		try {
+			commonService.save(eProve);
+		} catch (Exception e) {
+			result = false;
+		}
+		return result;
+	}
+
 	/**
 	 * 打印准考证
+	 * 
 	 * @return
 	 */
-	public ModelAndView printProvePage() {
-		ModelAndView model =new ModelAndView("com/jeecg/exam/student/printProve");
+	@RequestMapping(params = "printProvePage")
+	public ModelAndView printProvePage( String stu) {
+		@SuppressWarnings("unchecked")
+		List<EProveEntity> eProves = commondao.findByProperty(EProveEntity.class, "proveStuId", stu);
+		ModelAndView model = new ModelAndView("com/jeecg/exam/student/printProve");
+		model.addObject("prove", eProves.get(0));
 		return null;
 	}
+
 	/**
-	 *查看审核详情
+	 * 查看审核详情
 	 */
 	@RequestMapping(params = "goStuInfo")
 	public ModelAndView stuInfo(HttpServletRequest request) {
 		return new ModelAndView("com/jeecg/exam/student/eStudentInfo");
 	}
-	
+
 	/**
-	 *查看审核列表
+	 * 查看审核列表
 	 */
 	@RequestMapping(params = "audiList")
 	public ModelAndView audiList(HttpServletRequest request) {
 		return new ModelAndView("com/jeecg/exam/audi/eStudentList-audi");
 	}
+
 	/**
-	 *查看考生详情页面
+	 * 查看考生详情页面
 	 */
 	@RequestMapping(params = "goaudi")
-	public ModelAndView goaudi(EStudentEntity eStudent,HttpServletRequest req) {
+	public ModelAndView goaudi(EStudentEntity eStudent, HttpServletRequest req) {
 		if (StringUtil.isNotEmpty(eStudent.getId())) {
 			eStudent = eStudentService.getEntity(EStudentEntity.class, eStudent.getId());
 			req.setAttribute("eStudentPage", eStudent);
 		}
 		return new ModelAndView("com/jeecg/exam/audi/eStudent-audi");
 	}
-	
+
 	/**
 	 * easyui 查看单位下的报名考生列表
 	 * 
@@ -231,24 +278,24 @@ public class EStudentController extends BaseController {
 	 * @param user
 	 */
 	@RequestMapping(params = "getOrgStu")
-	public void getOrgStu(EStudentEntity eStudent,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
+	public void getOrgStu(EStudentEntity eStudent, HttpServletRequest request, HttpServletResponse response,
+			DataGrid dataGrid) {
 		TSUser user = ResourceUtil.getSessionUser();
 		String departid = user.getDepartid();
 		CriteriaQuery cq = new CriteriaQuery(EStudentEntity.class, dataGrid);
-		//查询条件组装器
+		// 查询条件组装器
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, eStudent, request.getParameterMap());
-		try{
+		try {
 			cq.add(Restrictions.eq("SOrg", departid));
-		//自定义追加查询条件
-		}catch (Exception e) {
+			// 自定义追加查询条件
+		} catch (Exception e) {
 			throw new BusinessException(e.getMessage());
 		}
 		cq.add();
 		this.eStudentService.getDataGridReturn(cq, true);
 		TagUtil.datagrid(response, dataGrid);
 	}
-	
-	
+
 	/**
 	 * easyui AJAX请求数据
 	 * 
@@ -259,21 +306,22 @@ public class EStudentController extends BaseController {
 	 */
 
 	@RequestMapping(params = "datagrid")
-	public void datagrid(EStudentEntity eStudent,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
-		
+	public void datagrid(EStudentEntity eStudent, HttpServletRequest request, HttpServletResponse response,
+			DataGrid dataGrid) {
+
 		CriteriaQuery cq = new CriteriaQuery(EStudentEntity.class, dataGrid);
-		//查询条件组装器
+		// 查询条件组装器
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, eStudent, request.getParameterMap());
-		try{
-		//自定义追加查询条件
-		}catch (Exception e) {
+		try {
+			// 自定义追加查询条件
+		} catch (Exception e) {
 			throw new BusinessException(e.getMessage());
 		}
 		cq.add();
 		this.eStudentService.getDataGridReturn(cq, true);
 		TagUtil.datagrid(response, dataGrid);
 	}
-	
+
 	/**
 	 * 删除考生信息报名审核表
 	 * 
@@ -286,38 +334,10 @@ public class EStudentController extends BaseController {
 		AjaxJson j = new AjaxJson();
 		eStudent = systemService.getEntity(EStudentEntity.class, eStudent.getId());
 		message = "考生信息报名审核表删除成功";
-		try{
+		try {
 			eStudentService.delete(eStudent);
 			systemService.addLog(message, Globals.Log_Type_DEL, Globals.Log_Leavel_INFO);
-		}catch(Exception e){
-			e.printStackTrace();
-			message = "考生信息报名审核表删除失败";
-			throw new BusinessException(e.getMessage());
-		}
-		j.setMsg(message);
-		return j;
-	}
-	
-	/**
-	 * 批量删除考生信息报名审核表
-	 * 
-	 * @return
-	 */
-	 @RequestMapping(params = "doBatchDel")
-	@ResponseBody
-	public AjaxJson doBatchDel(String ids,HttpServletRequest request){
-		String message = null;
-		AjaxJson j = new AjaxJson();
-		message = "考生信息报名审核表删除成功";
-		try{
-			for(String id:ids.split(",")){
-				EStudentEntity eStudent = systemService.getEntity(EStudentEntity.class, 
-				id
-				);
-				eStudentService.delete(eStudent);
-				systemService.addLog(message, Globals.Log_Type_DEL, Globals.Log_Leavel_INFO);
-			}
-		}catch(Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 			message = "考生信息报名审核表删除失败";
 			throw new BusinessException(e.getMessage());
@@ -326,6 +346,31 @@ public class EStudentController extends BaseController {
 		return j;
 	}
 
+	/**
+	 * 批量删除考生信息报名审核表
+	 * 
+	 * @return
+	 */
+	@RequestMapping(params = "doBatchDel")
+	@ResponseBody
+	public AjaxJson doBatchDel(String ids, HttpServletRequest request) {
+		String message = null;
+		AjaxJson j = new AjaxJson();
+		message = "考生信息报名审核表删除成功";
+		try {
+			for (String id : ids.split(",")) {
+				EStudentEntity eStudent = systemService.getEntity(EStudentEntity.class, id);
+				eStudentService.delete(eStudent);
+				systemService.addLog(message, Globals.Log_Type_DEL, Globals.Log_Leavel_INFO);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			message = "考生信息报名审核表删除失败";
+			throw new BusinessException(e.getMessage());
+		}
+		j.setMsg(message);
+		return j;
+	}
 
 	/**
 	 * 添加考生信息报名审核表
@@ -342,24 +387,24 @@ public class EStudentController extends BaseController {
 		TSUser user = ResourceUtil.getSessionUser();
 		@SuppressWarnings("unchecked")
 		List<EStudentEntity> findByExample = eStudentService.findByExample(EStudentEntity.class.getName(), eStudent);
-		if(findByExample.isEmpty()) {
+		if (findByExample.isEmpty()) {
 			eStudent.setSStatus("2");
 			eStudent.setUserId(user.getId());
-			try{
+			try {
 				eStudentService.save(eStudent);
 				systemService.addLog(message, Globals.Log_Type_INSERT, Globals.Log_Leavel_INFO);
-			}catch(Exception e){
+			} catch (Exception e) {
 				e.printStackTrace();
 				message = "考生信息报名审核表添加失败";
 				throw new BusinessException(e.getMessage());
 			}
-		}else{
+		} else {
 			message = "您已经报名该考试不能重复报名";
 		}
 		j.setMsg(message);
 		return j;
 	}
-	
+
 	/**
 	 * 更新考生信息报名审核表
 	 * 
@@ -385,7 +430,6 @@ public class EStudentController extends BaseController {
 		j.setMsg(message);
 		return j;
 	}
-	
 
 	/**
 	 * 考生信息报名审核表新增页面跳转
@@ -400,6 +444,7 @@ public class EStudentController extends BaseController {
 		}
 		return new ModelAndView("com/jeecg/exam/eStudent-add");
 	}
+
 	/**
 	 * 考生信息报名审核表编辑页面跳转
 	 * 
@@ -413,7 +458,7 @@ public class EStudentController extends BaseController {
 		}
 		return new ModelAndView("com/jeecg/exam/eStudent-update");
 	}
-	
+
 	/**
 	 * 导入功能跳转
 	 * 
@@ -421,10 +466,10 @@ public class EStudentController extends BaseController {
 	 */
 	@RequestMapping(params = "upload")
 	public ModelAndView upload(HttpServletRequest req) {
-		req.setAttribute("controller_name","eStudentController");
+		req.setAttribute("controller_name", "eStudentController");
 		return new ModelAndView("common/upload/pub_excel_upload");
 	}
-	
+
 	/**
 	 * 导出excel
 	 * 
@@ -432,18 +477,19 @@ public class EStudentController extends BaseController {
 	 * @param response
 	 */
 	@RequestMapping(params = "exportXls")
-	public String exportXls(EStudentEntity eStudent,HttpServletRequest request,HttpServletResponse response
-			, DataGrid dataGrid,ModelMap modelMap) {
+	public String exportXls(EStudentEntity eStudent, HttpServletRequest request, HttpServletResponse response,
+			DataGrid dataGrid, ModelMap modelMap) {
 		CriteriaQuery cq = new CriteriaQuery(EStudentEntity.class, dataGrid);
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, eStudent, request.getParameterMap());
-		List<EStudentEntity> eStudents = this.eStudentService.getListByCriteriaQuery(cq,false);
-		modelMap.put(NormalExcelConstants.FILE_NAME,"考生信息报名审核表");
-		modelMap.put(NormalExcelConstants.CLASS,EStudentEntity.class);
-		modelMap.put(NormalExcelConstants.PARAMS,new ExportParams("考生信息报名审核表列表", "导出人:"+ResourceUtil.getSessionUser().getRealName(),
-			"导出信息"));
-		modelMap.put(NormalExcelConstants.DATA_LIST,eStudents);
+		List<EStudentEntity> eStudents = this.eStudentService.getListByCriteriaQuery(cq, false);
+		modelMap.put(NormalExcelConstants.FILE_NAME, "考生信息报名审核表");
+		modelMap.put(NormalExcelConstants.CLASS, EStudentEntity.class);
+		modelMap.put(NormalExcelConstants.PARAMS,
+				new ExportParams("考生信息报名审核表列表", "导出人:" + ResourceUtil.getSessionUser().getRealName(), "导出信息"));
+		modelMap.put(NormalExcelConstants.DATA_LIST, eStudents);
 		return NormalExcelConstants.JEECG_EXCEL_VIEW;
 	}
+
 	/**
 	 * 导出excel 使模板
 	 * 
@@ -451,22 +497,22 @@ public class EStudentController extends BaseController {
 	 * @param response
 	 */
 	@RequestMapping(params = "exportXlsByT")
-	public String exportXlsByT(EStudentEntity eStudent,HttpServletRequest request,HttpServletResponse response
-			, DataGrid dataGrid,ModelMap modelMap) {
-    	modelMap.put(NormalExcelConstants.FILE_NAME,"考生信息报名审核表");
-    	modelMap.put(NormalExcelConstants.CLASS,EStudentEntity.class);
-    	modelMap.put(NormalExcelConstants.PARAMS,new ExportParams("考生信息报名审核表列表", "导出人:"+ResourceUtil.getSessionUser().getRealName(),
-    	"导出信息"));
-    	modelMap.put(NormalExcelConstants.DATA_LIST,new ArrayList());
-    	return NormalExcelConstants.JEECG_EXCEL_VIEW;
+	public String exportXlsByT(EStudentEntity eStudent, HttpServletRequest request, HttpServletResponse response,
+			DataGrid dataGrid, ModelMap modelMap) {
+		modelMap.put(NormalExcelConstants.FILE_NAME, "考生信息报名审核表");
+		modelMap.put(NormalExcelConstants.CLASS, EStudentEntity.class);
+		modelMap.put(NormalExcelConstants.PARAMS,
+				new ExportParams("考生信息报名审核表列表", "导出人:" + ResourceUtil.getSessionUser().getRealName(), "导出信息"));
+		modelMap.put(NormalExcelConstants.DATA_LIST, new ArrayList());
+		return NormalExcelConstants.JEECG_EXCEL_VIEW;
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	@RequestMapping(params = "importExcel", method = RequestMethod.POST)
 	@ResponseBody
 	public AjaxJson importExcel(HttpServletRequest request, HttpServletResponse response) {
 		AjaxJson j = new AjaxJson();
-		
+
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 		Map<String, MultipartFile> fileMap = multipartRequest.getFileMap();
 		for (Map.Entry<String, MultipartFile> entity : fileMap.entrySet()) {
@@ -476,7 +522,8 @@ public class EStudentController extends BaseController {
 			params.setHeadRows(1);
 			params.setNeedSave(true);
 			try {
-				List<EStudentEntity> listEStudentEntitys = ExcelImportUtil.importExcel(file.getInputStream(),EStudentEntity.class,params);
+				List<EStudentEntity> listEStudentEntitys = ExcelImportUtil.importExcel(file.getInputStream(),
+						EStudentEntity.class, params);
 				for (EStudentEntity eStudent : listEStudentEntitys) {
 					eStudentService.save(eStudent);
 				}
@@ -484,7 +531,7 @@ public class EStudentController extends BaseController {
 			} catch (Exception e) {
 				j.setMsg("文件导入失败！");
 				logger.error(e.getMessage());
-			}finally{
+			} finally {
 				try {
 					file.getInputStream().close();
 				} catch (IOException e) {
@@ -494,6 +541,5 @@ public class EStudentController extends BaseController {
 		}
 		return j;
 	}
-	
-	
+
 }

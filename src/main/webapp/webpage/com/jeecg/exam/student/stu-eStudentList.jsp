@@ -67,7 +67,23 @@
 function doPass(id,sStatus,index){
 	console.log(id);
 	console.log(sStatus);
-	window.location.href='<%=request.getContextPath()%>/eStudentController.do?printProve&stu='+id;
+	var url = "<%=request.getContextPath()%>/eStudentController.do?printProve";
+	var action = '<%=request.getContextPath()%>/eStudentController.do?printProvePage&stu='+id;
+	$.ajax({
+		type:"post",
+		url:url,
+		data:{
+			"stu":id
+		},
+		success:function(data){
+			var d = $.parseJSON(data);
+		        if (d.success) {
+		        	window.location.href = actionurl;
+		       } else {
+		    	   alert(d.msg);
+		        } 
+		}
+	});
 }
 //自定义按钮-审核不通过
 function doNotpass(id,index){
