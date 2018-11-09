@@ -40,14 +40,13 @@
    <t:dgCol title="审核不通过原因"  field="sReason"  hidden="true"  queryMode="single"  width="500"></t:dgCol>
    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
    <t:dgFunOpt  funname="doPass(id,sStatus)" title="生成准考证" urlclass="ace_button" urlfont="fa-wrench" />
-   <t:dgToolBar title="录入" icon="icon-add" url="eStudentController.do?goAdd" funname="add"></t:dgToolBar>
 	<t:dgToolBar title="编辑" icon="icon-edit" url="eStudentController.do?goUpdate" funname="update"></t:dgToolBar>
-   <t:dgToolBar title="批量删除"  icon="icon-remove" url="eStudentController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>
+   <%-- <t:dgToolBar title="批量删除"  icon="icon-remove" url="eStudentController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar> --%>
    <t:dgToolBar title="查看" icon="icon-search" url="eStudentController.do?goUpdate" funname="detail"></t:dgToolBar>
-   <t:dgToolBar title="导入" icon="icon-put" funname="ImportXls"></t:dgToolBar>
+  <%--  <t:dgToolBar title="导入" icon="icon-put" funname="ImportXls"></t:dgToolBar>
    <t:dgToolBar title="导出" icon="icon-putout" funname="ExportXls"></t:dgToolBar>
    <t:dgToolBar title="模板下载" icon="icon-putout" funname="ExportXlsByT"></t:dgToolBar>
-   <t:dgToolBar title="审核通过" icon="icon-edit" url="eStudentController.do?goUpdate" funname="doPass"></t:dgToolBar>
+   <t:dgToolBar title="审核通过" icon="icon-edit" url="eStudentController.do?goUpdate" funname="doPass"></t:dgToolBar> --%>
   </t:datagrid>
   </div>
  </div>
