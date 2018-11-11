@@ -9,9 +9,9 @@ body {
 .formtable .inputxt{
 	border: 1px solid #D7D7D7;
 	border-radius: 3PX;
-	/*update-start--Author: scott  Date:20180615 for：Online table风格一对多，输入框上下太宽 */
+	/*update-start--Author: scott  Date:20180615 for锛歄nline table椋庢牸涓�瀵瑰锛岃緭鍏ユ涓婁笅澶 */
 	height: 12px;
-	/*update-end--Author: scott  Date:20180615 for：Online table风格一对多，输入框上下太宽  */
+	/*update-end--Author: scott  Date:20180615 for锛歄nline table椋庢牸涓�瀵瑰锛岃緭鍏ユ涓婁笅澶  */
 	/*height: 14PX;*/
 	 padding: 7px 0 7px 5px; 
 	/*padding: 10px 0px 2px 5px;*/
@@ -21,7 +21,7 @@ body {
 	width:150px;
 	
 }
-/*update-start--Author: scott  Date:20171110 for：输入框选中边框变绿色效果 */
+/*update-start--Author: scott  Date:20171110 for锛氳緭鍏ユ閫変腑杈规鍙樼豢鑹叉晥鏋� */
 input:focus {
 	 border-color: #76B4AC;
      background-color: #fafafa;
@@ -32,21 +32,21 @@ input:focus {
     background-color: #fafafa;
     color: #007465;
 }
-/*update-start--Author: scott  Date:20171110 for：输入框选中边框变绿色效果 */
+/*update-start--Author: scott  Date:20171110 for锛氳緭鍏ユ閫変腑杈规鍙樼豢鑹叉晥鏋� */
 .formtable select{
 	padding:5px 2px;
 	width:155px;
-	/*update-begin--Author:scott  Date:20180628 for：tableform表单自定义下拉高度--- */
+	/*update-begin--Author:scott  Date:20180628 for锛歵ableform琛ㄥ崟鑷畾涔変笅鎷夐珮搴�--- */
 	height: 28px;
-	/*update-end--Author:scott  Date:20180628 for：tableform表单自定义下拉高度--- */
+	/*update-end--Author:scott  Date:20180628 for锛歵ableform琛ㄥ崟鑷畾涔変笅鎷夐珮搴�--- */
 }
 .Validform_label {
 	font-size: 12px;
 	font-weight: normal;
 /* 	color: #5E7595; */
-	/*update-begin--Author:scott  Date:20171128 for：【表单样式】非DIV表单，label宽一些-------------------- */
+	/*update-begin--Author:scott  Date:20171128 for锛氥�愯〃鍗曟牱寮忋�戦潪DIV琛ㄥ崟锛宭abel瀹戒竴浜�-------------------- */
 	padding: 20px;
-	/*update-end--Author:scott  Date:20171128 for：【表单样式】非DIV表单，label宽一些-------------------- */
+	/*update-end--Author:scott  Date:20171128 for锛氥�愯〃鍗曟牱寮忋�戦潪DIV琛ㄥ崟锛宭abel瀹戒竴浜�-------------------- */
 	white-space:nowrap;
 }
 .formtable
@@ -100,11 +100,11 @@ input:focus {
 	color:#fff;
 	background-color:#71b83d;
 }
-/*update-begin--Author:xuelin  Date:20170617 for：TASK #2110 【表单样式】表单，label宽一些-------------------- */
+/*update-begin--Author:xuelin  Date:20170617 for锛歍ASK #2110 銆愯〃鍗曟牱寮忋�戣〃鍗曪紝label瀹戒竴浜�-------------------- */
 tbody > tr > td[align='right']{
 	min-width: 110px;
 }
-/*update-end--Author:xuelin  Date:20170617 for：TASK #2110 【表单样式】表单，label宽一些---------------------- */
+/*update-end--Author:xuelin  Date:20170617 for锛歍ASK #2110 銆愯〃鍗曟牱寮忋�戣〃鍗曪紝label瀹戒竴浜�---------------------- */
 #tabs-project .progress{
 	background: url(../../images/bg_state-1.jpg) no-repeat -157px 0px;
 	height: 30px;
@@ -180,7 +180,7 @@ tbody > tr > td[align='right']{
 	background: #BDBEC0;
 	background: -webkit-gradient(linear, left top, left bottom, from(#BDBEC0), to(#BDBEC0));
 }
-/*--update-begin-author:taoyan for：上传控件样式被app.css搞坏了---*/
+/*--update-begin-author:taoyan for锛氫笂浼犳帶浠舵牱寮忚app.css鎼炲潖浜�---*/
 .webuploader-container{top:5px !important;}
 .webuploader-container>.webuploader-pick{line-height:18px;}
-/*--update-end-author:taoyan for：上传控件样式被app.css搞坏了--*/
+/*--update-end-author:taoyan for锛氫笂浼犳帶浠舵牱寮忚app.css鎼炲潖浜�--*/

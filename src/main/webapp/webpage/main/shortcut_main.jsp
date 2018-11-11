@@ -173,10 +173,11 @@ a:hover {
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
 <tr>
     <td align="left" style="vertical-align: text-bottom">
-    <img src="plug-in/login/images/logo.jpg"> 
+    <!-- <img src="plug-in/login/images/logo.jpg">  -->
+    <span style="font-size:40px;">人才测试系统</span>
     <!--
         <img src="plug-in/login/images/toplogo.png" width="550" height="52" alt="">-->
-        <div style="position: absolute; top: 75px; left: 33px;">JEECG Framework <span style="letter-spacing: -1px;"> <t:mutiLang langKey="system.version.number"/></span></div>
+       <%--  <div style="position: absolute; top: 75px; left: 33px;">JEECG Framework <span style="letter-spacing: -1px;"> <t:mutiLang langKey="system.version.number"/></span></div> --%>
     </td>
     <td align="right" nowrap>
         <table border="0" cellpadding="0" cellspacing="0">
@@ -264,7 +265,7 @@ a:hover {
 	</style> 
 	<div class="proccess" id="panelloadingDiv"><b>&nbsp;</b></div>
     <div id="maintabs" class="easyui-tabs" fit="true" border="false">
-        <div class="easyui-tab" title="<t:mutiLang langKey="common.dash_board"/>" href="loginController.do?home" style="padding: 2px;"></div>
+        <div class="easyui-tab" title="<t:mutiLang langKey="common.dash_board"/>" href="loginController.do?home" style="padding: 2px;">
         <c:if test="${map=='1'}">
             <div class="easyui-tab" title="<t:mutiLang langKey="common.map"/>" style="padding: 1px; overflow: hidden;">
                 <iframe onreadystatechange="hiddenloading();" onload="hiddenloading();" name="myMap" id="myMap" scrolling="no" frameborder="0" src="mapController.do?map" style="width: 100%; height: 99.5%;"></iframe>

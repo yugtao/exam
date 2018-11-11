@@ -3,11 +3,13 @@ package com.jeecg.exam.controller;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.hibernate.criterion.Restrictions;
 import org.jeecgframework.core.common.controller.BaseController;
@@ -50,6 +52,9 @@ import com.jeecg.exam.entity.EWorkEntity;
 import com.jeecg.exam.service.EExamServiceI;
 import com.jeecg.exam.service.EProveServiceI;
 import com.jeecg.exam.service.EStudentServiceI;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 
 /**
  * @Title: Controller
@@ -541,5 +546,84 @@ public class EStudentController extends BaseController {
 		}
 		return j;
 	}
+	/**
+	 * 左右布局demo
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping(params = "mainPage")
+	public ModelAndView siteSelect(HttpServletRequest request) {
+		return new ModelAndView("com/jeecg/exam/main/exam-pro");
+	}	
+	
+	
+	/**
+	 * 获取机构名
+	 */
+	@RequestMapping(params = "getOrg")
+	@ResponseBody
+	public AjaxJson getOrg(String url, HttpServletRequest request) {
+		AjaxJson j = new AjaxJson();
+		j.setSuccess(true);
+		List<TSDepart> list = commonService.getList(TSDepart.class);
+		JSONArray array = new JSONArray();
+		for (int i = 0; i < list.size(); i++) {
+			JSONObject json = new JSONObject();
+			String de= list.get(i).getDescription();
+			if(!"1".equals(de)) {
+				json.put("id", i+1+"");
+				json.put("name", list.get(i).getDepartname());
+				json.put("site", url+"&orgId="+list.get(i).getId());
+				array.add(json);
+			}
+		}
+		j.setObj(array);
+		return j;
+	}
+	/**
+	 * 获取机构可报名课程
+	 */
+	@RequestMapping(params = "towork")
+	public ModelAndView towork(String orgId, HttpServletRequest request) {
+		ModelAndView mode = new ModelAndView("com/jeecg/exam/main/examOrg");
+		HttpSession session = request.getSession();
+		session.setAttribute("workOrgId", orgId);
+		return mode;
+	}
+	
+	/**
+	 *
+	 * 
+	 * @param request
+	 * @param response
+	 * @param dataGrid
+	 * @param user
+	 */
 
+	/**
+	 * 获取我的考试数据
+	 */
+	@RequestMapping(params = "orgWorks")
+	public void orgWorks(EWorkEntity eWork,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
+		TSUser user = ResourceUtil.getSessionUser();
+		String userId = user.getId();
+		CriteriaQuery cq = new CriteriaQuery(EWorkEntity.class, dataGrid);
+		HttpSession session = request.getSession();
+		String orgId = (String) session.getAttribute("workOrgId");
+		if(orgId==null) {
+			orgId="4028d73c66cceb1d0166cd03b3800014";
+		}
+		// 查询条件组装器
+		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, eWork, request.getParameterMap());
+		try {
+			cq.add(Restrictions.eq("WOrg", orgId));
+			cq.add(Restrictions.eq("WStatus", "1"));
+			// 自定义追加查询条件
+		} catch (Exception e) {
+			throw new BusinessException(e.getMessage());
+		}
+		cq.add();
+		this.commonService.getDataGridReturn(cq, true);
+		TagUtil.datagrid(response, dataGrid);
+	}
 }

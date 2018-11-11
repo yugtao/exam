@@ -14,7 +14,7 @@
     <title><t:mutiLang langKey="jeect.platform"/></title>
     <link href="plug-in/hplus/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
 	<link rel="stylesheet" href="plug-in/themes/fineui/common/css/sccl.css">
-	<link rel="stylesheet" type="text/css" href="plug-in/themes/fineui/common/skin/qingxin/skin.css" id="layout-skin"/>
+	<link rel="stylesheet" type="text/css" href="plug-in/themes/fineui/common/skin/molv/skin.css" id="layout-skin"/>
 	<link rel="stylesheet" href="plug-in/themes/fineui/common/iconfont/iconfont.css">
 	<link rel="stylesheet" href="plug-in/themes/fineui/smart-menu/smartMenu.css">
 	<t:base type="tools,jquery"></t:base>
@@ -145,13 +145,13 @@
 			 -->
 			 <span class="header-logo">人才考试系统</span>
 			<div class="titlerow" >
-				<div class="titlecell">
-					<input id="searchbox" name="functionName" placeholder="请输入搜索关键字" class="searchbox" style="padding-right: 23px;border:0">
+				<!-- <div class="titlecell">
+					 <input id="searchbox" name="functionName" placeholder="请输入搜索关键字" class="searchbox" style="padding-right: 23px;border:0">
 					<div class="iconssdiv" onclick="checkput()">
 						<i class="iconfont icon-close ui-iconss" style="font-weight:700;font-size:14px;display:none"></i>
 						<i class="iconfont icon-sousuo ui-iconss"></i>
 					</div>
-				</div>
+				</div> -->
 			</div>
 			<ul class="header-bar">
 			
@@ -243,7 +243,7 @@
 			</div>
 			<div class="layout-main-body" style="margin:0;overflow-y: hidden;">
 				<iframe class="body-iframe" name="iframe0" width="100%" height="100%" 
-						src="loginController.do?fineuiHome" frameborder="0" data-id="home.html" seamless></iframe>
+						src="eStudentController.do?mainPage" frameborder="0" data-id="home.html" seamless></iframe>
 			</div>
 		</section>
 		

@@ -314,6 +314,27 @@ public class EExamController extends BaseController {
 		}
 		return j;
 	}
-	
-	
+	/**
+	 * bootstrap树形列表页面跳转
+	 *
+	 * @return
+	 */
+	@RequestMapping(params = "goHome")
+	public ModelAndView goHome(ModelMap model) {
+		return new ModelAndView("com/jeecg/exam/examHome");
+	}
+	/**
+	 *首页树形列表获取考试数据
+	 * 
+	 * @return
+	 */
+	@RequestMapping(params = "getExamInfo",method ={RequestMethod.GET, RequestMethod.POST})
+	public  void getExamInfo(HttpServletRequest request,HttpServletResponse response) {
+		    try {
+		      String text1="[{\"id\":1,\"pid\":0,\"status\":1,\"name\":\"系统管理\",\"permissionValue\":\"系统\"},{\"id\":2,\"pid\":0,\"status\":1,\"name\":\"字典管理\",\"permissionValue\":\"字典\"},{\"id\":20,\"pid\":1,\"status\":1,\"name\":\"新增系统\",\"permissionValue\":\"新增\"},{\"id\":21,\"pid\":1,\"status\":1,\"name\":\"编辑系统\",\"permissionValue\":\"编辑\"},{\"id\":22,\"pid\":1,\"status\":1,\"name\":\"删除系统\",\"permissionValue\":\"删除\"},{\"id\":33,\"pid\":2,\"status\":1,\"name\":\"系统环境\",\"permissionValue\":\"环境\"},{\"id\":333,\"pid\":33,\"status\":1,\"name\":\"新增环境\",\"permissionValue\":\"新增\"},{\"id\":3333,\"pid\":33,\"status\":1,\"name\":\"编辑环境\",\"permissionValue\":\"编辑\"},{\"id\":233332,\"pid\":33,\"status\":0,\"name\":\"删除环境\",\"permissionValue\":\"删除\"}]";
+			  response.getWriter().println(text1);
+			 } catch (IOException e) {
+				e.printStackTrace();
+		  }
+     }
 }

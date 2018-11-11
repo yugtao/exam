@@ -53,7 +53,7 @@ import org.jeecgframework.core.util.ExceptionUtil;
  * @Title: Controller  
  * @Description: 职位表
  * @author onlineGenerator
- * @date 2018-11-01 10:46:00
+ * @date 2018-11-11 14:50:00
  * @version V1.0   
  *
  */
@@ -314,6 +314,14 @@ public class EWorkController extends BaseController {
 		}
 		return j;
 	}
-	
+	/**
+	 * 职位表列表 页面跳转
+	 * 
+	 * @return
+	 */
+	@RequestMapping(params = "mainlist")
+	public ModelAndView mainlist(HttpServletRequest request) {
+		return new ModelAndView("com/jeecg/exam/examHome");
+	}
 	
 }
