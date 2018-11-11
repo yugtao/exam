@@ -35,13 +35,17 @@
     		data:{"url":"eStudentController.do?towork"},
     		success:function(data){
     			var d = $.parseJSON(data);
-    			var dbDate = eval(d.obj);
-                $.fn.zTree.init($("#siteSelect"), setting, dbDate);               
-                
-                $("#sitePanel").panel({
-                	title:dbDate[0].name,
-				    content:'<iframe src="' + dbDate[0].site + '" frameborder=0 height=100% width=100% ></iframe>'
-				});
+    			if(d.success){
+	    			var dbDate = eval(d.obj);
+	                $.fn.zTree.init($("#siteSelect"), setting, dbDate);               
+	                
+	                $("#sitePanel").panel({
+	                	title:dbDate[0].name,
+					    content:'<iframe src="' + dbDate[0].site + '" frameborder=0 height=100% width=100% ></iframe>'
+					});
+    			}else{
+    				$("#siteSelect").html("对不起，暂时还没有在招岗位");
+    			}
     		}
     	});
     	/* $.getJSON("${webRoot}/webpage/com/jeecg/demo/siteData.json",function(data){ 

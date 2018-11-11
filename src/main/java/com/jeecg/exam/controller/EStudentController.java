@@ -564,19 +564,31 @@ public class EStudentController extends BaseController {
 	@ResponseBody
 	public AjaxJson getOrg(String url, HttpServletRequest request) {
 		AjaxJson j = new AjaxJson();
-		j.setSuccess(true);
+		j.setSuccess(false);
+		String message = "对不起，暂时还没有在招岗位";
 		List<TSDepart> list = commonService.getList(TSDepart.class);
 		JSONArray array = new JSONArray();
-		for (int i = 0; i < list.size(); i++) {
-			JSONObject json = new JSONObject();
-			String de= list.get(i).getDescription();
-			if(!"1".equals(de)) {
-				json.put("id", i+1+"");
-				json.put("name", list.get(i).getDepartname());
-				json.put("site", url+"&orgId="+list.get(i).getId());
-				array.add(json);
+		List<EWorkEntity> list2 = commonService.getList(EWorkEntity.class);
+		StringBuffer buffer = new StringBuffer();
+		for (EWorkEntity eWorkEntity : list2) {
+			String wOrg = eWorkEntity.getWOrg();
+			buffer.append(",'"+wOrg+"'");
+		}
+		if(buffer.length()>1) {
+			String str = buffer.toString().substring(1);
+			for (int i = 0; i < list.size(); i++) {
+				JSONObject json = new JSONObject();
+				String de= list.get(i).getDescription();
+				if(!"1".equals(de)&&str.indexOf(list.get(i).getId())>0) {
+					json.put("id", i+1+"");
+					json.put("name", list.get(i).getDepartname());
+					json.put("site", url+"&orgId="+list.get(i).getId());
+					array.add(json);
+					j.setSuccess(true);
+				}
 			}
 		}
+		
 		j.setObj(array);
 		return j;
 	}
