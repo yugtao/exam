@@ -246,6 +246,18 @@
 						</td>
 						<td align="right">
 							<label class="Validform_label">
+								邮箱:
+							</label>
+						</td>
+						<td class="value">
+						    <input id="sEmail" name="sEmail" type="text" maxlength="32" style="width: 150px" class="inputxt"  datatype="e" ignore="ignore"  value='${eStudentPage.SEmail}'/>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">邮箱</label>
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							<label class="Validform_label">
 								联系电话:
 							</label>
 						</td>
@@ -254,9 +266,103 @@
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">联系电话</label>
 						</td>
+						<td align="right" style="display:none;">
+							<label class="Validform_label">
+								笔试成绩:
+							</label>
+						</td>
+						<td class="value" style="display:none;">
+						    <input id="sWrittenScore" name="sWrittenScore" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.SWrittenScore}'/>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">笔试成绩</label>
+						</td>
+					</tr>
+					<tr style="display:none;">
+						<td align="right">
+							<label class="Validform_label">
+								面试成绩:
+							</label>
+						</td>
+						<td class="value">
+						    <input id="sInterviewScore" name="sInterviewScore" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.SInterviewScore}'/>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">面试成绩</label>
+						</td>
+						<td align="right">
+							<label class="Validform_label">
+								总成绩:
+							</label>
+						</td>
+						<td class="value">
+						    <input id="sTotalScore" name="sTotalScore" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.STotalScore}'/>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">总成绩</label>
+						</td>
+					</tr>
+					<tr style="display:none;">
+						<td align="right">
+							<label class="Validform_label">
+								排名:
+							</label>
+						</td>
+						<td class="value">
+						    <input id="sRank" name="sRank" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.SRank}'/>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">排名</label>
+						</td>
+						<td align="right">
+							<label class="Validform_label">
+								备注:
+							</label>
+						</td>
+						<td class="value">
+						    <input id="sRemarks" name="sRemarks" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.SRemarks}'/>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">备注</label>
+						</td>
+					</tr>
+					<tr style="display:none;">
+						<td align="right">
+							<label class="Validform_label">
+								审核状态:
+							</label>
+						</td>
+						<td class="value">
+									<t:dictSelect field="sStatus" type="list"  typeGroupCode="e_s_status"   defaultVal="${eStudentPage.SStatus}" hasLabel="false"  title="审核状态" ></t:dictSelect>     
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">审核状态</label>
+						</td>
+						<td align="right">
+							<label class="Validform_label">
+								报名时间:
+							</label>
+						</td>
+						<td class="value">
+						    <input id="sCreateDate" name="sCreateDate" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eStudentPage.SCreateDate}'/>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">报名时间</label>
+						</td>
+					</tr>
+					<tr style="display:none;">
+						<td align="right">
+							<label class="Validform_label">
+								所属考试:
+							</label>
+						</td>
+						<td class="value">
+									<t:dictSelect field="sExamId" type="list"  dictTable="e_exam" dictField="id" dictText="e_name"   defaultVal="${eStudentPage.SExamId}" hasLabel="false"  title="所属考试" ></t:dictSelect>     
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">所属考试</label>
+						</td>
+				<td align="right">
+					<label class="Validform_label">
+					</label>
+				</td>
+				<td class="value">
+				</td>
 					</tr>
 				
-					<tr>
+					<tr style="display:none;">
 						<td align="right">
 							<label class="Validform_label">
 								审核不通过原因:

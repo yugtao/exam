@@ -5,7 +5,8 @@
   <div region="center" style="padding:0px;border:0px">
   <t:datagrid name="eWorkList" checkbox="true" pagination="true" fitColumns="true" title="职位表" sortName="id" actionUrl="eWorkController.do?datagrid" idField="id" fit="true" queryMode="group">
    <t:dgCol title="主键"  field="id"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="职位所属单位"  field="wOrg"  queryMode="single"  dictionary="t_s_depart,id,departname"  width="120"></t:dgCol>
+   <t:dgCol title="职业所属考试"  field="wExam"  query="true"  queryMode="single"  dictionary="e_exam,id,e_name"  width="120"></t:dgCol>
+   <t:dgCol title="职位所属单位"  field="wOrg"  query="true"  queryMode="single"  dictionary="t_s_depart,id,departname"  width="120"></t:dgCol>
    <t:dgCol title="岗位名称"  field="wName"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="岗位类别"  field="wType"  queryMode="single"  dictionary="e_wtype"  width="120"></t:dgCol>
    <t:dgCol title="招聘人数"  field="wCount"  queryMode="single"  width="120"></t:dgCol>
@@ -25,7 +26,6 @@
    <t:dgCol title="面试开考比例"  field="wIntPro"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="实际招收人数"  field="wRCount"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="解释"  field="wReason"  hidden="true"  queryMode="single"  width="250"></t:dgCol>
-   <t:dgCol title="职业所属考试"  field="wExam"  queryMode="single"  dictionary="e_exam,id,e_name"  width="120"></t:dgCol>
    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
    <t:dgDelOpt title="删除" url="eWorkController.do?doDel&id={id}" urlclass="ace_button"  urlfont="fa-trash-o"/>
    <t:dgToolBar title="录入" icon="icon-add" url="eWorkController.do?goAdd" funname="add"></t:dgToolBar>

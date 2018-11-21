@@ -109,11 +109,25 @@ public class EStudentController extends BaseController {
 	}
 
 	/**
-	 * 前往审核状态页面
+	 * 前往我的报名页面
 	 */
 	@RequestMapping(params = "goStuList")
 	public ModelAndView stuLits(HttpServletRequest request) {
 		return new ModelAndView("com/jeecg/exam/student/stu-eStudentList");
+	}
+	
+	/**
+	 * 考生信息报名审核表编辑页面跳转
+	 * 
+	 * @return
+	 */
+	@RequestMapping(params = "goStuUpdate")
+	public ModelAndView goStuUpdate(EStudentEntity eStudent, HttpServletRequest req) {
+		if (StringUtil.isNotEmpty(eStudent.getId())) {
+			eStudent = eStudentService.getEntity(EStudentEntity.class, eStudent.getId());
+			req.setAttribute("eStudentPage", eStudent);
+		}
+		return new ModelAndView("com/jeecg/exam/student/eStu-update");
 	}
 
 	/**
