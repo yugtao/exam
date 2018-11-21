@@ -64,7 +64,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="wCount" name="wCount" type="text" maxlength="50" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eWorkPage.WCount}'/>
+						    <input id="wCount" name="wCount" type="text" maxlength="50" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eWorkPage.WCount}' datatype="n"  errormsg="请输入数字"/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">招聘人数</label>
 						</td>
@@ -74,7 +74,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="wBCount" name="wBCount" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eWorkPage.WBCount}'/>
+						    <input id="wBCount" name="wBCount" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eWorkPage.WBCount}' datatype="n"  errormsg="请输入数字"/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">报名人数</label>
 						</td>
@@ -152,7 +152,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="wPassCount" name="wPassCount" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eWorkPage.WPassCount}'/>
+						    <input id="wPassCount" name="wPassCount" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eWorkPage.WPassCount}'datatype="n"  errormsg="请输入数字"/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">资格审查通过人数</label>
 						</td>
@@ -162,7 +162,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="wPassNot" name="wPassNot" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eWorkPage.WPassNot}'/>
+						    <input id="wPassNot" name="wPassNot" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eWorkPage.WPassNot}' datatype="n"  errormsg="请输入数字"/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">未通过人数</label>
 						</td>
@@ -184,7 +184,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="wWriCount" name="wWriCount" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eWorkPage.WWriCount}'/>
+						    <input id="wWriCount" name="wWriCount" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eWorkPage.WWriCount}' datatype="n"  errormsg="请输入数字"/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">笔试人数</label>
 						</td>
@@ -206,7 +206,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="wIntCount" name="wIntCount" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eWorkPage.WIntCount}'/>
+						    <input id="wIntCount" name="wIntCount" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${eWorkPage.WIntCount}' datatype="n"  errormsg="请输入数字"/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">面试人数</label>
 						</td>

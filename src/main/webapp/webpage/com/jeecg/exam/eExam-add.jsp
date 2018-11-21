@@ -56,7 +56,7 @@
 						</label>
 					</td>
 					<td class="value">
-					     	 <input id="eCount" name="eCount" type="text" maxlength="20" style="width: 150px" class="inputxt"  ignore="ignore" />
+					     	 <input id="eCount" name="eCount" type="text" maxlength="20" style="width: 150px" class="inputxt"  ignore="ignore" datatype="n"  errormsg="请输入数字"/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">考试人数</label>
 						</td>

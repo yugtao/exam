@@ -5,12 +5,12 @@
   <div region="center" style="padding:0px;border:0px">
   <t:datagrid name="eWorkList" checkbox="true" pagination="true" fitColumns="true" title="职位表" sortName="id" actionUrl="eWorkController.do?datagrid" idField="id" fit="true" queryMode="group">
    <t:dgCol title="主键"  field="id"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="职业所属考试"  field="wExam"  query="true"  queryMode="single"  dictionary="e_exam,id,e_name"  width="120"></t:dgCol>
-   <t:dgCol title="职位所属单位"  field="wOrg"  query="true"  queryMode="single"  dictionary="t_s_depart,id,departname"  width="120"></t:dgCol>
+   <t:dgCol title="所属考试"  field="wExam"  query="true"  queryMode="single"  dictionary="e_exam,id,e_name"  width="120"></t:dgCol>
+   <t:dgCol title="所属单位"  field="wOrg"  query="true"  queryMode="single"  dictionary="t_s_depart,id,departname"  width="120"></t:dgCol>
    <t:dgCol title="岗位名称"  field="wName"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="岗位类别"  field="wType"  queryMode="single"  dictionary="e_wtype"  width="120"></t:dgCol>
-   <t:dgCol title="招聘人数"  field="wCount"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="报名人数"  field="wBCount"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="招聘人数"  field="wCount"  queryMode="single"  width="80"></t:dgCol>
+   <t:dgCol title="报名人数"  field="wBCount"  queryMode="single"  width="80"></t:dgCol>
    <t:dgCol title="学历要求"  field="wAskEducation"  hidden="true"  queryMode="single"  dictionary="e_edu"  width="120"></t:dgCol>
    <t:dgCol title="学位要求"  field="wAskDegree"  hidden="true"  queryMode="single"  dictionary="e_degree"  width="120"></t:dgCol>
    <t:dgCol title="专业"  field="wAskMajor"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
@@ -19,7 +19,7 @@
    <t:dgCol title="其他要求"  field="wAskOther"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="资格审查通过人数"  field="wPassCount"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="未通过人数"  field="wPassNot"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="职位状态"  field="wStatus"  hidden="true"  queryMode="single"  dictionary="ew_status"  width="120"></t:dgCol>
+   <t:dgCol title="职位状态"  field="wStatus"  query="true"  queryMode="single"  dictionary="ew_status"  width="80"></t:dgCol>
    <t:dgCol title="笔试人数"  field="wWriCount"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="笔试开考比例"  field="wWriPro"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="面试人数"  field="wIntCount"  hidden="true"  queryMode="single"  width="120"></t:dgCol>

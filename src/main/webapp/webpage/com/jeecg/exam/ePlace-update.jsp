@@ -56,7 +56,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="pCount" name="pCount" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${ePlacePage.PCount}'/>
+						    <input id="pCount" name="pCount" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${ePlacePage.PCount}' datatype="n"  errormsg="请输入数字"/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">考场容纳人数</label>
 						</td>
