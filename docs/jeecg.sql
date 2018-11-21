@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50724
 File Encoding         : 65001
 
-Date: 2018-11-12 21:53:43
+Date: 2018-11-21 22:30:00
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -4001,12 +4001,10 @@ INSERT INTO `t_s_function` VALUES ('4028bc934869765001486977f0980001', null, '1'
 INSERT INTO `t_s_function` VALUES ('4028d73c66bdca9e0166bdcbc7c90001', null, '0', '个人中心', '1', '', null, '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', 'fa-user', 'admin', '管理员', 'admin', '2018-10-29 11:11:07', '2018-10-29 11:09:01', '管理员');
 INSERT INTO `t_s_function` VALUES ('4028d73c66bdca9e0166bdcc4ae30003', null, '0', '考试管理', '2', '', null, '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180e50022', '0', 'fa-files-o', 'admin', '管理员', 'admin', '2018-10-29 11:11:46', '2018-10-29 11:09:34', '管理员');
 INSERT INTO `t_s_function` VALUES ('4028d73c66bdca9e0166bdcc84040005', null, '0', '考生管理', '3', '', null, '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', 'fa-headphones', 'admin', '管理员', 'admin', '2018-10-31 15:04:28', '2018-10-29 11:09:49', '管理员');
-INSERT INTO `t_s_function` VALUES ('4028d73c66bdca9e0166bdccbe3a0007', null, '0', '分析统计', '4', '', null, '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', 'fa-bar-chart-o', 'admin', '管理员', 'admin', '2018-10-29 11:13:16', '2018-10-29 11:10:04', '管理员');
 INSERT INTO `t_s_function` VALUES ('4028d73c66bddbdd0166bde23b850001', null, '1', '考试添加', '3', 'eExamController.do?list', '4028d73c66bdca9e0166bdcc4ae30003', '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', '', 'admin', '管理员', 'admin', '2018-11-01 10:53:32', '2018-10-29 11:33:32', '管理员');
 INSERT INTO `t_s_function` VALUES ('4028d73c66c26a1c0166c270627f0001', null, '1', '我要报名', '2', 'eStudentController.do?goStuIn', '4028d73c66bdca9e0166bdcbc7c90001', '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', '', 'admin', '管理员', 'admin', '2018-11-08 16:12:55', '2018-10-30 08:47:17', '管理员');
 INSERT INTO `t_s_function` VALUES ('4028d73c66c2c7960166c2cee7610002', null, '1', '审核及记分', '1', 'eStudentController.do?audiList', '4028d73c66bdca9e0166bdcc84040005', '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', '', 'admin', '管理员', 'admin', '2018-10-31 15:04:48', '2018-10-30 10:30:32', '管理员');
 INSERT INTO `t_s_function` VALUES ('4028d73c66c809940166c80b2b870001', null, '1', '考场添加', '4', 'ePlaceController.do?list', '4028d73c66bdca9e0166bdcc4ae30003', '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', '', 'admin', '管理员', 'admin', '2018-11-01 10:53:19', '2018-10-31 10:54:27', '管理员');
-INSERT INTO `t_s_function` VALUES ('4028d73c66cd2aab0166cd2ebb7f0001', null, '1', '机构添加', '1', 'organzationController.do?myDepart', '4028d73c66bdca9e0166bdcc4ae30003', '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', '', 'admin', '管理员', 'admin', '2018-11-01 10:52:41', '2018-11-01 10:51:24', '管理员');
 INSERT INTO `t_s_function` VALUES ('4028d73c66cd2aab0166cd2f93380003', null, '1', '职业添加', '2', 'eWorkController.do?list', '4028d73c66bdca9e0166bdcc4ae30003', '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', '', 'admin', '管理员', null, null, '2018-11-01 10:52:19', null);
 INSERT INTO `t_s_function` VALUES ('4028d73c66cd58a80166cdd7c4f40004', null, '1', '我的考试', '3', 'eStudentController.do?goStuList', '4028d73c66bdca9e0166bdcbc7c90001', '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', '', 'admin', '管理员', 'admin', '2018-11-08 16:13:05', '2018-11-01 13:56:02', '管理员');
 INSERT INTO `t_s_function` VALUES ('4028d73c66f25c9f0166f261719d0001', null, '1', '我的信息', '1', 'eUserController.do?myInfo', '4028d73c66bdca9e0166bdcbc7c90001', '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', '', 'admin', '管理员', 'admin', '2018-11-08 16:21:40', '2018-11-08 16:12:44', '管理员');
@@ -6400,6 +6398,14 @@ INSERT INTO `t_s_log` VALUES ('402883896707f7b801670830779e00b2', 'Chrome', '操
 INSERT INTO `t_s_log` VALUES ('402883896707f7b80167083096f300b3', 'Chrome', '菜单【minidao数据权限列表】存在数据规则，不能删除', '1', '本地', '2018-11-12 21:51:01', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
 INSERT INTO `t_s_log` VALUES ('402883896707f7b80167083208c700b4', 'Chrome', 'admin', '1', '本地', '2018-11-12 21:52:36', '2', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
 INSERT INTO `t_s_log` VALUES ('402883896707f7b80167083251f300b5', 'Chrome', '用户: admin[自治区农业厅]common.login.success', '1', '192.168.3.9', '2018-11-12 21:52:54', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('402883a767365a56016736ab25b6002b', 'Chrome', 'admin', '1', '本地', '2018-11-21 22:27:25', '2', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('402883a767365a56016736ab48ec002c', 'Chrome', '用户: admin[自治区农业厅]common.login.success', '1', '192.168.3.39', '2018-11-21 22:27:34', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('402883a767365a56016736abe217002e', 'Chrome', 'admin', '1', '本地', '2018-11-21 22:28:13', '2', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('402883a767365a56016736ac0c70002f', 'Chrome', '用户: admin[自治区农业厅]common.login.success', '1', '192.168.3.39', '2018-11-21 22:28:24', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('402883a767365a56016736ac3bb70030', 'Chrome', '操作成功', '1', '本地', '2018-11-21 22:28:36', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('402883a767365a56016736ac4ec30031', 'Chrome', '操作成功', '1', '本地', '2018-11-21 22:28:41', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('402883a767365a56016736ac75100032', 'Chrome', 'admin', '1', '本地', '2018-11-21 22:28:51', '2', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('402883a767365a56016736ac97d50033', 'Chrome', '用户: admin[自治区农业厅]common.login.success', '1', '192.168.3.39', '2018-11-21 22:28:59', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
 
 -- ----------------------------
 -- Table structure for t_s_muti_lang
@@ -11372,23 +11378,16 @@ CREATE TABLE `t_s_role_function` (
 -- ----------------------------
 -- Records of t_s_role_function
 -- ----------------------------
-INSERT INTO `t_s_role_function` VALUES ('402880ef5aff3ede015aff44230f0003', null, '8a8ab0b246dc81120146dc81811d0032', '8a8ab0b246dc81120146dc8181870050', null);
-INSERT INTO `t_s_role_function` VALUES ('402880ef5aff3ede015aff4423120005', null, '8a8ab0b246dc81120146dc8181100030', '8a8ab0b246dc81120146dc8181870050', null);
 INSERT INTO `t_s_role_function` VALUES ('402880ef5aff3ede015aff4423120009', null, '8a8ab0b246dc81120146dc8180df001f', '8a8ab0b246dc81120146dc8181870050', null);
-INSERT INTO `t_s_role_function` VALUES ('402880ef5aff3ede015aff442313000c', null, '8a8ab0b246dc81120146dc8181250034', '8a8ab0b246dc81120146dc8181870050', null);
 INSERT INTO `t_s_role_function` VALUES ('402880ef5aff3ede015aff442313000d', null, '8a8ab0b246dc81120146dc8180e70023', '8a8ab0b246dc81120146dc8181870050', null);
 INSERT INTO `t_s_role_function` VALUES ('402880ef5aff3ede015aff442313000e', null, '8a8ab0b246dc81120146dc8180ee0025', '8a8ab0b246dc81120146dc8181870050', null);
-INSERT INTO `t_s_role_function` VALUES ('402880ef5aff3ede015aff442313000f', null, '402885814e3d2d09014e3d2e77800001', '8a8ab0b246dc81120146dc8181870050', null);
-INSERT INTO `t_s_role_function` VALUES ('402880ef5aff3ede015aff4423130013', null, '4028bc934869765001486977f0980001', '8a8ab0b246dc81120146dc8181870050', null);
-INSERT INTO `t_s_role_function` VALUES ('4028810260c422c30160c423823d0001', null, '297e7ae160baa7ec0160baa977980001', '8a8ab0b246dc81120146dc8181870050', null);
 INSERT INTO `t_s_role_function` VALUES ('402881855afb59f7015afc6123c7000e', null, '8a8ab0b246dc81120146dc8180d2001a', '8a8ab0b246dc81120146dc8181870050', null);
 INSERT INTO `t_s_role_function` VALUES ('402881855afbcdf7015afc6123c7000e', null, '8a8ab0b246dc81120146dc8180e30021', '8a8ab0b246dc81120146dc8181870050', null);
-INSERT INTO `t_s_role_function` VALUES ('402881855b05d2c4015b05f2ae6a0004', null, '402880ea53303a060153304a9ad50001', '8a8ab0b246dc81120146dc8181870050', null);
-INSERT INTO `t_s_role_function` VALUES ('402881855c1c1c38015c1c2096780005', null, '40284a815c1bac76015c1bc02abe0003', '8a8ab0b246dc81120146dc8181870050', null);
 INSERT INTO `t_s_role_function` VALUES ('402883896701bda5016701c0e99a0003', null, '4028d73c66f25c9f0166f261719d0001', '8a8ab0b246dc81120146dc8181870050', null);
 INSERT INTO `t_s_role_function` VALUES ('402883896701bda5016701c0e9ab0004', null, '402883896701bda5016701c0a25b0001', '8a8ab0b246dc81120146dc8181870050', null);
 INSERT INTO `t_s_role_function` VALUES ('402883896701bda5016701c0e9ab0005', null, '4028d73c66cd58a80166cdd7c4f40004', '8a8ab0b246dc81120146dc8181870050', null);
 INSERT INTO `t_s_role_function` VALUES ('402883896701bda5016701c108b30006', null, '402883896701bda5016701c0a25b0001', '402880e74d75c4dd014d75d3c5f40001', null);
+INSERT INTO `t_s_role_function` VALUES ('402883a767365a56016736abcf51002d', null, '8a8ab0b246dc81120146dc8180f60028', '8a8ab0b246dc81120146dc8181870050', null);
 INSERT INTO `t_s_role_function` VALUES ('4028d73c66bdca9e0166bdd044c90011', null, '4028d73c66bdca9e0166bdcc4ae30003', '8a8ab0b246dc81120146dc8181870050', null);
 INSERT INTO `t_s_role_function` VALUES ('4028d73c66bdca9e0166bdd044c90012', null, '4028d73c66bdca9e0166bdcc84040005', '8a8ab0b246dc81120146dc8181870050', null);
 INSERT INTO `t_s_role_function` VALUES ('4028d73c66bdca9e0166bdd044c90013', null, '4028d73c66bdca9e0166bdcbc7c90001', '8a8ab0b246dc81120146dc8181870050', null);
@@ -11397,10 +11396,7 @@ INSERT INTO `t_s_role_function` VALUES ('4028d73c66c26a1c0166c2708d4d0003', null
 INSERT INTO `t_s_role_function` VALUES ('4028d73c66c2c7960166c2cf14040004', null, '4028d73c66c2c7960166c2cee7610002', '8a8ab0b246dc81120146dc8181870050', null);
 INSERT INTO `t_s_role_function` VALUES ('4028d73c66c809940166c80b54980003', null, '4028d73c66c809940166c80b2b870001', '8a8ab0b246dc81120146dc8181870050', null);
 INSERT INTO `t_s_role_function` VALUES ('4028d73c66cd2aab0166cd31412e000c', null, '4028d73c66cd2aab0166cd2f93380003', '8a8ab0b246dc81120146dc8181870050', null);
-INSERT INTO `t_s_role_function` VALUES ('4028d73c66cd2aab0166cd314162000d', null, '4028d73c66cd2aab0166cd2ebb7f0001', '8a8ab0b246dc81120146dc8181870050', null);
-INSERT INTO `t_s_role_function` VALUES ('4028d73c66cd2aab0166cd319a21000e', null, '4028d73c66bdca9e0166bdccbe3a0007', '8a8ab0b246dc81120146dc81818b0051', null);
 INSERT INTO `t_s_role_function` VALUES ('4028d73c66cd2aab0166cd319a2f000f', null, '4028d73c66cd2aab0166cd2f93380003', '8a8ab0b246dc81120146dc81818b0051', null);
-INSERT INTO `t_s_role_function` VALUES ('4028d73c66cd2aab0166cd319a2f0010', null, '4028d73c66cd2aab0166cd2ebb7f0001', '8a8ab0b246dc81120146dc81818b0051', null);
 INSERT INTO `t_s_role_function` VALUES ('4028d73c66cd2aab0166cd319a2f0011', null, '4028d73c66bdca9e0166bdcc4ae30003', '8a8ab0b246dc81120146dc81818b0051', null);
 INSERT INTO `t_s_role_function` VALUES ('4028d73c66cd2aab0166cd319a2f0012', null, '4028d73c66bddbdd0166bde23b850001', '8a8ab0b246dc81120146dc81818b0051', null);
 INSERT INTO `t_s_role_function` VALUES ('4028d73c66cd2aab0166cd319a2f0013', null, '4028d73c66bdca9e0166bdcc84040005', '8a8ab0b246dc81120146dc81818b0051', null);
