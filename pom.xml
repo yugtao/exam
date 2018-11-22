@@ -588,7 +588,7 @@
 		</dependency>
 		
 		 <!-- 插件：在线聊天 -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.jeecgframework.p3</groupId>
 			<artifactId>jeecg-p3-biz-chat</artifactId>
 			<version>${jeecg-p3-biz-chat.version}</version>
@@ -598,7 +598,7 @@
 					<artifactId>jeecg-p3-start-quick</artifactId>
 				</exclusion>
 			</exclusions>
-		</dependency>
+		</dependency> -->
 		
 		<!-- 插件: 我的邮箱-->
 		<dependency>
